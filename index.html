@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt's Board Game Roster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title">
+        <span class="header-eyebrow">Matt's Collection</span>
+        <h1>Board Game <em>Roster</em></h1>
+      </div>
+      <div class="header-meta">
+        <span class="game-count">
+          <span id="visible-count">119</span><span class="count-total" id="count-total"></span>
+          <span class="meta-label">games</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="sidebar-toggle" id="sidebar-toggle">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="6" y1="12" x2="14" y2="12"/></svg>
+        Filters <span id="toggle-count"></span>
+        <svg class="toggle-chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+      </button>
+
+      <div class="sidebar-content" id="sidebar-content">
+        <div class="sidebar-section" id="section-search">
+          <label class="sidebar-label">Search</label>
+          <input type="text" id="search-input" class="search-input" placeholder="Game name or mechanic…" />
+        </div>
+
+        <div class="sidebar-section" id="section-players">
+          <label class="sidebar-label">Players</label>
+          <div class="filter-group" id="player-filters">
+            <button class="filter-pill active" data-players="all">Any</button>
+            <button class="filter-pill" data-players="1">Solo</button>
+            <button class="filter-pill" data-players="2">2</button>
+            <button class="filter-pill" data-players="3">3+</button>
+            <button class="filter-pill" data-players="5">5+</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section" id="section-time">
+          <label class="sidebar-label">Play Time</label>
+          <div class="filter-group" id="time-filters">
+            <button class="filter-pill active" data-time="all">Any</button>
+            <button class="filter-pill" data-time="quick">Quick (&lt;30m)</button>
+            <button class="filter-pill" data-time="medium">Medium (30–60m)</button>
+            <button class="filter-pill" data-time="long">Long (60–120m)</button>
+            <button class="filter-pill" data-time="epic">Epic (120m+)</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section" id="section-crunch">
+          <label class="sidebar-label">Crunchiness</label>
+          <div class="range-row">
+            <span class="mono" id="crunch-min-label">1</span>
+            <div class="range-track">
+              <div class="range-track-bg"></div>
+              <div class="range-fill" id="crunch-fill"></div>
+              <input type="range" id="crunch-min" min="1" max="9" value="1" />
+              <input type="range" id="crunch-max" min="1" max="9" value="9" />
+            </div>
+            <span class="mono" id="crunch-max-label">9</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section" id="section-coop">
+          <label class="sidebar-label">Co-op?</label>
+          <div class="filter-group" id="coop-filters">
+            <button class="filter-pill active" data-coop="all">Any</button>
+            <button class="filter-pill" data-coop="yes">Co-op only</button>
+            <button class="filter-pill" data-coop="no">No co-op</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <label class="sidebar-label">Sort by</label>
+          <select id="sort-select" class="sort-select">
+            <option value="name">Name A–Z</option>
+            <option value="rating">BGG Rating ↓</option>
+            <option value="crunch-asc">Crunchiness ↑</option>
+            <option value="crunch-desc">Crunchiness ↓</option>
+            <option value="time-asc">Play Time ↑</option>
+          </select>
+        </div>
+
+        <button class="reset-btn" id="reset-btn">Reset Filters</button>
+      </div>
+    </aside>
+
+    <main class="catalog">
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <div class="empty-state" id="empty-state" style="display:none">
+        <span class="empty-die">⚄</span>
+        <p>No games match these filters.</p>
+        <button onclick="document.getElementById('reset-btn').click()">Clear filters</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="games.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
