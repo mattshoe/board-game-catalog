@@ -1,11 +1,11 @@
 // ── State ──────────────────────────────────────────────
 const state = {
   search: "",
-  players: "all",
+  players: 1,
   time: "all",
   crunchMin: 1,
   crunchMax: 9,
-  coop: "all",
+  mechanic: "all",
   sort: "name",
 };
 
@@ -17,13 +17,10 @@ function parsePlayers(str) {
 }
 
 function matchesPlayers(game, filter) {
+  if (filter === 1) return true;
   const [min, max] = parsePlayers(game.players);
-  if (filter === "all") return true;
-  if (filter === "1") return min === 1;
-  if (filter === "2") return min <= 2 && max >= 2;
-  if (filter === "3") return max >= 3;
-  if (filter === "5") return max >= 5;
-  return true;
+  if (filter === 10) return max >= 10;
+  return min <= filter && max >= filter;
 }
 
 function matchesTime(game, filter) {
@@ -46,8 +43,7 @@ function filterGames() {
     if (!matchesPlayers(g, state.players)) return false;
     if (!matchesTime(g, state.time)) return false;
     if (g.crunch < state.crunchMin || g.crunch > state.crunchMax) return false;
-    if (state.coop === "yes" && !g.coop) return false;
-    if (state.coop === "no" && g.coop) return false;
+    if (state.mechanic !== "all" && !g.mechanics.includes(state.mechanic)) return false;
     return true;
   });
 }
@@ -79,13 +75,7 @@ function ratingBadge(r) {
 }
 
 function mechanicTags(mechanics) {
-  const visible = mechanics.slice(0, 3).map(m =>
-    `<span class="tag">${m}</span>`
-  ).join("");
-  const overflow = mechanics.length > 3
-    ? `<span class="tag tag--more">+${mechanics.length - 3}</span>`
-    : "";
-  return visible + overflow;
+  return mechanics.map(m => `<span class="tag">${m}</span>`).join("");
 }
 
 function coopBadge(isCoop) {
@@ -124,11 +114,10 @@ function renderCard(game) {
 // ── Filter Indicators ──────────────────────────────────
 function updateFilterIndicators() {
   const checks = [
-    ["section-search",  state.search !== ""],
-    ["section-players", state.players !== "all"],
-    ["section-time",    state.time !== "all"],
-    ["section-crunch",  state.crunchMin !== 1 || state.crunchMax !== 9],
-    ["section-coop",    state.coop !== "all"],
+    ["section-players",  state.players !== 1],
+    ["section-time",     state.time !== "all"],
+    ["section-crunch",   state.crunchMin !== 1 || state.crunchMax !== 9],
+    ["section-mechanic", state.mechanic !== "all"],
   ];
   let activeCount = 0;
   checks.forEach(([id, active]) => {
@@ -224,19 +213,81 @@ function wirePillGroup(parentId, stateKey) {
   });
 }
 
-wirePillGroup("player-filters", "players");
-wirePillGroup("time-filters", "time");
-wirePillGroup("coop-filters", "coop");
+// Players slider
+const playersSlider = document.getElementById("players-slider");
+const playersLabel  = document.getElementById("players-label");
 
-// Mechanic tag click — set search to that mechanic; also block BGG nav when clicking any tag
+function updatePlayersFill() {
+  const fill = document.getElementById("players-fill");
+  if (!fill) return;
+  const val = parseInt(playersSlider.value);
+  const pct = (val - 1) / 9 * 100;
+  fill.style.left = "0%";
+  fill.style.right = (100 - pct) + "%";
+  fill.style.opacity = val === 1 ? "0" : "1";
+  playersLabel.textContent = val === 1 ? "Any" : val === 10 ? "10+" : String(val);
+}
+
+playersSlider.addEventListener("input", () => {
+  state.players = parseInt(playersSlider.value);
+  updatePlayersFill();
+  render();
+});
+
+// Time slider
+const timeSlider = document.getElementById("time-slider");
+const timeLabel  = document.getElementById("time-label");
+const TIME_VALUES = ["all", "quick", "medium", "long", "epic"];
+const TIME_LABELS = ["Any", "<30m", "30–60m", "1–2h", "2h+"];
+
+function updateTimeFill() {
+  const fill = document.getElementById("time-fill");
+  if (!fill) return;
+  const val = parseInt(timeSlider.value);
+  const pct = val / 4 * 100;
+  fill.style.left = "0%";
+  fill.style.right = (100 - pct) + "%";
+  fill.style.opacity = val === 0 ? "0" : "1";
+  timeLabel.textContent = TIME_LABELS[val];
+}
+
+timeSlider.addEventListener("input", () => {
+  state.time = TIME_VALUES[parseInt(timeSlider.value)];
+  updateTimeFill();
+  render();
+});
+
+// Mechanic pills (populated from game data, top 15 by frequency)
+function initMechanicPills() {
+  const counts = {};
+  GAMES.forEach(g => g.mechanics.forEach(m => { counts[m] = (counts[m] || 0) + 1; }));
+  const top = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 15)
+    .map(([m]) => m);
+  document.getElementById("mechanic-filters").innerHTML =
+    `<button class="filter-pill active" data-mechanic="all">Any</button>` +
+    top.map(m => `<button class="filter-pill" data-mechanic="${m}">${m}</button>`).join("");
+}
+
+initMechanicPills();
+wirePillGroup("mechanic-filters", "mechanic");
+
+// Mechanic tag click — activate mechanic pill if available, else fall back to search
 document.getElementById("catalog-grid").addEventListener("click", e => {
   const tag = e.target.closest(".tag");
-  if (!tag) return;
+  if (!tag || tag.classList.contains("tag--more")) return;
   e.preventDefault();
-  if (tag.classList.contains("tag--more")) return;
   const mechanic = tag.textContent.trim();
-  state.search = mechanic;
-  document.getElementById("search-input").value = mechanic;
+  const pill = document.querySelector(`#mechanic-filters [data-mechanic="${mechanic}"]`);
+  if (pill) {
+    document.querySelectorAll("#mechanic-filters .filter-pill").forEach(p => p.classList.remove("active"));
+    pill.classList.add("active");
+    state.mechanic = mechanic;
+  } else {
+    state.search = mechanic;
+    document.getElementById("search-input").value = mechanic;
+  }
   render();
 });
 
@@ -248,11 +299,11 @@ document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
 // Reset
 document.getElementById("reset-btn").addEventListener("click", () => {
   state.search = "";
-  state.players = "all";
+  state.players = 1;
   state.time = "all";
   state.crunchMin = 1;
   state.crunchMax = 9;
-  state.coop = "all";
+  state.mechanic = "all";
   state.sort = "name";
 
   document.getElementById("search-input").value = "";
@@ -263,15 +314,19 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   crunchMaxLabel.textContent = 9;
 
   document.querySelectorAll(".filter-pill").forEach(p => {
-    p.classList.toggle("active",
-      p.dataset.players === "all" || p.dataset.time === "all" || p.dataset.coop === "all"
-    );
+    p.classList.toggle("active", p.dataset.mechanic === "all");
   });
 
+  playersSlider.value = 1;
+  timeSlider.value = 0;
+  updatePlayersFill();
+  updateTimeFill();
   updateCrunchFill();
   render();
 });
 
 // ── Init ───────────────────────────────────────────────
+updatePlayersFill();
+updateTimeFill();
 updateCrunchFill();
 render();

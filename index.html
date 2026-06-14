@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,6 +27,12 @@
     </div>
   </header>
 
+  <div class="global-search">
+    <div class="global-search-inner">
+      <input type="text" id="search-input" class="search-input" placeholder="Search games or mechanics…" />
+    </div>
+  </div>
+
   <div class="layout">
     <aside class="sidebar">
       <button class="sidebar-toggle" id="sidebar-toggle">
@@ -33,30 +42,27 @@
       </button>
 
       <div class="sidebar-content" id="sidebar-content">
-        <div class="sidebar-section" id="section-search">
-          <label class="sidebar-label">Search</label>
-          <input type="text" id="search-input" class="search-input" placeholder="Game name or mechanic…" />
-        </div>
-
         <div class="sidebar-section" id="section-players">
           <label class="sidebar-label">Players</label>
-          <div class="filter-group" id="player-filters">
-            <button class="filter-pill active" data-players="all">Any</button>
-            <button class="filter-pill" data-players="1">Solo</button>
-            <button class="filter-pill" data-players="2">2</button>
-            <button class="filter-pill" data-players="3">3+</button>
-            <button class="filter-pill" data-players="5">5+</button>
+          <div class="range-row">
+            <div class="range-track" style="touch-action:none">
+              <div class="range-track-bg"></div>
+              <div class="range-fill" id="players-fill"></div>
+              <input type="range" id="players-slider" min="1" max="10" value="1" />
+            </div>
+            <span class="mono" id="players-label">Any</span>
           </div>
         </div>
 
         <div class="sidebar-section" id="section-time">
           <label class="sidebar-label">Play Time</label>
-          <div class="filter-group" id="time-filters">
-            <button class="filter-pill active" data-time="all">Any</button>
-            <button class="filter-pill" data-time="quick">Quick (&lt;30m)</button>
-            <button class="filter-pill" data-time="medium">Medium (30–60m)</button>
-            <button class="filter-pill" data-time="long">Long (60–120m)</button>
-            <button class="filter-pill" data-time="epic">Epic (120m+)</button>
+          <div class="range-row">
+            <div class="range-track" style="touch-action:none">
+              <div class="range-track-bg"></div>
+              <div class="range-fill" id="time-fill"></div>
+              <input type="range" id="time-slider" min="0" max="4" value="0" />
+            </div>
+            <span class="mono" id="time-label">Any</span>
           </div>
         </div>
 
@@ -74,13 +80,9 @@
           </div>
         </div>
 
-        <div class="sidebar-section" id="section-coop">
-          <label class="sidebar-label">Co-op?</label>
-          <div class="filter-group" id="coop-filters">
-            <button class="filter-pill active" data-coop="all">Any</button>
-            <button class="filter-pill" data-coop="yes">Co-op only</button>
-            <button class="filter-pill" data-coop="no">No co-op</button>
-          </div>
+        <div class="sidebar-section" id="section-mechanic">
+          <label class="sidebar-label">Mechanic</label>
+          <div class="filter-group" id="mechanic-filters"></div>
         </div>
 
         <div class="sidebar-section">
