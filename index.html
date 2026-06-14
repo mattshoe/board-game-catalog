@@ -167,14 +167,22 @@
   <div id="tab-planner" hidden>
     <div class="planner-page">
       <div class="planner-page-head">
-        <div class="planner-top-row">
-          <h2 class="planner-title">Tonight's Lineup</h2>
-          <div class="planner-players">
-            <span class="planner-players-label">Players</span>
-            <div class="planner-players-ctrl">
-              <button class="planner-players-btn" id="planner-players-dec">−</button>
-              <span class="planner-players-val" id="planner-players-val">4</span>
-              <button class="planner-players-btn" id="planner-players-inc">+</button>
+        <h2 class="planner-title">Tonight's Lineup</h2>
+        <div class="planner-controls">
+          <div class="planner-ctrl-group">
+            <span class="planner-ctrl-label">Players</span>
+            <div class="planner-ctrl-stepper">
+              <button class="planner-ctrl-btn" id="planner-players-dec">−</button>
+              <span class="planner-ctrl-val" id="planner-players-val">4</span>
+              <button class="planner-ctrl-btn" id="planner-players-inc">+</button>
+            </div>
+          </div>
+          <div class="planner-ctrl-group">
+            <span class="planner-ctrl-label">Max Crunch</span>
+            <div class="planner-ctrl-stepper">
+              <button class="planner-ctrl-btn" id="planner-crunch-dec">−</button>
+              <span class="planner-ctrl-val" id="planner-crunch-val">10</span>
+              <button class="planner-ctrl-btn" id="planner-crunch-inc">+</button>
             </div>
           </div>
         </div>
@@ -184,7 +192,7 @@
           <button class="planner-pill filter-pill active" data-course="Appetizer">Appetizer</button>
           <button class="planner-pill filter-pill active" data-course="Main Course">Main Course</button>
           <button class="planner-pill filter-pill" data-course="Feast">Feast</button>
-          <button class="planner-pill filter-pill" data-course="Dessert">Dessert</button>
+          <button class="planner-pill filter-pill active" data-course="Dessert">Dessert</button>
         </div>
       </div>
       <div class="planner-lineup" id="planner-lineup"></div>

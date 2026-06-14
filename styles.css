@@ -794,22 +794,20 @@ input[type=range]::-moz-range-track {
   margin-bottom: 28px;
 }
 
-.planner-top-row {
+.planner-controls {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 4px;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 20px;
 }
 
-.planner-players {
+.planner-ctrl-group {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
 }
 
-.planner-players-label {
+.planner-ctrl-label {
   font-size: 12px;
   color: var(--slate);
   text-transform: uppercase;
@@ -817,16 +815,15 @@ input[type=range]::-moz-range-track {
   font-weight: 500;
 }
 
-.planner-players-ctrl {
+.planner-ctrl-stepper {
   display: flex;
   align-items: center;
-  gap: 0;
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
-.planner-players-btn {
+.planner-ctrl-btn {
   background: none;
   border: none;
   color: var(--slate-2);
@@ -838,14 +835,14 @@ input[type=range]::-moz-range-track {
   transition: color var(--transition), background var(--transition);
 }
 
-.planner-players-btn:hover { color: var(--parch); background: rgba(255,255,255,0.05); }
+.planner-ctrl-btn:hover { color: var(--parch); background: rgba(255,255,255,0.05); }
 
-.planner-players-val {
+.planner-ctrl-val {
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--amber);
-  min-width: 28px;
+  min-width: 24px;
   text-align: center;
   padding: 4px 2px;
   border-left: 1px solid var(--card-border);

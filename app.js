@@ -384,14 +384,19 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 const COURSE_ORDER = ["Amuse-Bouche", "Appetizer", "Main Course", "Feast", "Dessert"];
 
 const planner = {
-  courses: new Set(["Amuse-Bouche", "Appetizer", "Main Course"]),
+  courses: new Set(["Amuse-Bouche", "Appetizer", "Main Course", "Dessert"]),
   picks: {},
   locked: new Set(),
   players: 4,
+  crunchMax: 10,
 };
 
 function planPick(course) {
-  const pool = GAMES.filter(g => g.meal === course && matchesPlayers(g, planner.players));
+  const pool = GAMES.filter(g =>
+    g.meal === course &&
+    matchesPlayers(g, planner.players) &&
+    g.crunch <= planner.crunchMax
+  );
   return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
 }
 
@@ -414,6 +419,7 @@ function planTimeText() {
 
 function planRender() {
   document.getElementById("planner-players-val").textContent = planner.players;
+  document.getElementById("planner-crunch-val").textContent = planner.crunchMax;
   document.querySelectorAll("#planner-pills .planner-pill").forEach(pill => {
     pill.classList.toggle("active", planner.courses.has(pill.dataset.course));
   });
@@ -481,6 +487,12 @@ document.getElementById("planner-players-dec").addEventListener("click", () => {
 });
 document.getElementById("planner-players-inc").addEventListener("click", () => {
   if (planner.players < 12) { planner.players++; planBuild(); }
+});
+document.getElementById("planner-crunch-dec").addEventListener("click", () => {
+  if (planner.crunchMax > 1) { planner.crunchMax--; planBuild(); }
+});
+document.getElementById("planner-crunch-inc").addEventListener("click", () => {
+  if (planner.crunchMax < 10) { planner.crunchMax++; planBuild(); }
 });
 
 document.getElementById("planner-pills").addEventListener("click", e => {
