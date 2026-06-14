@@ -4,10 +4,17 @@ const state = {
   players: 1,
   time: "all",
   crunchMin: 1,
-  crunchMax: 9,
-  mechanic: "all",
+  crunchMax: 10,
+  tags: new Set(),
   sort: "name-asc",
 };
+
+// Strip parenthetical text from all tags at startup
+GAMES.forEach(g => {
+  g.tags = [...new Set(
+    g.tags.map(t => t.replace(/\s*\([^)]*\)/g, '').trim()).filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b));
+});
 
 // ── Helpers ────────────────────────────────────────────
 function parsePlayers(str) {
@@ -37,13 +44,13 @@ function filterGames() {
     if (state.search) {
       const q = state.search.toLowerCase();
       const inName = g.name.toLowerCase().includes(q);
-      const inMechanics = g.mechanics.some(m => m.toLowerCase().includes(q));
+      const inMechanics = g.tags.some(m => m.toLowerCase().includes(q));
       if (!inName && !inMechanics) return false;
     }
     if (!matchesPlayers(g, state.players)) return false;
     if (!matchesTime(g, state.time)) return false;
     if (g.crunch < state.crunchMin || g.crunch > state.crunchMax) return false;
-    if (state.mechanic !== "all" && !g.mechanics.includes(state.mechanic)) return false;
+    if (state.tags.size > 0 && ![...state.tags].every(t => g.tags.includes(t))) return false;
     return true;
   });
 }
@@ -68,7 +75,7 @@ function sortGames(games) {
 
 // ── Rendering ──────────────────────────────────────────
 function crunchPips(n) {
-  return Array.from({ length: 9 }, (_, i) =>
+  return Array.from({ length: 10 }, (_, i) =>
     `<span class="pip${i < n ? " pip--filled" : ""}"></span>`
   ).join("");
 }
@@ -79,8 +86,14 @@ function ratingBadge(r) {
   return `<span class="badge ${cls}">${r.toFixed(1)}</span>`;
 }
 
-function mechanicTags(mechanics) {
-  return mechanics.map(m => `<span class="tag">${m}</span>`).join("");
+const TAG_CARD_VISIBLE = 10;
+
+function mechanicTags(tags) {
+  const visible = tags.slice(0, TAG_CARD_VISIBLE);
+  const extra   = tags.slice(TAG_CARD_VISIBLE);
+  return visible.map(t => `<span class="tag">${t}</span>`).join("") +
+    extra.map(t => `<span class="tag tag-card-extra">${t}</span>`).join("") +
+    (extra.length ? `<button class="tag tag-card-expand">+${extra.length} more</button>` : "");
 }
 
 function coopBadge(isCoop) {
@@ -90,12 +103,15 @@ function coopBadge(isCoop) {
 function renderCard(game) {
   return `
     <a class="game-row" href="${game.bgg}" target="_blank" rel="noopener">
-      <div class="row-main">
-        <div class="row-name-line">
-          <h3 class="row-title">${game.name}</h3>
-          ${coopBadge(game.coop)}
+      <div class="row-top">
+        <div class="row-thumb">${game.img ? `<img class="game-thumb" src="${game.img}" loading="lazy" alt="" />` : ''}</div>
+        <div class="row-main">
+          <div class="row-name-line">
+            <h3 class="row-title">${game.name}</h3>
+            ${coopBadge(game.coop)}
+          </div>
+          ${game.description ? `<p class="row-desc">${game.description}</p>` : ''}
         </div>
-        <div class="mechanic-tags">${mechanicTags(game.mechanics)}</div>
       </div>
       <div class="row-stats">
         <span class="row-stat">
@@ -118,6 +134,7 @@ function renderCard(game) {
           ${ratingBadge(game.rating)}
         </div>
       </div>
+      <div class="mechanic-tags">${mechanicTags(game.tags)}</div>
     </a>
   `;
 }
@@ -128,7 +145,7 @@ function updateFilterIndicators() {
     ["section-players",  state.players !== 1],
     ["section-time",     state.time !== "all"],
     ["section-crunch",   state.crunchMin !== 1 || state.crunchMax !== 9],
-    ["section-mechanic", state.mechanic !== "all"],
+    ["section-tag", state.tags.size > 0],
   ];
   let activeCount = 0;
   checks.forEach(([id, active]) => {
@@ -172,7 +189,7 @@ function updateCrunchFill() {
   if (!fill) return;
   const lo = Math.min(parseInt(crunchMinEl.value), parseInt(crunchMaxEl.value));
   const hi = Math.max(parseInt(crunchMinEl.value), parseInt(crunchMaxEl.value));
-  const pct = v => (v - 1) / 8 * 100;
+  const pct = v => (v - 1) / 9 * 100;
   fill.style.left = pct(lo) + "%";
   fill.style.right = (100 - pct(hi)) + "%";
   // When thumbs collide, bring min to front so user can drag it back left
@@ -212,21 +229,6 @@ document.getElementById("sort-select").addEventListener("change", e => {
   state.sort = e.target.value;
   render();
 });
-
-function wirePillGroup(parentId, stateKey) {
-  document.getElementById(parentId).addEventListener("click", e => {
-    const pill = e.target.closest(".filter-pill");
-    if (!pill) return;
-    const isActive = pill.classList.contains("active");
-    const isAny = pill.dataset[stateKey] === "all";
-    // Clicking the active non-Any pill toggles it off (back to Any)
-    const target = (isActive && !isAny) ? "all" : pill.dataset[stateKey];
-    document.querySelectorAll(`#${parentId} .filter-pill`).forEach(p => p.classList.remove("active"));
-    document.querySelector(`#${parentId} [data-${stateKey}="${target}"]`)?.classList.add("active");
-    state[stateKey] = target;
-    render();
-  });
-}
 
 // Players slider
 const playersSlider = document.getElementById("players-slider");
@@ -272,43 +274,67 @@ timeSlider.addEventListener("input", () => {
   render();
 });
 
-// Mechanic pills (populated from game data, top 15 by frequency)
-function initMechanicPills() {
+const TAG_VISIBLE = 12;
+
+function initTagPills() {
   const counts = {};
-  GAMES.forEach(g => g.mechanics.forEach(m => { counts[m] = (counts[m] || 0) + 1; }));
-  const top = Object.entries(counts)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 30)
-    .map(([m]) => m)
+  GAMES.forEach(g => g.tags.forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+  const all = Object.entries(counts)
+    .map(([t]) => t)
     .sort((a, b) => a.localeCompare(b));
-  document.getElementById("mechanic-filters").innerHTML =
-    `<button class="filter-pill active" data-mechanic="all">Any</button>` +
-    top.map(m => `<button class="filter-pill" data-mechanic="${m}">${m}</button>`).join("");
+  const hidden = all.length - TAG_VISIBLE;
+  document.getElementById("tag-filters").innerHTML =
+    all.map((t, i) =>
+      `<button class="filter-pill${i >= TAG_VISIBLE ? " tag-extra" : ""}" data-tag="${t}">${t}</button>`
+    ).join("") +
+    `<button class="tag-more-btn" id="tag-more-btn">More (${hidden})</button>`;
+
+  document.getElementById("tag-more-btn").addEventListener("click", () => {
+    const container = document.getElementById("tag-filters");
+    const expanded = container.classList.toggle("tags-expanded");
+    const btn = document.getElementById("tag-more-btn");
+    btn.textContent = expanded ? "Less" : `More (${hidden})`;
+  });
 }
 
-// Auto-tag games with min player count of 1 as Solo
-GAMES.forEach(g => {
-  const [min] = parsePlayers(g.players);
-  if (min === 1 && !g.mechanics.includes("Solo")) g.mechanics.push("Solo");
+initTagPills();
+
+document.getElementById("tag-filters").addEventListener("click", e => {
+  const pill = e.target.closest(".filter-pill");
+  if (!pill) return;
+  const value = pill.dataset.tag;
+  if (state.tags.has(value)) {
+    state.tags.delete(value);
+    pill.classList.remove("active");
+  } else {
+    state.tags.add(value);
+    pill.classList.add("active");
+  }
+  render();
 });
 
-initMechanicPills();
-wirePillGroup("mechanic-filters", "mechanic");
-
-// Mechanic tag click — activate mechanic pill if available, else fall back to search
+// Tag click — activate tag pill if available, else fall back to search
 document.getElementById("catalog-grid").addEventListener("click", e => {
+  // Expand hidden tags on a card
+  const expandBtn = e.target.closest(".tag-card-expand");
+  if (expandBtn) {
+    e.preventDefault();
+    expandBtn.closest(".mechanic-tags").classList.add("tags-expanded");
+    return;
+  }
+
   const tag = e.target.closest(".tag");
-  if (!tag || tag.classList.contains("tag--more")) return;
+  if (!tag || tag.classList.contains("tag--more") || tag.classList.contains("tag-card-expand")) return;
   e.preventDefault();
-  const mechanic = tag.textContent.trim();
-  const pill = document.querySelector(`#mechanic-filters [data-mechanic="${mechanic}"]`);
+  const value = tag.textContent.trim();
+  const pill = document.querySelector(`#tag-filters [data-tag="${value}"]`);
   if (pill) {
-    document.querySelectorAll("#mechanic-filters .filter-pill").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll("#tag-filters .filter-pill").forEach(p => p.classList.remove("active"));
+    state.tags = new Set([value]);
     pill.classList.add("active");
-    state.mechanic = mechanic;
   } else {
-    state.search = mechanic;
-    document.getElementById("search-input").value = mechanic;
+    state.search = value;
+    document.getElementById("search-input").value = value;
   }
   render();
 });
@@ -325,19 +351,21 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   state.time = "all";
   state.crunchMin = 1;
   state.crunchMax = 9;
-  state.mechanic = "all";
+  state.tags = new Set();
   state.sort = "name-asc";
 
   document.getElementById("search-input").value = "";
   document.getElementById("sort-select").value = "name-asc";
   crunchMinEl.value = 1;
-  crunchMaxEl.value = 9;
+  crunchMaxEl.value = 10;
   crunchMinLabel.textContent = 1;
-  crunchMaxLabel.textContent = 9;
+  crunchMaxLabel.textContent = 10;
 
-  document.querySelectorAll(".filter-pill").forEach(p => {
-    p.classList.toggle("active", p.dataset.mechanic === "all");
-  });
+  document.querySelectorAll("#tag-filters .filter-pill").forEach(p => p.classList.remove("active"));
+  const tagContainer = document.getElementById("tag-filters");
+  tagContainer.classList.remove("tags-expanded");
+  const moreBtn = document.getElementById("tag-more-btn");
+  if (moreBtn) { const h = tagContainer.querySelectorAll(".tag-extra").length; moreBtn.textContent = `More (${h})`; }
 
   playersSlider.value = 1;
   timeSlider.value = 0;

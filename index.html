@@ -6,17 +6,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matt's Board Game Roster</title>
+  <title>Matt's Board Game Catalog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <div class="header-title">
         <span class="header-eyebrow">Matt's Collection</span>
-        <h1>Board Game <em>Roster</em></h1>
+        <h1>Board Game <em>Catalog</em></h1>
       </div>
       <div class="header-meta">
         <span class="game-count">
@@ -29,7 +29,7 @@
 
   <div class="global-search">
     <div class="global-search-inner">
-      <input type="text" id="search-input" class="search-input" placeholder="Search games or mechanics…" />
+      <input type="text" id="search-input" class="search-input" placeholder="Search games or tags…" />
     </div>
   </div>
 
@@ -73,16 +73,16 @@
             <div class="range-track">
               <div class="range-track-bg"></div>
               <div class="range-fill" id="crunch-fill"></div>
-              <input type="range" id="crunch-min" min="1" max="9" value="1" />
-              <input type="range" id="crunch-max" min="1" max="9" value="9" />
+              <input type="range" id="crunch-min" min="1" max="10" value="1" />
+              <input type="range" id="crunch-max" min="1" max="10" value="10" />
             </div>
-            <span class="mono" id="crunch-max-label">9</span>
+            <span class="mono" id="crunch-max-label">10</span>
           </div>
         </div>
 
-        <div class="sidebar-section" id="section-mechanic">
-          <label class="sidebar-label">Mechanic</label>
-          <div class="filter-group" id="mechanic-filters"></div>
+        <div class="sidebar-section" id="section-tag">
+          <label class="sidebar-label">Tag</label>
+          <div class="filter-group" id="tag-filters"></div>
         </div>
 
         <div class="sidebar-section">
@@ -134,7 +134,7 @@
     </main>
   </div>
 
-  <script src="games.js"></script>
+  <script src="games.js?v=3"></script>
   <script src="app.js"></script>
 </body>
 </html>
