@@ -31,6 +31,7 @@
     <div class="tab-bar-inner">
       <button class="tab active" data-tab="catalog">Catalog</button>
       <button class="tab" data-tab="planner">Game Night</button>
+      <button class="tab" data-tab="solo">Solo</button>
     </div>
   </nav>
 
@@ -200,6 +201,95 @@
         <span class="planner-time" id="planner-time"></span>
         <button class="planner-reroll-all" id="planner-reroll-all">↺ Re-roll All</button>
       </div>
+    </div>
+  </div>
+
+  <div id="tab-solo" hidden>
+    <div class="global-search">
+      <div class="global-search-inner">
+        <input type="text" id="solo-search-input" class="search-input" placeholder="Search solo games or tags…" />
+      </div>
+    </div>
+    <div class="layout">
+      <aside class="sidebar" id="solo-sidebar">
+        <button class="sidebar-toggle" id="solo-sidebar-toggle">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="4" x2="14" y2="4"/><line x1="4" y1="8" x2="14" y2="8"/><line x1="6" y1="12" x2="14" y2="12"/></svg>
+          Filters <span id="solo-toggle-count"></span>
+          <svg class="toggle-chevron" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+        </button>
+        <div class="sidebar-content">
+          <div class="sidebar-section" id="solo-section-time">
+            <label class="sidebar-label">Play Time</label>
+            <div class="range-row">
+              <div class="range-track" style="touch-action:none">
+                <div class="range-track-bg"></div>
+                <div class="range-fill" id="solo-time-fill"></div>
+                <input type="range" id="solo-time-slider" min="0" max="4" value="0" />
+              </div>
+              <span class="mono" id="solo-time-label">Any</span>
+            </div>
+          </div>
+          <div class="sidebar-section" id="solo-section-crunch">
+            <label class="sidebar-label">Crunchiness</label>
+            <div class="range-row">
+              <span class="mono" id="solo-crunch-min-label">1</span>
+              <div class="range-track">
+                <div class="range-track-bg"></div>
+                <div class="range-fill" id="solo-crunch-fill"></div>
+                <input type="range" id="solo-crunch-min" min="1" max="10" value="1" />
+                <input type="range" id="solo-crunch-max" min="1" max="10" value="10" />
+              </div>
+              <span class="mono" id="solo-crunch-max-label">10</span>
+            </div>
+          </div>
+          <div class="sidebar-section" id="solo-section-tag">
+            <label class="sidebar-label">Tag</label>
+            <div class="filter-group" id="solo-tag-filters"></div>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Sort by</label>
+            <select id="solo-sort-select" class="sort-select">
+              <optgroup label="Name">
+                <option value="name-asc">Name A–Z</option>
+                <option value="name-desc">Name Z–A</option>
+              </optgroup>
+              <optgroup label="Time">
+                <option value="time-asc">Time ↑</option>
+                <option value="time-desc">Time ↓</option>
+              </optgroup>
+              <optgroup label="Crunch">
+                <option value="crunch-asc">Crunch ↑</option>
+                <option value="crunch-desc">Crunch ↓</option>
+              </optgroup>
+              <optgroup label="BGG Rating">
+                <option value="rating-desc">BGG Rating ↓</option>
+                <option value="rating-asc">BGG Rating ↑</option>
+              </optgroup>
+            </select>
+          </div>
+          <button class="reset-btn" id="solo-reset-btn">Reset Filters</button>
+        </div>
+      </aside>
+      <main class="catalog">
+        <div class="catalog-header">
+          <div class="ch-spacer"></div>
+          <div class="ch-stats">
+            <span>Players</span>
+            <span>Time</span>
+            <span>Crunchiness</span>
+            <span>BGG Rating</span>
+          </div>
+        </div>
+        <div class="solo-actions">
+          <button class="solo-random-btn" id="solo-random-btn">↺ Random Pick</button>
+        </div>
+        <div class="solo-pick-slot" id="solo-pick-slot" hidden></div>
+        <div class="catalog-grid" id="solo-grid"></div>
+        <div class="empty-state" id="solo-empty" style="display:none">
+          <span class="empty-die">⚄</span>
+          <p>No solo games match these filters.</p>
+        </div>
+      </main>
     </div>
   </div>
 

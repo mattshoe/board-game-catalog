@@ -468,6 +468,7 @@ function switchTab(name) {
   );
   document.getElementById("tab-catalog").hidden = name !== "catalog";
   document.getElementById("tab-planner").hidden = name !== "planner";
+  document.getElementById("tab-solo").hidden = name !== "solo";
 
   if (name === "planner" && !plannerInited) {
     planBuild();
@@ -528,8 +529,222 @@ document.getElementById("planner-lineup").addEventListener("click", e => {
 
 document.getElementById("planner-reroll-all").addEventListener("click", planBuild);
 
+// ── Solo ───────────────────────────────────────────────
+const soloState = {
+  search: "",
+  time: "all",
+  crunchMin: 1,
+  crunchMax: 10,
+  tags: new Set(),
+  sort: "name-asc",
+};
+
+function filterSoloGames() {
+  return GAMES.filter(g => {
+    if (parsePlayers(g.players)[0] > 1) return false;
+    if (soloState.search) {
+      const q = soloState.search.toLowerCase();
+      if (!g.name.toLowerCase().includes(q) && !g.tags.some(t => t.toLowerCase().includes(q))) return false;
+    }
+    if (!matchesTime(g, soloState.time)) return false;
+    if (g.crunch < soloState.crunchMin || g.crunch > soloState.crunchMax) return false;
+    if (soloState.tags.size > 0 && ![...soloState.tags].every(t => g.tags.includes(t))) return false;
+    return true;
+  });
+}
+
+function sortSoloGames(games) {
+  return [...games].sort((a, b) => {
+    switch (soloState.sort) {
+      case "name-asc":    return a.name.localeCompare(b.name);
+      case "name-desc":   return b.name.localeCompare(a.name);
+      case "time-asc":    return a.timeMin - b.timeMin;
+      case "time-desc":   return b.timeMin - a.timeMin;
+      case "crunch-asc":  return a.crunch - b.crunch;
+      case "crunch-desc": return b.crunch - a.crunch;
+      case "rating-desc": return (b.rating ?? -1) - (a.rating ?? -1);
+      case "rating-asc":  return (a.rating ?? 11) - (b.rating ?? 11);
+      default: return 0;
+    }
+  });
+}
+
+function updateSoloFilterIndicators() {
+  const checks = [
+    ["solo-section-time",  soloState.time !== "all"],
+    ["solo-section-crunch", soloState.crunchMin !== 1 || soloState.crunchMax !== 10],
+    ["solo-section-tag",   soloState.tags.size > 0],
+  ];
+  let count = 0;
+  checks.forEach(([id, active]) => {
+    document.getElementById(id)?.classList.toggle("is-filtered", active);
+    if (active) count++;
+  });
+  const el = document.getElementById("solo-toggle-count");
+  if (el) el.textContent = count > 0 ? `(${count})` : "";
+}
+
+function renderSolo() {
+  const filtered = filterSoloGames();
+  const sorted = sortSoloGames(filtered);
+  const grid = document.getElementById("solo-grid");
+  const empty = document.getElementById("solo-empty");
+  grid.innerHTML = sorted.length ? sorted.map(renderCard).join("") : "";
+  empty.style.display = sorted.length ? "none" : "flex";
+  updateSoloFilterIndicators();
+}
+
+function soloPickRandom() {
+  const games = filterSoloGames();
+  if (!games.length) return;
+  const game = games[Math.floor(Math.random() * games.length)];
+  const slot = document.getElementById("solo-pick-slot");
+  slot.hidden = false;
+  slot.innerHTML = `
+    <div class="solo-pick-head">
+      <span class="planner-course-name">Random Pick</span>
+      <button class="planner-reroll" id="solo-reroll-btn">↺ Re-roll</button>
+    </div>
+    <a class="planner-card" href="${game.bgg}" target="_blank" rel="noopener">
+      ${game.img ? `<img class="planner-thumb" src="${game.img}" loading="lazy" alt="" />` : `<div class="planner-thumb planner-thumb--empty"></div>`}
+      <div class="planner-info">
+        <div class="planner-name">${game.name}${game.coop ? ` <span class="coop-badge">Co-op</span>` : ""}</div>
+        <div class="planner-meta">${game.players} · ${game.playTime} · Crunch ${game.crunch}</div>
+      </div>
+    </a>
+  `;
+  document.getElementById("solo-reroll-btn").addEventListener("click", e => {
+    e.preventDefault();
+    soloPickRandom();
+  });
+}
+
+function initSoloTagPills() {
+  const soloGames = GAMES.filter(g => parsePlayers(g.players)[0] === 1);
+  const counts = {};
+  soloGames.forEach(g => g.tags.forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+  const all = Object.keys(counts).sort((a, b) => a.localeCompare(b));
+  const TAG_VISIBLE = 12;
+  const hidden = all.length - TAG_VISIBLE;
+  document.getElementById("solo-tag-filters").innerHTML =
+    all.map((t, i) =>
+      `<button class="filter-pill${i >= TAG_VISIBLE ? " tag-extra" : ""}" data-tag="${t}">${t}</button>`
+    ).join("") +
+    (hidden > 0 ? `<button class="tag-more-btn" id="solo-tag-more-btn">More (${hidden})</button>` : "");
+  const moreBtn = document.getElementById("solo-tag-more-btn");
+  if (moreBtn) moreBtn.addEventListener("click", () => {
+    const c = document.getElementById("solo-tag-filters");
+    const expanded = c.classList.toggle("tags-expanded");
+    moreBtn.textContent = expanded ? "Less" : `More (${hidden})`;
+  });
+}
+
+// Solo time slider
+const soloTimeSlider = document.getElementById("solo-time-slider");
+const soloTimeLabel  = document.getElementById("solo-time-label");
+
+function updateSoloTimeFill() {
+  const fill = document.getElementById("solo-time-fill");
+  if (!fill) return;
+  const val = parseInt(soloTimeSlider.value);
+  const pct = val / 4 * 100;
+  fill.style.left = "0%";
+  fill.style.right = (100 - pct) + "%";
+  fill.style.opacity = val === 0 ? "0" : "1";
+  soloTimeLabel.textContent = TIME_LABELS[val];
+}
+
+soloTimeSlider.addEventListener("input", () => {
+  soloState.time = TIME_VALUES[parseInt(soloTimeSlider.value)];
+  updateSoloTimeFill();
+  renderSolo();
+});
+
+// Solo crunch sliders
+const soloCrunchMinEl    = document.getElementById("solo-crunch-min");
+const soloCrunchMaxEl    = document.getElementById("solo-crunch-max");
+const soloCrunchMinLabel = document.getElementById("solo-crunch-min-label");
+const soloCrunchMaxLabel = document.getElementById("solo-crunch-max-label");
+
+function updateSoloCrunchFill() {
+  const fill = document.getElementById("solo-crunch-fill");
+  if (!fill) return;
+  const lo = Math.min(parseInt(soloCrunchMinEl.value), parseInt(soloCrunchMaxEl.value));
+  const hi = Math.max(parseInt(soloCrunchMinEl.value), parseInt(soloCrunchMaxEl.value));
+  const pct = v => (v - 1) / 9 * 100;
+  fill.style.left = pct(lo) + "%";
+  fill.style.right = (100 - pct(hi)) + "%";
+  soloCrunchMinEl.style.zIndex = parseInt(soloCrunchMinEl.value) >= parseInt(soloCrunchMaxEl.value) ? 3 : 2;
+}
+
+function updateSoloCrunchSliders() {
+  soloState.crunchMin = parseInt(soloCrunchMinEl.value);
+  soloState.crunchMax = parseInt(soloCrunchMaxEl.value);
+  soloCrunchMinLabel.textContent = soloState.crunchMin;
+  soloCrunchMaxLabel.textContent = soloState.crunchMax;
+  updateSoloCrunchFill();
+  renderSolo();
+}
+
+soloCrunchMinEl.addEventListener("input", () => {
+  if (parseInt(soloCrunchMinEl.value) > parseInt(soloCrunchMaxEl.value)) soloCrunchMinEl.value = soloCrunchMaxEl.value;
+  updateSoloCrunchSliders();
+});
+soloCrunchMaxEl.addEventListener("input", () => {
+  if (parseInt(soloCrunchMaxEl.value) < parseInt(soloCrunchMinEl.value)) soloCrunchMaxEl.value = soloCrunchMinEl.value;
+  updateSoloCrunchSliders();
+});
+
+document.getElementById("solo-search-input").addEventListener("input", e => {
+  soloState.search = e.target.value;
+  renderSolo();
+});
+
+document.getElementById("solo-tag-filters").addEventListener("click", e => {
+  const pill = e.target.closest(".filter-pill");
+  if (!pill) return;
+  const val = pill.dataset.tag;
+  if (soloState.tags.has(val)) { soloState.tags.delete(val); pill.classList.remove("active"); }
+  else { soloState.tags.add(val); pill.classList.add("active"); }
+  renderSolo();
+});
+
+document.getElementById("solo-sort-select").addEventListener("change", e => {
+  soloState.sort = e.target.value;
+  renderSolo();
+});
+
+document.getElementById("solo-random-btn").addEventListener("click", soloPickRandom);
+
+document.getElementById("solo-reset-btn").addEventListener("click", () => {
+  soloState.search = ""; soloState.time = "all";
+  soloState.crunchMin = 1; soloState.crunchMax = 10;
+  soloState.tags = new Set(); soloState.sort = "name-asc";
+  document.getElementById("solo-search-input").value = "";
+  document.getElementById("solo-sort-select").value = "name-asc";
+  soloCrunchMinEl.value = 1; soloCrunchMaxEl.value = 10;
+  soloCrunchMinLabel.textContent = 1; soloCrunchMaxLabel.textContent = 10;
+  document.querySelectorAll("#solo-tag-filters .filter-pill").forEach(p => p.classList.remove("active"));
+  const c = document.getElementById("solo-tag-filters");
+  c.classList.remove("tags-expanded");
+  const mb = document.getElementById("solo-tag-more-btn");
+  if (mb) { mb.textContent = `More (${c.querySelectorAll(".tag-extra").length})`; }
+  soloTimeSlider.value = 0;
+  updateSoloTimeFill();
+  updateSoloCrunchFill();
+  renderSolo();
+});
+
+document.getElementById("solo-sidebar-toggle")?.addEventListener("click", () => {
+  document.getElementById("solo-sidebar").classList.toggle("open");
+});
+
 // ── Init ───────────────────────────────────────────────
 updatePlayersFill();
 updateTimeFill();
 updateCrunchFill();
+initSoloTagPills();
+updateSoloTimeFill();
+updateSoloCrunchFill();
 render();
+renderSolo();

@@ -3457,7 +3457,7 @@ const GAMES = [
   {
     "id": 119,
     "name": "The Red Dragon Inn",
-    "players": "2–4",
+    "players": "2–16",
     "playTime": "45 min",
     "timeMin": 45,
     "timeMax": 45,
@@ -3481,7 +3481,7 @@ const GAMES = [
       "Variable Player Powers"
     ],
     "description": "A rowdy party game where fantasy adventurers celebrate after a dungeon raid — gambling, drinking, and using dirty tricks on each other to be the last hero still standing and solvent.",
-    "meal": "Dessert"
+    "meal": "Main Course"
   },
   {
     "id": 120,

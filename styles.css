@@ -783,6 +783,43 @@ input[type=range]::-moz-range-track {
 .info-tip b { color: var(--parch-2); font-weight: 500; }
 
 
+/* ── Solo Tab ─────────────────────────────────────────── */
+.solo-actions {
+  padding: 4px 0 12px;
+}
+
+.solo-random-btn {
+  background: var(--amber);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.solo-random-btn:hover { background: var(--amber-2); }
+
+.solo-pick-slot {
+  background: var(--card-bg);
+  border: 1px solid var(--amber);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+
+.solo-pick-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.02);
+}
+
 /* ── Game Night Planner (full page) ───────────────────── */
 .planner-page {
   max-width: 680px;

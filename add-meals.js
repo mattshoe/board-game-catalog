@@ -128,7 +128,7 @@ const meals = {
   116: "Main Course",  // Horrified: Greek Monsters
   117: "Appetizer",    // Codenames Duet
   118: "Dessert",      // Cards Against Humanity
-  119: "Dessert",      // The Red Dragon Inn
+  119: "Main Course",  // The Red Dragon Inn
   120: "Main Course",  // Sleeping Gods
   121: "Amuse-Bouche", // Coup
   122: "Appetizer",    // Skull King
