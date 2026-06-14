@@ -1,3 +1,89 @@
+// ── URL State ──────────────────────────────────────────
+let urlReady = false;
+
+function serializeState() {
+  const p = new URLSearchParams();
+  const tab = document.querySelector(".tab.active")?.dataset.tab || "catalog";
+  if (tab !== "catalog") p.set("tab", tab);
+
+  if (state.search) p.set("q", state.search);
+  if (state.players !== 1) p.set("players", state.players);
+  if (state.time !== "all") p.set("time", state.time);
+  if (state.crunchMin !== 1) p.set("cmin", state.crunchMin);
+  if (state.crunchMax !== 10) p.set("cmax", state.crunchMax);
+  if (state.meals.size > 0) p.set("meals", [...state.meals].join(","));
+  if (state.tags.size > 0) p.set("tags", [...state.tags].join(","));
+  if (state.sort !== "name-asc") p.set("sort", state.sort);
+
+  const defaultCourses = ["Amuse-Bouche", "Appetizer", "Main Course", "Dessert"];
+  const coursesDefault = planner.courses.size === defaultCourses.length &&
+    defaultCourses.every(c => planner.courses.has(c));
+  if (!coursesDefault) p.set("courses", [...planner.courses].join(","));
+  if (planner.players !== 4) p.set("pp", planner.players);
+  if (planner.crunchMax !== 10) p.set("pc", planner.crunchMax);
+
+  if (soloState.search) p.set("sq", soloState.search);
+  if (soloState.time !== "all") p.set("stime", soloState.time);
+  if (soloState.crunchMin !== 1) p.set("scmin", soloState.crunchMin);
+  if (soloState.crunchMax !== 10) p.set("scmax", soloState.crunchMax);
+  if (soloState.tags.size > 0) p.set("stags", [...soloState.tags].join(","));
+  if (soloState.sort !== "name-asc") p.set("ssort", soloState.sort);
+
+  return p.toString();
+}
+
+function updateURL() {
+  const s = serializeState();
+  history.replaceState(null, "", s ? "#" + s : location.pathname + location.search);
+}
+
+function loadFromURL() {
+  const hash = location.hash.slice(1);
+  if (!hash) return;
+  const p = new URLSearchParams(hash);
+
+  // Catalog state
+  if (p.has("q")) { state.search = p.get("q"); document.getElementById("search-input").value = state.search; }
+  if (p.has("players")) { state.players = parseInt(p.get("players")); playersSlider.value = state.players; updatePlayersFill(); }
+  if (p.has("time")) { const t = p.get("time"); if (TIME_VALUES.includes(t)) { state.time = t; timeSlider.value = TIME_VALUES.indexOf(t); updateTimeFill(); } }
+  if (p.has("cmin")) { state.crunchMin = parseInt(p.get("cmin")); crunchMinEl.value = state.crunchMin; crunchMinLabel.textContent = state.crunchMin; }
+  if (p.has("cmax")) { state.crunchMax = parseInt(p.get("cmax")); crunchMaxEl.value = state.crunchMax; crunchMaxLabel.textContent = state.crunchMax; }
+  if (p.has("cmin") || p.has("cmax")) updateCrunchFill();
+  if (p.has("meals")) p.get("meals").split(",").forEach(m => {
+    if (!m) return;
+    state.meals.add(m);
+    document.querySelector(`[data-meal="${m}"]`)?.classList.add("active");
+  });
+  if (p.has("tags")) p.get("tags").split(",").forEach(t => {
+    if (!t) return;
+    state.tags.add(t);
+    document.querySelector(`#tag-filters [data-tag="${t}"]`)?.classList.add("active");
+  });
+  if (p.has("sort")) { state.sort = p.get("sort"); document.getElementById("sort-select").value = state.sort; }
+
+  // Planner state — must be set before switchTab so planBuild() uses the right values
+  if (p.has("pp")) planner.players = parseInt(p.get("pp"));
+  if (p.has("pc")) planner.crunchMax = parseInt(p.get("pc"));
+  if (p.has("courses")) planner.courses = new Set(p.get("courses").split(",").filter(Boolean));
+
+  // Solo state
+  if (p.has("sq")) { soloState.search = p.get("sq"); document.getElementById("solo-search-input").value = soloState.search; }
+  if (p.has("stime")) { const t = p.get("stime"); if (TIME_VALUES.includes(t)) { soloState.time = t; soloTimeSlider.value = TIME_VALUES.indexOf(t); updateSoloTimeFill(); } }
+  if (p.has("scmin")) { soloState.crunchMin = parseInt(p.get("scmin")); soloCrunchMinEl.value = soloState.crunchMin; soloCrunchMinLabel.textContent = soloState.crunchMin; }
+  if (p.has("scmax")) { soloState.crunchMax = parseInt(p.get("scmax")); soloCrunchMaxEl.value = soloState.crunchMax; soloCrunchMaxLabel.textContent = soloState.crunchMax; }
+  if (p.has("scmin") || p.has("scmax")) updateSoloCrunchFill();
+  if (p.has("stags")) p.get("stags").split(",").forEach(t => {
+    if (!t) return;
+    soloState.tags.add(t);
+    document.querySelector(`#solo-tag-filters [data-tag="${t}"]`)?.classList.add("active");
+  });
+  if (p.has("ssort")) { soloState.sort = p.get("ssort"); document.getElementById("solo-sort-select").value = soloState.sort; }
+
+  // Switch tab last so planner/solo state is already applied when their init runs
+  const tab = p.get("tab");
+  if (tab && ["catalog", "planner", "solo"].includes(tab)) switchTab(tab);
+}
+
 // ── State ──────────────────────────────────────────────
 const state = {
   search: "",
@@ -179,6 +265,7 @@ function render() {
   }
 
   updateFilterIndicators();
+  if (urlReady) updateURL();
 }
 
 // ── Crunch Slider Fill ─────────────────────────────────
@@ -457,6 +544,7 @@ function planRender() {
   }).join("");
 
   document.getElementById("planner-time").textContent = planTimeText();
+  if (urlReady) updateURL();
 }
 
 let plannerInited = false;
@@ -476,6 +564,7 @@ function switchTab(name) {
   } else if (name === "planner") {
     planRender();
   }
+  if (urlReady) updateURL();
 }
 
 document.getElementById("tab-bar").addEventListener("click", e => {
@@ -592,6 +681,7 @@ function renderSolo() {
   grid.innerHTML = sorted.length ? sorted.map(renderCard).join("") : "";
   empty.style.display = sorted.length ? "none" : "flex";
   updateSoloFilterIndicators();
+  if (urlReady) updateURL();
 }
 
 function soloPickRandom() {
@@ -746,5 +836,7 @@ updateCrunchFill();
 initSoloTagPills();
 updateSoloTimeFill();
 updateSoloCrunchFill();
+loadFromURL();
+urlReady = true;
 render();
 renderSolo();
