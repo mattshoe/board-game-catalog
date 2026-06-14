@@ -380,6 +380,142 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   render();
 });
 
+// ── Game Night Planner ─────────────────────────────────
+const COURSE_ORDER = ["Amuse-Bouche", "Appetizer", "Main Course", "Feast", "Dessert"];
+
+const planner = {
+  courses: new Set(["Amuse-Bouche", "Appetizer", "Main Course"]),
+  picks: {},
+  locked: new Set(),
+  players: 4,
+};
+
+function planPick(course) {
+  const pool = GAMES.filter(g => g.meal === course && matchesPlayers(g, planner.players));
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+
+function planBuild() {
+  COURSE_ORDER.forEach(c => {
+    if (planner.courses.has(c) && !planner.locked.has(c)) planner.picks[c] = planPick(c);
+    if (!planner.courses.has(c)) delete planner.picks[c];
+  });
+  planRender();
+}
+
+function planTimeText() {
+  const games = COURSE_ORDER.filter(c => planner.courses.has(c)).map(c => planner.picks[c]).filter(Boolean);
+  if (!games.length) return "";
+  const minT = games.reduce((s, g) => s + g.timeMin, 0);
+  const maxT = games.reduce((s, g) => s + g.timeMax, 0);
+  const fmt = m => m < 60 ? `${m}m` : `${Math.floor(m / 60)}h${m % 60 ? ` ${m % 60}m` : ""}`;
+  return `Estimated: ${minT === maxT ? fmt(minT) : `${fmt(minT)}–${fmt(maxT)}`}`;
+}
+
+function planRender() {
+  document.getElementById("planner-players-val").textContent = planner.players;
+  document.querySelectorAll("#planner-pills .planner-pill").forEach(pill => {
+    pill.classList.toggle("active", planner.courses.has(pill.dataset.course));
+  });
+
+  const active = COURSE_ORDER.filter(c => planner.courses.has(c));
+  const lineup = document.getElementById("planner-lineup");
+
+  if (!active.length) {
+    lineup.innerHTML = `<p class="planner-empty">Select at least one course above.</p>`;
+    document.getElementById("planner-time").textContent = "";
+    return;
+  }
+
+  lineup.innerHTML = active.map(course => {
+    const game = planner.picks[course];
+    const locked = planner.locked.has(course);
+    return `
+      <div class="planner-slot">
+        <div class="planner-slot-head">
+          <span class="planner-course-name">${course}</span>
+          <div class="planner-slot-btns">
+            <button class="planner-lock${locked ? " is-locked" : ""}" data-course="${course}">${locked ? "Locked" : "Lock"}</button>
+            <button class="planner-reroll" data-course="${course}"${locked ? " disabled" : ""}>↺ Re-roll</button>
+          </div>
+        </div>
+        ${game ? `
+        <a class="planner-card" href="${game.bgg}" target="_blank" rel="noopener">
+          ${game.img ? `<img class="planner-thumb" src="${game.img}" loading="lazy" alt="" />` : `<div class="planner-thumb planner-thumb--empty"></div>`}
+          <div class="planner-info">
+            <div class="planner-name">${game.name}${game.coop ? ` <span class="coop-badge">Co-op</span>` : ""}</div>
+            <div class="planner-meta">${game.players} · ${game.playTime} · Crunch ${game.crunch}</div>
+          </div>
+        </a>` : `<p class="planner-no-game">No games in this course.</p>`}
+      </div>`;
+  }).join("");
+
+  document.getElementById("planner-time").textContent = planTimeText();
+}
+
+let plannerInited = false;
+
+// ── Tab Switching ──────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll(".tab").forEach(t =>
+    t.classList.toggle("active", t.dataset.tab === name)
+  );
+  document.getElementById("tab-catalog").hidden = name !== "catalog";
+  document.getElementById("tab-planner").hidden = name !== "planner";
+
+  if (name === "planner" && !plannerInited) {
+    planBuild();
+    plannerInited = true;
+  } else if (name === "planner") {
+    planRender();
+  }
+}
+
+document.getElementById("tab-bar").addEventListener("click", e => {
+  const tab = e.target.closest(".tab");
+  if (tab) switchTab(tab.dataset.tab);
+});
+
+document.getElementById("planner-players-dec").addEventListener("click", () => {
+  if (planner.players > 1) { planner.players--; planBuild(); }
+});
+document.getElementById("planner-players-inc").addEventListener("click", () => {
+  if (planner.players < 12) { planner.players++; planBuild(); }
+});
+
+document.getElementById("planner-pills").addEventListener("click", e => {
+  const pill = e.target.closest(".planner-pill");
+  if (!pill) return;
+  const c = pill.dataset.course;
+  if (planner.courses.has(c)) {
+    planner.courses.delete(c);
+    planner.locked.delete(c);
+    delete planner.picks[c];
+  } else {
+    planner.courses.add(c);
+    planner.picks[c] = planPick(c);
+  }
+  planRender();
+});
+
+document.getElementById("planner-lineup").addEventListener("click", e => {
+  const lockBtn = e.target.closest(".planner-lock");
+  if (lockBtn) {
+    const c = lockBtn.dataset.course;
+    if (planner.locked.has(c)) planner.locked.delete(c);
+    else planner.locked.add(c);
+    planRender();
+    return;
+  }
+  const rerollBtn = e.target.closest(".planner-reroll:not([disabled])");
+  if (rerollBtn) {
+    planner.picks[rerollBtn.dataset.course] = planPick(rerollBtn.dataset.course);
+    planRender();
+  }
+});
+
+document.getElementById("planner-reroll-all").addEventListener("click", planBuild);
+
 // ── Init ───────────────────────────────────────────────
 updatePlayersFill();
 updateTimeFill();

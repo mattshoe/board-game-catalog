@@ -87,7 +87,7 @@ h1 {
 
 h1 em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--parch);
 }
 
 .header-meta {
@@ -142,6 +142,40 @@ h1 em {
   width: 100%;
   height: 38px;
 }
+
+/* ── Tab Bar ──────────────────────────────────────────── */
+.tab-bar {
+  background: var(--navy-2);
+  border-bottom: 1px solid var(--navy-3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tab-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--slate);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 12px 20px;
+  margin-bottom: -1px;
+  transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.tab:hover { color: var(--parch-2); }
+.tab.active { color: var(--amber); border-bottom-color: var(--amber); }
 
 /* ── Layout ───────────────────────────────────────────── */
 .layout {
@@ -749,6 +783,179 @@ input[type=range]::-moz-range-track {
 .info-tip b { color: var(--parch-2); font-weight: 500; }
 
 
+/* ── Game Night Planner (full page) ───────────────────── */
+.planner-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.planner-page-head {
+  margin-bottom: 28px;
+}
+
+.planner-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.planner-players {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.planner-players-label {
+  font-size: 12px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.planner-players-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.planner-players-btn {
+  background: none;
+  border: none;
+  color: var(--slate-2);
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--font-body);
+  line-height: 1;
+  padding: 4px 10px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.planner-players-btn:hover { color: var(--parch); background: rgba(255,255,255,0.05); }
+
+.planner-players-val {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--amber);
+  min-width: 28px;
+  text-align: center;
+  padding: 4px 2px;
+  border-left: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+}
+
+.planner-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--parch);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.planner-hint {
+  font-size: 13px;
+  color: var(--slate);
+  margin: 8px 0 14px;
+}
+
+.planner-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+
+.planner-lineup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.planner-empty, .planner-no-game {
+  text-align: center; color: var(--slate);
+  font-size: 13px; padding: 32px;
+}
+
+.planner-slot {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.planner-slot-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.02);
+}
+.planner-course-name {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--amber);
+}
+.planner-slot-btns { display: flex; gap: 6px; }
+
+.planner-lock, .planner-reroll {
+  background: none;
+  border: 1px solid var(--navy-3);
+  border-radius: 4px;
+  color: var(--slate);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: var(--font-body);
+  padding: 3px 10px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.planner-lock:hover { border-color: var(--slate-2); color: var(--parch-2); }
+.planner-lock.is-locked { border-color: var(--amber); color: var(--amber); }
+.planner-reroll:hover:not([disabled]) { border-color: var(--slate-2); color: var(--parch-2); }
+.planner-reroll[disabled] { opacity: 0.3; cursor: default; }
+
+.planner-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px; text-decoration: none; color: inherit;
+  transition: background 0.15s;
+}
+.planner-card:hover { background: rgba(255,255,255,0.025); }
+
+.planner-thumb {
+  width: 72px; height: 72px;
+  border-radius: 8px; object-fit: cover; flex-shrink: 0;
+}
+.planner-thumb--empty { background: var(--navy-3); }
+
+.planner-info { flex: 1; min-width: 0; }
+.planner-name {
+  font-weight: 600; color: var(--parch);
+  font-size: 15px; margin-bottom: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.planner-meta { font-size: 12px; color: var(--slate-2); }
+
+.planner-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 20px;
+}
+.planner-time {
+  font-size: 13px; color: var(--slate-2);
+  font-family: var(--font-mono);
+}
+.planner-reroll-all {
+  background: var(--amber); color: var(--navy);
+  border: none; border-radius: var(--radius-sm);
+  padding: 9px 20px; font-size: 13px; font-weight: 600;
+  font-family: var(--font-body); cursor: pointer;
+  transition: background 0.15s;
+}
+.planner-reroll-all:hover { background: var(--amber-2); }
+
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .mobile-only { display: inline; }
@@ -806,6 +1013,7 @@ input[type=range]::-moz-range-track {
 
   .catalog { padding: 12px 16px 32px; }
   .site-header { padding: 12px 16px; }
+  .tab-bar-inner { padding: 0 16px; }
   .global-search { top: 56px; padding: 10px 16px; }
   .header-meta { display: flex; }
   .header-inner { max-width: 100%; }

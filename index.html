@@ -6,17 +6,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matt's Board Game Catalog</title>
+  <title>Matt's Board Game Shelf</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <div class="header-title">
         <span class="header-eyebrow">Matt's Collection</span>
-        <h1>Board Game <em>Catalog</em></h1>
+        <h1><em>Board Game Shelf</em></h1>
       </div>
       <div class="header-meta">
         <span class="game-count">
@@ -27,6 +27,14 @@
     </div>
   </header>
 
+  <nav class="tab-bar" id="tab-bar">
+    <div class="tab-bar-inner">
+      <button class="tab active" data-tab="catalog">Catalog</button>
+      <button class="tab" data-tab="planner">Game Night</button>
+    </div>
+  </nav>
+
+  <div id="tab-catalog">
   <div class="global-search">
     <div class="global-search-inner">
       <input type="text" id="search-input" class="search-input" placeholder="Search games or tags…" />
@@ -154,8 +162,40 @@
       </div>
     </main>
   </div>
+  </div>
+
+  <div id="tab-planner" hidden>
+    <div class="planner-page">
+      <div class="planner-page-head">
+        <div class="planner-top-row">
+          <h2 class="planner-title">Tonight's Lineup</h2>
+          <div class="planner-players">
+            <span class="planner-players-label">Players</span>
+            <div class="planner-players-ctrl">
+              <button class="planner-players-btn" id="planner-players-dec">−</button>
+              <span class="planner-players-val" id="planner-players-val">4</span>
+              <button class="planner-players-btn" id="planner-players-inc">+</button>
+            </div>
+          </div>
+        </div>
+        <p class="planner-hint">Choose your courses for the evening:</p>
+        <div class="planner-pills" id="planner-pills">
+          <button class="planner-pill filter-pill active" data-course="Amuse-Bouche">Amuse-Bouche</button>
+          <button class="planner-pill filter-pill active" data-course="Appetizer">Appetizer</button>
+          <button class="planner-pill filter-pill active" data-course="Main Course">Main Course</button>
+          <button class="planner-pill filter-pill" data-course="Feast">Feast</button>
+          <button class="planner-pill filter-pill" data-course="Dessert">Dessert</button>
+        </div>
+      </div>
+      <div class="planner-lineup" id="planner-lineup"></div>
+      <div class="planner-foot">
+        <span class="planner-time" id="planner-time"></span>
+        <button class="planner-reroll-all" id="planner-reroll-all">↺ Re-roll All</button>
+      </div>
+    </div>
+  </div>
 
   <script src="games.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
