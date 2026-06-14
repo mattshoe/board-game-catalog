@@ -113,6 +113,28 @@ h1 em {
   font-weight: 400;
 }
 
+.discord-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  background: #5865F2;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.discord-btn:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
 .meta-label {
   font-size: 11px;
   color: var(--slate-2);
@@ -994,6 +1016,9 @@ input[type=range]::-moz-range-track {
 @media (max-width: 768px) {
   .mobile-only { display: inline; }
   .layout { flex-direction: column; }
+
+  .discord-btn span { display: none; }
+  .discord-btn { padding: 7px 10px; }
 
   .sidebar {
     width: 100%;
