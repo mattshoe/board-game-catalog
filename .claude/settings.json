@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__discord-mcp__read_messages",
+      "mcp__discord-mcp__get_server_info",
+      "mcp__Claude_Preview__preview_screenshot",
+      "mcp__discord-mcp__find_category"
+    ]
+  }
+}

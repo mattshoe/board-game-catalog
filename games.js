@@ -903,7 +903,7 @@ const GAMES = [
   {
     "id": 33,
     "name": "Catan",
-    "players": "3–4",
+    "players": "3–6",
     "playTime": "60–120 min",
     "timeMin": 60,
     "timeMax": 120,
@@ -1459,7 +1459,7 @@ const GAMES = [
   {
     "id": 52,
     "name": "Cascadia",
-    "players": "1–4",
+    "players": "1–6",
     "playTime": "30–45 min",
     "timeMin": 30,
     "timeMax": 45,
@@ -1481,38 +1481,6 @@ const GAMES = [
       "Variable Set-up"
     ],
     "description": "A serene tile and token drafting game about building a Pacific Northwest ecosystem, placing wildlife into habitats to score points when animals achieve their preferred environmental patterns.",
-    "meal": "Appetizer"
-  },
-  {
-    "id": 53,
-    "name": "Cascadia: Landmarks",
-    "players": "1–6",
-    "playTime": "30–45 min",
-    "timeMin": 30,
-    "timeMax": 45,
-    "crunch": 4,
-    "rating": 7.8,
-    "bgg": "https://boardgamegeek.com/boardgame/385318/cascadia-landmarks",
-    "coop": false,
-    "img": "https://cf.geekdo-images.com/sD3EGm2CyvQGrp7FhScs0w__square200/img/7Q9LWNWf3l6ulxJDYXzxfgcd-mA=/200x200/filters:strip_icc()/pic7453773.jpg",
-    "tags": [
-      "Abstract Strategy",
-      "Animals",
-      "End Game Bonuses",
-      "Environmental",
-      "Expansion for Base-game",
-      "Family Games",
-      "Hexagon Grid",
-      "Open Drafting",
-      "Pattern Building",
-      "Puzzle",
-      "Scenario / Mission / Campaign Game",
-      "Solo / Solitaire Game",
-      "Tile Placement",
-      "Variable Set-up",
-      "Victory Points as a Resource"
-    ],
-    "description": "An expansion for Cascadia adding landmark tokens and location cards that enrich the ecosystem puzzle without disturbing the elegant simplicity of the base game.",
     "meal": "Appetizer"
   },
   {
@@ -1657,7 +1625,7 @@ const GAMES = [
   {
     "id": 58,
     "name": "Here to Slay",
-    "players": "2–6",
+    "players": "2–12",
     "playTime": "30–60 min",
     "timeMin": 30,
     "timeMax": 60,
@@ -2117,7 +2085,7 @@ const GAMES = [
   {
     "id": 74,
     "name": "Trivillennial",
-    "players": "3–10",
+    "players": "2–99",
     "playTime": "30–60 min",
     "timeMin": 30,
     "timeMax": 60,
@@ -2606,7 +2574,7 @@ const GAMES = [
   {
     "id": 90,
     "name": "Heroes of Barcadia",
-    "players": "2–6",
+    "players": "2–8",
     "playTime": "30–90 min",
     "timeMin": 30,
     "timeMax": 90,
@@ -3405,7 +3373,7 @@ const GAMES = [
   {
     "id": 117,
     "name": "Codenames Duet",
-    "players": "2–11",
+    "players": "2",
     "playTime": "15–30 min",
     "timeMin": 15,
     "timeMax": 30,
