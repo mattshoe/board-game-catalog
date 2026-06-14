@@ -21,6 +21,10 @@ function serializeState() {
   if (!coursesDefault) p.set("courses", [...planner.courses].join(","));
   if (planner.players !== 4) p.set("pp", planner.players);
   if (planner.crunchMax !== 10) p.set("pc", planner.crunchMax);
+  const PICK_KEYS = {"Amuse-Bouche": "pab", "Appetizer": "pa", "Main Course": "pm", "Feast": "pf", "Dessert": "pd"};
+  Object.entries(PICK_KEYS).forEach(([course, key]) => {
+    if (planner.picks[course]) p.set(key, planner.picks[course].name);
+  });
 
   if (soloState.search) p.set("sq", soloState.search);
   if (soloState.time !== "all") p.set("stime", soloState.time);
@@ -82,6 +86,17 @@ function loadFromURL() {
   // Switch tab last so planner/solo state is already applied when their init runs
   const tab = p.get("tab");
   if (tab && ["catalog", "planner", "solo"].includes(tab)) switchTab(tab);
+
+  // Override planner picks from URL (switchTab/planBuild already ran with random picks above)
+  const PICK_KEYS = {"Amuse-Bouche": "pab", "Appetizer": "pa", "Main Course": "pm", "Feast": "pf", "Dessert": "pd"};
+  let picksFromURL = false;
+  Object.entries(PICK_KEYS).forEach(([course, key]) => {
+    if (p.has(key)) {
+      const game = GAMES.find(g => g.name === p.get(key));
+      if (game) { planner.picks[course] = game; picksFromURL = true; }
+    }
+  });
+  if (picksFromURL) planRender();
 }
 
 // ── State ──────────────────────────────────────────────
