@@ -721,8 +721,10 @@ input[type=range]::-moz-range-track {
   cursor: default;
 }
 
-#tag-filters .tag-extra { display: none; }
-#tag-filters.tags-expanded .tag-extra { display: inline-block; }
+#tag-filters .tag-extra,
+#solo-tag-filters .tag-extra { display: none; }
+#tag-filters.tags-expanded .tag-extra,
+#solo-tag-filters.tags-expanded .tag-extra { display: inline-block; }
 
 .tag-more-btn {
   background: transparent;
@@ -743,7 +745,8 @@ input[type=range]::-moz-range-track {
   color: var(--parch);
 }
 
-#tag-filters.tags-expanded .tag-more-btn { order: 999; }
+#tag-filters.tags-expanded .tag-more-btn,
+#solo-tag-filters.tags-expanded .tag-more-btn { order: 999; }
 
 /* ── Empty State ──────────────────────────────────────── */
 .empty-state {
