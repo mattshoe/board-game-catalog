@@ -3564,5 +3564,38 @@ const GAMES = [
     ],
     "description": "A cooperative campaign game where players crew Earth's first interstellar spaceship, exploring alien planets through a branching narrative driven by a companion app and an enormous discovery book.",
     "meal": "Main Course"
+  },
+  {
+    "id": 124,
+    "name": "Arkham Horror",
+    "players": "1–8",
+    "playTime": "120–240 min",
+    "timeMin": 120,
+    "timeMax": 240,
+    "crunch": 8,
+    "rating": 7.2,
+    "bgg": "https://boardgamegeek.com/boardgame/15987/arkham-horror",
+    "coop": true,
+    "img": "https://cf.geekdo-images.com/9cJf4kd_HZQo6NunfJlo9w__square200/img/cepht7NWPHktzYctwFXTMgJo4BA=/200x200/filters:strip_icc()/pic175966.jpg",
+    "tags": [
+      "Adventure",
+      "Cooperative Game",
+      "Dice Rolling",
+      "Events",
+      "Fighting",
+      "Finale Ending",
+      "Hand Management",
+      "Horror",
+      "Lose a Turn",
+      "Novel-based",
+      "Point to Point Movement",
+      "Role Playing",
+      "Solo / Solitaire Game",
+      "Stat Check Resolution",
+      "Thematic Games",
+      "Variable Player Powers"
+    ],
+    "description": "A sprawling cooperative horror game set in 1920s Arkham where investigators explore monster-infested locations, close dimensional gates, and race to prevent an Ancient One from awakening — infamous for its lengthy playtime and encyclopedic rulebook.",
+    "meal": "Main Course"
   }
 ];
