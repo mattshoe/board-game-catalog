@@ -781,7 +781,7 @@ input[type=range]::-moz-range-track {
   .catalog { padding: 12px 16px 32px; }
   .site-header { padding: 12px 16px; }
   .global-search { top: 56px; padding: 10px 16px; }
-  .header-meta { display: none; }
+  .header-meta { display: flex; }
   .header-inner { max-width: 100%; }
   .filter-pill { white-space: normal; text-align: center; }
 
