@@ -9,7 +9,7 @@
   <title>Matt's Board Game Catalog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <header class="site-header">
@@ -80,6 +80,27 @@
           </div>
         </div>
 
+        <div class="sidebar-section" id="section-meal">
+          <div class="sidebar-label-row">
+            <span class="sidebar-label">Course</span>
+            <button class="info-btn" id="course-info-btn" aria-label="What do these mean?">ⓘ</button>
+          </div>
+          <div class="info-tip" id="course-info-tip">
+            <div><b>Amuse-Bouche</b> — tiny quick bites, ≤20 min</div>
+            <div><b>Appetizer</b> — light gateway games</div>
+            <div><b>Main Course</b> — centerpiece of the night</div>
+            <div><b>Feast</b> — epic multi-hour experiences</div>
+            <div><b>Dessert</b> — party &amp; social games</div>
+          </div>
+          <div class="filter-group" id="meal-filters">
+            <button class="filter-pill" data-meal="Amuse-Bouche">Amuse-Bouche</button>
+            <button class="filter-pill" data-meal="Appetizer">Appetizer</button>
+            <button class="filter-pill" data-meal="Main Course">Main Course</button>
+            <button class="filter-pill" data-meal="Feast">Feast</button>
+            <button class="filter-pill" data-meal="Dessert">Dessert</button>
+          </div>
+        </div>
+
         <div class="sidebar-section" id="section-tag">
           <label class="sidebar-label">Tag</label>
           <div class="filter-group" id="tag-filters"></div>
@@ -134,7 +155,7 @@
     </main>
   </div>
 
-  <script src="games.js?v=4"></script>
-  <script src="app.js?v=2"></script>
+  <script src="games.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

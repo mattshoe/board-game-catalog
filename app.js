@@ -5,6 +5,7 @@ const state = {
   time: "all",
   crunchMin: 1,
   crunchMax: 10,
+  meals: new Set(),
   tags: new Set(),
   sort: "name-asc",
 };
@@ -50,6 +51,7 @@ function filterGames() {
     if (!matchesPlayers(g, state.players)) return false;
     if (!matchesTime(g, state.time)) return false;
     if (g.crunch < state.crunchMin || g.crunch > state.crunchMax) return false;
+    if (state.meals.size > 0 && !state.meals.has(g.meal)) return false;
     if (state.tags.size > 0 && ![...state.tags].every(t => g.tags.includes(t))) return false;
     return true;
   });
@@ -116,7 +118,7 @@ function renderCard(game) {
       <div class="row-stats">
         <span class="row-stat">
           <svg viewBox="0 0 16 16" width="11" height="11"><circle cx="8" cy="6" r="3" fill="currentColor"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          ${game.players}
+          ${game.players} <span class="mobile-only">Players</span>
         </span>
         <span class="row-stat">
           <svg viewBox="0 0 16 16" width="11" height="11"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
@@ -144,8 +146,9 @@ function updateFilterIndicators() {
   const checks = [
     ["section-players",  state.players !== 1],
     ["section-time",     state.time !== "all"],
-    ["section-crunch",   state.crunchMin !== 1 || state.crunchMax !== 9],
-    ["section-tag", state.tags.size > 0],
+    ["section-crunch",   state.crunchMin !== 1 || state.crunchMax !== 10],
+    ["section-meal",     state.meals.size > 0],
+    ["section-tag",      state.tags.size > 0],
   ];
   let activeCount = 0;
   checks.forEach(([id, active]) => {
@@ -299,6 +302,15 @@ function initTagPills() {
 
 initTagPills();
 
+document.getElementById("meal-filters").addEventListener("click", e => {
+  const pill = e.target.closest(".filter-pill");
+  if (!pill) return;
+  const value = pill.dataset.meal;
+  if (state.meals.has(value)) { state.meals.delete(value); pill.classList.remove("active"); }
+  else { state.meals.add(value); pill.classList.add("active"); }
+  render();
+});
+
 document.getElementById("tag-filters").addEventListener("click", e => {
   const pill = e.target.closest(".filter-pill");
   if (!pill) return;
@@ -313,30 +325,21 @@ document.getElementById("tag-filters").addEventListener("click", e => {
   render();
 });
 
-// Tag click — activate tag pill if available, else fall back to search
 document.getElementById("catalog-grid").addEventListener("click", e => {
-  // Expand hidden tags on a card
   const expandBtn = e.target.closest(".tag-card-expand");
   if (expandBtn) {
     e.preventDefault();
     expandBtn.closest(".mechanic-tags").classList.add("tags-expanded");
-    return;
   }
+});
 
-  const tag = e.target.closest(".tag");
-  if (!tag || tag.classList.contains("tag--more") || tag.classList.contains("tag-card-expand")) return;
-  e.preventDefault();
-  const value = tag.textContent.trim();
-  const pill = document.querySelector(`#tag-filters [data-tag="${value}"]`);
-  if (pill) {
-    document.querySelectorAll("#tag-filters .filter-pill").forEach(p => p.classList.remove("active"));
-    state.tags = new Set([value]);
-    pill.classList.add("active");
-  } else {
-    state.search = value;
-    document.getElementById("search-input").value = value;
-  }
-  render();
+// Course info tooltip
+document.getElementById("course-info-btn").addEventListener("click", e => {
+  e.stopPropagation();
+  document.getElementById("course-info-tip").classList.toggle("visible");
+});
+document.addEventListener("click", () => {
+  document.getElementById("course-info-tip").classList.remove("visible");
 });
 
 // Mobile sidebar toggle
@@ -351,6 +354,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   state.time = "all";
   state.crunchMin = 1;
   state.crunchMax = 10;
+  state.meals = new Set();
   state.tags = new Set();
   state.sort = "name-asc";
 
@@ -361,6 +365,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   crunchMinLabel.textContent = 1;
   crunchMaxLabel.textContent = 10;
 
+  document.querySelectorAll("#meal-filters .filter-pill").forEach(p => p.classList.remove("active"));
   document.querySelectorAll("#tag-filters .filter-pill").forEach(p => p.classList.remove("active"));
   const tagContainer = document.getElementById("tag-filters");
   tagContainer.classList.remove("tags-expanded");

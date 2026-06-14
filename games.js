@@ -25,7 +25,8 @@ const GAMES = [
       "Variable Set-up",
       "Worker Placement with Dice Workers"
     ],
-    "description": "A two-player only co-op where pilot and co-pilot silently place dice on cockpit controls to land a plane — communication is strictly limited by the rules."
+    "description": "A two-player only co-op where pilot and co-pilot silently place dice on cockpit controls to land a plane — communication is strictly limited by the rules.",
+    "meal": "Appetizer"
   },
   {
     "id": 2,
@@ -52,7 +53,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A solo horror game where you play the lone survivor of a slasher film, using modular killer and location boxes to face a different nightmare each time."
+    "description": "A solo horror game where you play the lone survivor of a slasher film, using modular killer and location boxes to face a different nightmare each time.",
+    "meal": "Appetizer"
   },
   {
     "id": 3,
@@ -72,7 +74,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A cooperative card game where players investigate and battle cryptid creatures like Bigfoot and the Mothman using unique hand management mechanics."
+    "description": "A cooperative card game where players investigate and battle cryptid creatures like Bigfoot and the Mothman using unique hand management mechanics.",
+    "meal": "Appetizer"
   },
   {
     "id": 4,
@@ -95,7 +98,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Thematic Games"
     ],
-    "description": "A survival card game about pushing into the deadly Amazon jungle, managing food, ammo, and health while making perilous group decisions to reach El Dorado."
+    "description": "A survival card game about pushing into the deadly Amazon jungle, managing food, ammo, and health while making perilous group decisions to reach El Dorado.",
+    "meal": "Appetizer"
   },
   {
     "id": 5,
@@ -135,7 +139,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A cooperative living card game set in Lovecraft's 1920s New England, where investigators build personal decks to battle cosmic horrors across branching narrative campaigns."
+    "description": "A cooperative living card game set in Lovecraft's 1920s New England, where investigators build personal decks to battle cosmic horrors across branching narrative campaigns.",
+    "meal": "Main Course"
   },
   {
     "id": 6,
@@ -171,7 +176,8 @@ const GAMES = [
       "Variable Player Powers",
       "Worker Placement"
     ],
-    "description": "A deck-building worker placement hybrid set in the Dune universe, where you lead one of the great houses competing for control of spice, intrigue, and military supremacy."
+    "description": "A deck-building worker placement hybrid set in the Dune universe, where you lead one of the great houses competing for control of spice, intrigue, and military supremacy.",
+    "meal": "Main Course"
   },
   {
     "id": 7,
@@ -199,7 +205,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Thematic Games"
     ],
-    "description": "A solo fishing game with a dark twist — you're dragging impossible creatures up from the abyss, each catch adding to an evolving story of maritime obsession."
+    "description": "A solo fishing game with a dark twist — you're dragging impossible creatures up from the abyss, each catch adding to an evolving story of maritime obsession.",
+    "meal": "Appetizer"
   },
   {
     "id": 8,
@@ -224,7 +231,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Thematic Games"
     ],
-    "description": "A chaotic, heavy-metal-flavored dungeon crawl through a grim fantasy world where degenerate adventurers battle mutants and cultists across a sprawling hex map."
+    "description": "A chaotic, heavy-metal-flavored dungeon crawl through a grim fantasy world where degenerate adventurers battle mutants and cultists across a sprawling hex map.",
+    "meal": "Feast"
   },
   {
     "id": 9,
@@ -244,7 +252,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A solo bag-building space shooter where you draw tokens to fire your ship's weapons, fighting through waves of enemy fighters to destroy a massive mothership."
+    "description": "A solo bag-building space shooter where you draw tokens to fire your ship's weapons, fighting through waves of enemy fighters to destroy a massive mothership.",
+    "meal": "Appetizer"
   },
   {
     "id": 10,
@@ -277,7 +286,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A solo or cooperative dungeon-delver where a single deck of cards serves as both the dungeon and its monsters, with heroes growing stronger as they fight deeper."
+    "description": "A solo or cooperative dungeon-delver where a single deck of cards serves as both the dungeon and its monsters, with heroes growing stronger as they fight deeper.",
+    "meal": "Appetizer"
   },
   {
     "id": 11,
@@ -302,7 +312,8 @@ const GAMES = [
       "Strategy Games",
       "Thematic Games"
     ],
-    "description": "A cooperative game for 1-2 players where one deck generates an entire galaxy to explore, as you build a space civilization to face an escalating end-game threat."
+    "description": "A cooperative game for 1-2 players where one deck generates an entire galaxy to explore, as you build a space civilization to face an escalating end-game threat.",
+    "meal": "Appetizer"
   },
   {
     "id": 12,
@@ -322,7 +333,8 @@ const GAMES = [
       "Fantasy",
       "Hand Management"
     ],
-    "description": "A solo tarot-inspired card game where you shepherd a small village through the seasons, managing the fates of its citizens as fortune smiles and turns."
+    "description": "A solo tarot-inspired card game where you shepherd a small village through the seasons, managing the fates of its citizens as fortune smiles and turns.",
+    "meal": "Appetizer"
   },
   {
     "id": 13,
@@ -347,7 +359,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A standalone solo/co-op dungeon delve where two heroes fight through a deadly fortress using a streamlined card system — each box is a complete self-contained adventure."
+    "description": "A standalone solo/co-op dungeon delve where two heroes fight through a deadly fortress using a streamlined card system — each box is a complete self-contained adventure.",
+    "meal": "Appetizer"
   },
   {
     "id": 14,
@@ -372,7 +385,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A standalone solo/co-op dungeon delve where two heroes battle through a dangerous laboratory, using the same elegant Kinfire Delve card system in a new setting."
+    "description": "A standalone solo/co-op dungeon delve where two heroes battle through a dangerous laboratory, using the same elegant Kinfire Delve card system in a new setting.",
+    "meal": "Appetizer"
   },
   {
     "id": 15,
@@ -397,7 +411,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A standalone solo/co-op dungeon delve where two heroes descend into a treacherous grotto, the third self-contained adventure in the Kinfire Delve series."
+    "description": "A standalone solo/co-op dungeon delve where two heroes descend into a treacherous grotto, the third self-contained adventure in the Kinfire Delve series.",
+    "meal": "Appetizer"
   },
   {
     "id": 16,
@@ -421,7 +436,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Storytelling"
     ],
-    "description": "A cooperative game for 1-4 players where you tackle the legendary twelve labors of Hercules, racing against time and a mounting threat to complete each impossible task."
+    "description": "A cooperative game for 1-4 players where you tackle the legendary twelve labors of Hercules, racing against time and a mounting threat to complete each impossible task.",
+    "meal": "Appetizer"
   },
   {
     "id": 17,
@@ -450,7 +466,8 @@ const GAMES = [
       "Wargame",
       "Wargames"
     ],
-    "description": "A solo card game set in WWII-occupied France, where you secretly organize resistance cells and plan sabotage missions to undermine the occupation before liberation arrives."
+    "description": "A solo card game set in WWII-occupied France, where you secretly organize resistance cells and plan sabotage missions to undermine the occupation before liberation arrives.",
+    "meal": "Appetizer"
   },
   {
     "id": 18,
@@ -483,7 +500,8 @@ const GAMES = [
       "Tile Placement",
       "Variable Player Powers"
     ],
-    "description": "A fast cooperative adventure where players work together to capture four sacred treasures from a sinking island before the rising waters swallow everything."
+    "description": "A fast cooperative adventure where players work together to capture four sacred treasures from a sinking island before the rising waters swallow everything.",
+    "meal": "Appetizer"
   },
   {
     "id": 19,
@@ -509,7 +527,8 @@ const GAMES = [
       "Team-Based Game",
       "Word Game"
     ],
-    "description": "A party word game where rival spymasters give one-word clues to help teammates identify secret agents hidden in a grid of words, while avoiding the instant-losing assassin."
+    "description": "A party word game where rival spymasters give one-word clues to help teammates identify secret agents hidden in a grid of words, while avoiding the instant-losing assassin.",
+    "meal": "Appetizer"
   },
   {
     "id": 20,
@@ -533,7 +552,8 @@ const GAMES = [
       "Spies / Secret Agents",
       "Team-Based Game"
     ],
-    "description": "The picture-based variant of Codenames where cryptic artwork replaces words, making connections more surprising and connections between images wonderfully abstract."
+    "description": "The picture-based variant of Codenames where cryptic artwork replaces words, making connections more surprising and connections between images wonderfully abstract.",
+    "meal": "Appetizer"
   },
   {
     "id": 21,
@@ -563,7 +583,8 @@ const GAMES = [
       "Tile Placement",
       "Variable Player Powers"
     ],
-    "description": "A tile and token placement game where you arrange elements of nature — mountains, forests, and water — to create the ideal habitat for a variety of scoring animals."
+    "description": "A tile and token placement game where you arrange elements of nature — mountains, forests, and water — to create the ideal habitat for a variety of scoring animals.",
+    "meal": "Appetizer"
   },
   {
     "id": 22,
@@ -587,7 +608,8 @@ const GAMES = [
       "Renaissance",
       "Set Collection"
     ],
-    "description": "An elegant engine-building game where you collect gemstone tokens to purchase development cards, gradually building a gem merchant empire that attracts noble patrons."
+    "description": "An elegant engine-building game where you collect gemstone tokens to purchase development cards, gradually building a gem merchant empire that attracts noble patrons.",
+    "meal": "Appetizer"
   },
   {
     "id": 23,
@@ -618,7 +640,8 @@ const GAMES = [
       "Turn Order: Progressive",
       "Variable Set-up"
     ],
-    "description": "A gorgeous dice-drafting game where players craft stained glass windows by placing colored dice that must satisfy strict color and shade placement restrictions."
+    "description": "A gorgeous dice-drafting game where players craft stained glass windows by placing colored dice that must satisfy strict color and shade placement restrictions.",
+    "meal": "Appetizer"
   },
   {
     "id": 24,
@@ -642,7 +665,8 @@ const GAMES = [
       "Open Drafting",
       "Solo / Solitaire Game"
     ],
-    "description": "A cooperative adventure following Bilbo and the company of dwarves on their quest to reclaim the Lonely Mountain, facing trolls, goblins, and a very territorial dragon."
+    "description": "A cooperative adventure following Bilbo and the company of dwarves on their quest to reclaim the Lonely Mountain, facing trolls, goblins, and a very territorial dragon.",
+    "meal": "Appetizer"
   },
   {
     "id": 25,
@@ -665,7 +689,8 @@ const GAMES = [
       "Player Elimination",
       "Tile Placement"
     ],
-    "description": "A beautifully simple tile placement game where players lay path tiles and follow their dragon's flight across the board, trying to stay on while others are sent off the edge."
+    "description": "A beautifully simple tile placement game where players lay path tiles and follow their dragon's flight across the board, trying to stay on while others are sent off the edge.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 26,
@@ -698,7 +723,8 @@ const GAMES = [
       "Variable Set-up",
       "Worker Placement"
     ],
-    "description": "A worker placement and tableau-building game set in a whimsical forest city where critters and constructions combine to build the most prosperous woodland community across four seasons."
+    "description": "A worker placement and tableau-building game set in a whimsical forest city where critters and constructions combine to build the most prosperous woodland community across four seasons.",
+    "meal": "Main Course"
   },
   {
     "id": 27,
@@ -719,7 +745,8 @@ const GAMES = [
       "Expansion for Base-game",
       "Fantasy"
     ],
-    "description": "An expansion for Everdell that adds train travel, new locations, and fresh visitors to the forest city, bringing new seasonal opportunities to the valley."
+    "description": "An expansion for Everdell that adds train travel, new locations, and fresh visitors to the forest city, bringing new seasonal opportunities to the valley.",
+    "meal": "Main Course"
   },
   {
     "id": 28,
@@ -746,7 +773,8 @@ const GAMES = [
       "Square Grid",
       "Tile Placement"
     ],
-    "description": "A cooperative card game where players channel the power of forest spirits to protect an enchanted woodland, combining wisps' abilities to overcome the creeping decay threatening their home."
+    "description": "A cooperative card game where players channel the power of forest spirits to protect an enchanted woodland, combining wisps' abilities to overcome the creeping decay threatening their home.",
+    "meal": "Appetizer"
   },
   {
     "id": 29,
@@ -783,7 +811,8 @@ const GAMES = [
       "Wargame",
       "Wargames"
     ],
-    "description": "A highly asymmetric war game where woodland factions — each with completely different rules and goals — battle for control of a vast forest in a deceptively charming package."
+    "description": "A highly asymmetric war game where woodland factions — each with completely different rules and goals — battle for control of a vast forest in a deceptively charming package.",
+    "meal": "Main Course"
   },
   {
     "id": 30,
@@ -809,7 +838,8 @@ const GAMES = [
       "Territory Building",
       "Tile Placement"
     ],
-    "description": "A classic tile-placement game where players build a medieval landscape of cities, roads, and farms, cleverly deploying followers to claim and score the growing map."
+    "description": "A classic tile-placement game where players build a medieval landscape of cities, roads, and farms, cleverly deploying followers to claim and score the growing map.",
+    "meal": "Appetizer"
   },
   {
     "id": 31,
@@ -837,7 +867,8 @@ const GAMES = [
       "Skill Based (buy or gain skills)",
       "Solo Play Resource"
     ],
-    "description": "A tabletop RPG system that blends old-school fantasy with Swedish folklore, designed for fast and lethal adventures that require minimal prep and reward bold play."
+    "description": "A tabletop RPG system that blends old-school fantasy with Swedish folklore, designed for fast and lethal adventures that require minimal prep and reward bold play.",
+    "meal": "Main Course"
   },
   {
     "id": 32,
@@ -866,7 +897,8 @@ const GAMES = [
       "Tech Trees / Tech Tracks",
       "Variable Player Powers"
     ],
-    "description": "A post-apocalyptic engine-building game where survivors awaken on a frozen Earth, using unique asymmetric faction mechanics to restore ancient machines and reboot civilization."
+    "description": "A post-apocalyptic engine-building game where survivors awaken on a frozen Earth, using unique asymmetric faction mechanics to restore ancient machines and reboot civilization.",
+    "meal": "Main Course"
   },
   {
     "id": 33,
@@ -900,7 +932,8 @@ const GAMES = [
       "Trading",
       "Variable Set-up"
     ],
-    "description": "The landmark settler game where players collect and trade resources to build roads, settlements, and cities on a modular island, racing to earn ten victory points."
+    "description": "The landmark settler game where players collect and trade resources to build roads, settlements, and cities on a modular island, racing to earn ten victory points.",
+    "meal": "Main Course"
   },
   {
     "id": 34,
@@ -926,7 +959,8 @@ const GAMES = [
       "Track Movement",
       "Variable Set-up"
     ],
-    "description": "A raucous betting game where players wager on a camel race where the camels literally stack on top of each other, creating the most chaotically unpredictable finish imaginable."
+    "description": "A raucous betting game where players wager on a camel race where the camels literally stack on top of each other, creating the most chaotically unpredictable finish imaginable.",
+    "meal": "Dessert"
   },
   {
     "id": 35,
@@ -963,7 +997,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A card-drafting civilization game where players simultaneously develop their ancient city across three ages, building wonders, raising armies, and pursuing scientific achievement."
+    "description": "A card-drafting civilization game where players simultaneously develop their ancient city across three ages, building wonders, raising armies, and pursuing scientific achievement.",
+    "meal": "Appetizer"
   },
   {
     "id": 36,
@@ -1001,7 +1036,8 @@ const GAMES = [
       "Victory Points as a Resource",
       "Zone of Control"
     ],
-    "description": "An alternate-history engine-building game set in 1920s Eastern Europe, where diesel mechs roam a scarred landscape as factions compete for wealth, territory, and the mysterious Factory."
+    "description": "An alternate-history engine-building game set in 1920s Eastern Europe, where diesel mechs roam a scarred landscape as factions compete for wealth, territory, and the mysterious Factory.",
+    "meal": "Main Course"
   },
   {
     "id": 37,
@@ -1023,7 +1059,8 @@ const GAMES = [
       "Score-and-Reset Game",
       "Take That"
     ],
-    "description": "A quick deduction card game starring Arkham Horror investigators, where players use a tiny hand of powerful cards to eliminate rivals and be the last one standing."
+    "description": "A quick deduction card game starring Arkham Horror investigators, where players use a tiny hand of powerful cards to eliminate rivals and be the last one standing.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 38,
@@ -1047,7 +1084,8 @@ const GAMES = [
       "Score-and-Reset Game",
       "Take That"
     ],
-    "description": "A swift deduction game of risk and logic where each player holds just one card at a time, using its special ability to eliminate opponents and reach the princess."
+    "description": "A swift deduction game of risk and logic where each player holds just one card at a time, using its special ability to eliminate opponents and reach the princess.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 39,
@@ -1070,7 +1108,8 @@ const GAMES = [
       "Questions and Answers",
       "Set Collection"
     ],
-    "description": "A quick card game where players draw and pass cards, racing to collect three cards of the same number while keeping their hand secret from opponents."
+    "description": "A quick card game where players draw and pass cards, racing to collect three cards of the same number while keeping their hand secret from opponents.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 40,
@@ -1095,7 +1134,8 @@ const GAMES = [
       "Race",
       "Re-rolling and Locking"
     ],
-    "description": "A push-your-luck pirate dice game where you press your luck raiding treasure from a ship, knowing that one roll too many sends the whole haul to the depths."
+    "description": "A push-your-luck pirate dice game where you press your luck raiding treasure from a ship, knowing that one roll too many sends the whole haul to the depths.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 41,
@@ -1122,7 +1162,8 @@ const GAMES = [
       "Sudden Death Ending",
       "Take That"
     ],
-    "description": "An elegant hand-collection card game with a charming origami ocean theme, where knowing exactly when to stop and claim your points is the key strategic tension."
+    "description": "An elegant hand-collection card game with a charming origami ocean theme, where knowing exactly when to stop and claim your points is the key strategic tension.",
+    "meal": "Appetizer"
   },
   {
     "id": 42,
@@ -1141,7 +1182,8 @@ const GAMES = [
       "Family Games",
       "Ladder Climbing"
     ],
-    "description": "A quick Norse-themed ladder climbing card game where players compete to play the highest sequence of cards, with the cunning to know when to hold back and when to push the pile."
+    "description": "A quick Norse-themed ladder climbing card game where players compete to play the highest sequence of cards, with the cunning to know when to hold back and when to push the pile.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 43,
@@ -1168,7 +1210,8 @@ const GAMES = [
       "Score-and-Reset Game",
       "Take That"
     ],
-    "description": "A push-your-luck card game where you flip cards to build the highest possible total without busting, deciding each turn whether to press on or walk away with what you have."
+    "description": "A push-your-luck card game where you flip cards to build the highest possible total without busting, deciding each turn whether to press on or walk away with what you have.",
+    "meal": "Dessert"
   },
   {
     "id": 44,
@@ -1200,7 +1243,8 @@ const GAMES = [
       "Strategy Games",
       "Variable Player Powers"
     ],
-    "description": "A tiny self-contained solo dungeon crawl where a shrunken hero battles household insects using a streamlined version of Gloomhaven's signature card-action system."
+    "description": "A tiny self-contained solo dungeon crawl where a shrunken hero battles household insects using a streamlined version of Gloomhaven's signature card-action system.",
+    "meal": "Appetizer"
   },
   {
     "id": 45,
@@ -1221,7 +1265,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Tile Placement"
     ],
-    "description": "A serene solo tile game where you place flower tiles to create a blooming garden — there's no score and no losing, just the quiet pleasure of arrangement."
+    "description": "A serene solo tile game where you place flower tiles to create a blooming garden — there's no score and no losing, just the quiet pleasure of arrangement.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 46,
@@ -1245,7 +1290,8 @@ const GAMES = [
       "Set Collection",
       "Solo / Solitaire Game"
     ],
-    "description": "A solo (or co-op) card game where you wander a dream labyrinth, collecting door cards in matching color runs before your deck runs out and the nightmare takes hold."
+    "description": "A solo (or co-op) card game where you wander a dream labyrinth, collecting door cards in matching color runs before your deck runs out and the nightmare takes hold.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 47,
@@ -1287,7 +1333,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A streamlined entry point into the Gloomhaven universe with a guided campaign, pre-printed dungeon tiles, and progressive rule introduction designed to ease new players into the system."
+    "description": "A streamlined entry point into the Gloomhaven universe with a guided campaign, pre-printed dungeon tiles, and progressive rule introduction designed to ease new players into the system.",
+    "meal": "Main Course"
   },
   {
     "id": 48,
@@ -1314,7 +1361,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Thematic Games"
     ],
-    "description": "A strategic card game where players compete to build the most powerful combinations from a shared tableau, rewarding clever timing, adaptability, and reading your opponents."
+    "description": "A strategic card game where players compete to build the most powerful combinations from a shared tableau, rewarding clever timing, adaptability, and reading your opponents.",
+    "meal": "Feast"
   },
   {
     "id": 49,
@@ -1341,7 +1389,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A cooperative race game where the Fellowship must carry the One Ring across Middle-Earth to Mount Doom while Sauron's forces steadily hunt them down."
+    "description": "A cooperative race game where the Fellowship must carry the One Ring across Middle-Earth to Mount Doom while Sauron's forces steadily hunt them down.",
+    "meal": "Main Course"
   },
   {
     "id": 50,
@@ -1369,7 +1418,8 @@ const GAMES = [
       "Strategy Games",
       "Video Game Theme"
     ],
-    "description": "A faithful adaptation of the beloved roguelike video game, where players build synergistic decks and fight through escalating encounters to reach and defeat the Spire."
+    "description": "A faithful adaptation of the beloved roguelike video game, where players build synergistic decks and fight through escalating encounters to reach and defeat the Spire.",
+    "meal": "Main Course"
   },
   {
     "id": 51,
@@ -1403,7 +1453,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Set-up"
     ],
-    "description": "A cooperative campaign card game set in a lush post-climate-crisis Pacific Northwest, where park rangers protect the wilderness from emerging dangers across a deeply replayable open world."
+    "description": "A cooperative campaign card game set in a lush post-climate-crisis Pacific Northwest, where park rangers protect the wilderness from emerging dangers across a deeply replayable open world.",
+    "meal": "Feast"
   },
   {
     "id": 52,
@@ -1429,7 +1480,8 @@ const GAMES = [
       "Tile Placement",
       "Variable Set-up"
     ],
-    "description": "A serene tile and token drafting game about building a Pacific Northwest ecosystem, placing wildlife into habitats to score points when animals achieve their preferred environmental patterns."
+    "description": "A serene tile and token drafting game about building a Pacific Northwest ecosystem, placing wildlife into habitats to score points when animals achieve their preferred environmental patterns.",
+    "meal": "Appetizer"
   },
   {
     "id": 53,
@@ -1460,7 +1512,8 @@ const GAMES = [
       "Variable Set-up",
       "Victory Points as a Resource"
     ],
-    "description": "An expansion for Cascadia adding landmark tokens and location cards that enrich the ecosystem puzzle without disturbing the elegant simplicity of the base game."
+    "description": "An expansion for Cascadia adding landmark tokens and location cards that enrich the ecosystem puzzle without disturbing the elegant simplicity of the base game.",
+    "meal": "Appetizer"
   },
   {
     "id": 54,
@@ -1496,7 +1549,8 @@ const GAMES = [
       "Turn Order: Progressive",
       "Worker Placement with Dice Workers"
     ],
-    "description": "A simultaneous dice placement and engine-building game where you roll your dice workers, assign them to factories, and race opponents to manufacture the most goods."
+    "description": "A simultaneous dice placement and engine-building game where you roll your dice workers, assign them to factories, and race opponents to manufacture the most goods.",
+    "meal": "Appetizer"
   },
   {
     "id": 55,
@@ -1526,7 +1580,8 @@ const GAMES = [
       "Team-Based Game",
       "Variable Player Powers"
     ],
-    "description": "An asymmetric dueling game where iconic characters from myth and history — Medusa, Sherlock Holmes, King Arthur — battle with entirely unique decks and wildly different abilities."
+    "description": "An asymmetric dueling game where iconic characters from myth and history — Medusa, Sherlock Holmes, King Arthur — battle with entirely unique decks and wildly different abilities.",
+    "meal": "Appetizer"
   },
   {
     "id": 56,
@@ -1565,7 +1620,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A tense 2-player card game where one side guides the Fellowship toward Mordor while the other commands Sauron's forces, battling over iconic locations across the map."
+    "description": "A tense 2-player card game where one side guides the Fellowship toward Mordor while the other commands Sauron's forces, battling over iconic locations across the map.",
+    "meal": "Appetizer"
   },
   {
     "id": 57,
@@ -1595,7 +1651,8 @@ const GAMES = [
       "Worker Placement",
       "Worker Placement with Dice Workers"
     ],
-    "description": "A solo game where you manage underground bunkers to defend Earth against an alien invasion, using dice placement to simultaneously research escape technology and shoot down the encroaching fleet."
+    "description": "A solo game where you manage underground bunkers to defend Earth against an alien invasion, using dice placement to simultaneously research escape technology and shoot down the encroaching fleet.",
+    "meal": "Appetizer"
   },
   {
     "id": 58,
@@ -1627,7 +1684,8 @@ const GAMES = [
       "Turn Order: Progressive",
       "Variable Player Powers"
     ],
-    "description": "A fantasy party-building card game where heroes, weapons, and companions combine to slay monsters — if your opponents don't sabotage your team before you get the chance."
+    "description": "A fantasy party-building card game where heroes, weapons, and companions combine to slay monsters — if your opponents don't sabotage your team before you get the chance.",
+    "meal": "Appetizer"
   },
   {
     "id": 59,
@@ -1650,7 +1708,8 @@ const GAMES = [
       "Set Collection",
       "Take That"
     ],
-    "description": "A chaotic card game where players race to build a herd of magical unicorns while casting spells to dismantle everyone else's, in a premium edition with shimmering card treatments."
+    "description": "A chaotic card game where players race to build a herd of magical unicorns while casting spells to dismantle everyone else's, in a premium edition with shimmering card treatments.",
+    "meal": "Dessert"
   },
   {
     "id": 60,
@@ -1670,7 +1729,8 @@ const GAMES = [
       "Card Game",
       "I Cut, You Choose"
     ],
-    "description": "A tiny solo card game about a witch discovering her magical companion, gently placing cards to guide an animal spirit toward becoming the familiar it was always meant to be."
+    "description": "A tiny solo card game about a witch discovering her magical companion, gently placing cards to guide an animal spirit toward becoming the familiar it was always meant to be.",
+    "meal": "Appetizer"
   },
   {
     "id": 61,
@@ -1700,7 +1760,8 @@ const GAMES = [
       "Take That",
       "Variable Player Powers"
     ],
-    "description": "A cute but brutal survival card game where adorable dinosaurs navigate natural disasters and personal catastrophes, trying to be the last dino still standing."
+    "description": "A cute but brutal survival card game where adorable dinosaurs navigate natural disasters and personal catastrophes, trying to be the last dino still standing.",
+    "meal": "Dessert"
   },
   {
     "id": 62,
@@ -1726,7 +1787,8 @@ const GAMES = [
       "Player Elimination",
       "Strategy Games"
     ],
-    "description": "A head-to-head card game with striking nature art where players embody elemental forces, building up power and casting effects to dominate the natural world."
+    "description": "A head-to-head card game with striking nature art where players embody elemental forces, building up power and casting effects to dominate the natural world.",
+    "meal": "Appetizer"
   },
   {
     "id": 63,
@@ -1756,7 +1818,8 @@ const GAMES = [
       "Turn Order: Time Track",
       "Victory Points as a Resource"
     ],
-    "description": "A tight 2-player puzzle where players take turns purchasing and placing oddly shaped fabric patches on their quilt boards, trying to fill the grid efficiently with as few gaps as possible."
+    "description": "A tight 2-player puzzle where players take turns purchasing and placing oddly shaped fabric patches on their quilt boards, trying to fill the grid efficiently with as few gaps as possible.",
+    "meal": "Appetizer"
   },
   {
     "id": 64,
@@ -1779,7 +1842,8 @@ const GAMES = [
       "Puzzle",
       "Scenario / Mission / Campaign Game"
     ],
-    "description": "A clever abstract strategy game centered on time management, where players must carefully balance their available actions to outmaneuver opponents across a tightly contested board."
+    "description": "A clever abstract strategy game centered on time management, where players must carefully balance their available actions to outmaneuver opponents across a tightly contested board.",
+    "meal": "Appetizer"
   },
   {
     "id": 65,
@@ -1806,7 +1870,8 @@ const GAMES = [
       "Track Movement",
       "Turn Order: Progressive"
     ],
-    "description": "A cave-excavating dragon game where players recruit and house dragons of every type in an expanding underground cavern, built on the accessible engine-building of Wingspan."
+    "description": "A cave-excavating dragon game where players recruit and house dragons of every type in an expanding underground cavern, built on the accessible engine-building of Wingspan.",
+    "meal": "Main Course"
   },
   {
     "id": 66,
@@ -1842,7 +1907,8 @@ const GAMES = [
       "Video Game Theme",
       "Worker Placement"
     ],
-    "description": "A harrowing cooperative survival game based on the acclaimed video game, where civilians trapped in a war-torn city make desperate moral choices to scavenge resources and stay alive."
+    "description": "A harrowing cooperative survival game based on the acclaimed video game, where civilians trapped in a war-torn city make desperate moral choices to scavenge resources and stay alive.",
+    "meal": "Main Course"
   },
   {
     "id": 67,
@@ -1868,7 +1934,8 @@ const GAMES = [
       "Set Collection",
       "Trains"
     ],
-    "description": "A beloved gateway game where players collect colored train cards to claim railway routes across a map, connecting cities and completing secret destination tickets before opponents block the way."
+    "description": "A beloved gateway game where players collect colored train cards to claim railway routes across a map, connecting cities and completing secret destination tickets before opponents block the way.",
+    "meal": "Main Course"
   },
   {
     "id": 68,
@@ -1893,7 +1960,8 @@ const GAMES = [
       "Thematic Games",
       "Tile Placement"
     ],
-    "description": "A cooperative horror game where players trapped in a shifting dark maze are tethered by a single candle, racing to collect keys and find the exit before the darkness devours them."
+    "description": "A cooperative horror game where players trapped in a shifting dark maze are tethered by a single candle, racing to collect keys and find the exit before the darkness devours them.",
+    "meal": "Appetizer"
   },
   {
     "id": 69,
@@ -1920,7 +1988,8 @@ const GAMES = [
       "Worker Placement",
       "Worker Placement, Different Worker Types"
     ],
-    "description": "A tile collection and placement game where players discover and catalog fantastical beasts, arranging diverse habitats to attract the most magnificent array of creatures."
+    "description": "A tile collection and placement game where players discover and catalog fantastical beasts, arranging diverse habitats to attract the most magnificent array of creatures.",
+    "meal": "Main Course"
   },
   {
     "id": 70,
@@ -1946,7 +2015,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A cooperative disaster response game where emergency teams work together to contain and mitigate cascading catastrophes before they spiral beyond anyone's ability to control."
+    "description": "A cooperative disaster response game where emergency teams work together to contain and mitigate cascading catastrophes before they spiral beyond anyone's ability to control.",
+    "meal": "Main Course"
   },
   {
     "id": 71,
@@ -1981,7 +2051,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "The quintessential cooperative game where specialist agents travel the globe, treating disease outbreaks and racing to discover cures for four deadly pathogens before time runs out."
+    "description": "The quintessential cooperative game where specialist agents travel the globe, treating disease outbreaks and racing to discover cures for four deadly pathogens before time runs out.",
+    "meal": "Main Course"
   },
   {
     "id": 72,
@@ -2011,7 +2082,8 @@ const GAMES = [
       "Turn Order: Random",
       "Variable Player Powers"
     ],
-    "description": "A cooperative narrative campaign card game set in a dying world, where a party of questers journeys across the land to relight the magical Kinfire and stave off eternal darkness."
+    "description": "A cooperative narrative campaign card game set in a dying world, where a party of questers journeys across the land to relight the magical Kinfire and stave off eternal darkness.",
+    "meal": "Main Course"
   },
   {
     "id": 73,
@@ -2039,7 +2111,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A cooperative game where players team up against classic Universal Monsters — Dracula, the Mummy, Frankenstein's creature — each requiring a completely unique strategy to defeat."
+    "description": "A cooperative game where players team up against classic Universal Monsters — Dracula, the Mummy, Frankenstein's creature — each requiring a completely unique strategy to defeat.",
+    "meal": "Main Course"
   },
   {
     "id": 74,
@@ -2058,7 +2131,8 @@ const GAMES = [
       "Party Game",
       "Trivia"
     ],
-    "description": "A trivia game designed for millennials, packed with questions about pop culture, technology, and the defining moments of growing up between the '80s and 2010s."
+    "description": "A trivia game designed for millennials, packed with questions about pop culture, technology, and the defining moments of growing up between the '80s and 2010s.",
+    "meal": "Dessert"
   },
   {
     "id": 75,
@@ -2088,7 +2162,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Variable Set-up"
     ],
-    "description": "A cooperative living card game where players build custom decks of heroes and allies to embark on quest scenarios across the many ages and beloved locations of Middle-Earth."
+    "description": "A cooperative living card game where players build custom decks of heroes and allies to embark on quest scenarios across the many ages and beloved locations of Middle-Earth.",
+    "meal": "Main Course"
   },
   {
     "id": 76,
@@ -2114,7 +2189,8 @@ const GAMES = [
       "Thematic Games",
       "Trading"
     ],
-    "description": "A pirate adventure game where players sail the seas, raid merchant ships, and compete to amass the greatest treasure before returning triumphantly to port."
+    "description": "A pirate adventure game where players sail the seas, raid merchant ships, and compete to amass the greatest treasure before returning triumphantly to port.",
+    "meal": "Main Course"
   },
   {
     "id": 77,
@@ -2141,7 +2217,8 @@ const GAMES = [
       "Team-Based Game",
       "Variable Player Powers"
     ],
-    "description": "A dice-rolling dueling game where each hero character has a unique ability wheel, using Yahtzee-style rolling to activate powerful attacks, defenses, and special skills."
+    "description": "A dice-rolling dueling game where each hero character has a unique ability wheel, using Yahtzee-style rolling to activate powerful attacks, defenses, and special skills.",
+    "meal": "Appetizer"
   },
   {
     "id": 78,
@@ -2168,7 +2245,8 @@ const GAMES = [
       "Tile Placement",
       "Turn Order: Progressive"
     ],
-    "description": "A tile-drafting castle building game where you construct an eccentric palace for a capricious king, with each room unlocking bonuses based on what rooms it connects to."
+    "description": "A tile-drafting castle building game where you construct an eccentric palace for a capricious king, with each room unlocking bonuses based on what rooms it connects to.",
+    "meal": "Main Course"
   },
   {
     "id": 79,
@@ -2207,7 +2285,8 @@ const GAMES = [
       "Traitor Game",
       "Variable Player Powers"
     ],
-    "description": "An app-driven cooperative horror game where players explore haunted mansions and battle Lovecraftian horrors, with the app serving as a fully automated game master."
+    "description": "An app-driven cooperative horror game where players explore haunted mansions and battle Lovecraftian horrors, with the app serving as a fully automated game master.",
+    "meal": "Feast"
   },
   {
     "id": 80,
@@ -2241,7 +2320,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A cooperative game that flips the colonization narrative — players are powerful island spirits working in concert to repel invading settlers before the land is fully colonized and lost."
+    "description": "A cooperative game that flips the colonization narrative — players are powerful island spirits working in concert to repel invading settlers before the land is fully colonized and lost.",
+    "meal": "Main Course"
   },
   {
     "id": 81,
@@ -2266,7 +2346,8 @@ const GAMES = [
       "Puzzle",
       "Role Playing"
     ],
-    "description": "A compact solo dungeon crawler where the dungeon is procedurally generated from a shuffled deck of cards, creating a unique and dangerous delve every single time."
+    "description": "A compact solo dungeon crawler where the dungeon is procedurally generated from a shuffled deck of cards, creating a unique and dangerous delve every single time.",
+    "meal": "Main Course"
   },
   {
     "id": 82,
@@ -2293,7 +2374,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Storytelling"
     ],
-    "description": "A cooperative nature game where players explore an ancient forest as a team, collecting specimens and uncovering secrets hidden deep within the canopy."
+    "description": "A cooperative nature game where players explore an ancient forest as a team, collecting specimens and uncovering secrets hidden deep within the canopy.",
+    "meal": "Appetizer"
   },
   {
     "id": 83,
@@ -2324,7 +2406,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A cooperative saga expansion for Lord of the Rings: The Card Game covering the final book's events, from the siege of Minas Tirith to the fires of Mount Doom."
+    "description": "A cooperative saga expansion for Lord of the Rings: The Card Game covering the final book's events, from the siege of Minas Tirith to the fires of Mount Doom.",
+    "meal": "Main Course"
   },
   {
     "id": 84,
@@ -2353,7 +2436,8 @@ const GAMES = [
       "Wargame",
       "Wargames"
     ],
-    "description": "The classic game of global domination where dice decide the fate of armies as players expand their empires across a world map, plotting to eliminate every rival from the board."
+    "description": "The classic game of global domination where dice decide the fate of armies as players expand their empires across a world map, plotting to eliminate every rival from the board.",
+    "meal": "Feast"
   },
   {
     "id": 85,
@@ -2383,7 +2467,8 @@ const GAMES = [
       "Traitor Game",
       "Voting"
     ],
-    "description": "A social deduction game set in 1930s Germany where liberals work to pass good policies while fascists secretly maneuver to install their leader as chancellor."
+    "description": "A social deduction game set in 1930s Germany where liberals work to pass good policies while fascists secretly maneuver to install their leader as chancellor.",
+    "meal": "Dessert"
   },
   {
     "id": 86,
@@ -2410,7 +2495,8 @@ const GAMES = [
       "Team-Based Game",
       "Variable Player Powers"
     ],
-    "description": "A quick cooperative card game where players plan and execute an elaborate heist, coordinating specialized roles to steal the prize without tripping a single alarm."
+    "description": "A quick cooperative card game where players plan and execute an elaborate heist, coordinating specialized roles to steal the prize without tripping a single alarm.",
+    "meal": "Dessert"
   },
   {
     "id": 87,
@@ -2452,7 +2538,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "An asymmetric civilization game where players advance along science, technology, exploration, and military tracks, building a unique society with a distinctive arc through history."
+    "description": "An asymmetric civilization game where players advance along science, technology, exploration, and military tracks, building a unique society with a distinctive arc through history.",
+    "meal": "Main Course"
   },
   {
     "id": 88,
@@ -2478,7 +2565,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Strategy Games"
     ],
-    "description": "A cooperative deckbuilder set in Brandon Sanderson's Mistborn universe, where players harness allomantic metal powers to fight the Lord Ruler's forces across the ash-covered empire."
+    "description": "A cooperative deckbuilder set in Brandon Sanderson's Mistborn universe, where players harness allomantic metal powers to fight the Lord Ruler's forces across the ash-covered empire.",
+    "meal": "Appetizer"
   },
   {
     "id": 89,
@@ -2512,7 +2600,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "An app-assisted cooperative adventure where a fellowship of heroes journeys through iconic Middle-Earth locations, with the companion app managing the story, enemies, and revelation."
+    "description": "An app-assisted cooperative adventure where a fellowship of heroes journeys through iconic Middle-Earth locations, with the companion app managing the story, enemies, and revelation.",
+    "meal": "Main Course"
   },
   {
     "id": 90,
@@ -2534,7 +2623,8 @@ const GAMES = [
       "Party Game",
       "Tile Placement"
     ],
-    "description": "A dungeon-crawling drinking game where adventurers battle monsters with dice and cards, taking drinks when their heroes take damage in the heat of fantasy combat."
+    "description": "A dungeon-crawling drinking game where adventurers battle monsters with dice and cards, taking drinks when their heroes take damage in the heat of fantasy combat.",
+    "meal": "Dessert"
   },
   {
     "id": 91,
@@ -2571,7 +2661,8 @@ const GAMES = [
       "Turn Order: Stat-Based",
       "Variable Set-up"
     ],
-    "description": "A masterwork economic game set during England's industrial revolution, where players develop industries and build canal and rail networks to create the most profitable empire."
+    "description": "A masterwork economic game set during England's industrial revolution, where players develop industries and build canal and rail networks to create the most profitable empire.",
+    "meal": "Main Course"
   },
   {
     "id": 92,
@@ -2605,7 +2696,8 @@ const GAMES = [
       "Wargame",
       "Wargames"
     ],
-    "description": "An epic 2-4 player strategic war game spanning the entire Lord of the Rings conflict, with the Fellowship racing to destroy the One Ring as Sauron's armies sweep across the map."
+    "description": "An epic 2-4 player strategic war game spanning the entire Lord of the Rings conflict, with the Fellowship racing to destroy the One Ring as Sauron's armies sweep across the map.",
+    "meal": "Feast"
   },
   {
     "id": 93,
@@ -2635,7 +2727,8 @@ const GAMES = [
       "Strategy Games",
       "Variable Player Powers"
     ],
-    "description": "A solo/cooperative space 4X game that replaces randomness with careful planning, as you expand your civilization, develop technologies, and confront the all-consuming Voidborn threat."
+    "description": "A solo/cooperative space 4X game that replaces randomness with careful planning, as you expand your civilization, develop technologies, and confront the all-consuming Voidborn threat.",
+    "meal": "Feast"
   },
   {
     "id": 94,
@@ -2669,7 +2762,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "The classic dungeon adventure game where a group of heroes explores monster-filled rooms and collects treasure while a game master controls the dungeon and the evil Zargon's minions."
+    "description": "The classic dungeon adventure game where a group of heroes explores monster-filled rooms and collects treasure while a game master controls the dungeon and the evil Zargon's minions.",
+    "meal": "Main Course"
   },
   {
     "id": 95,
@@ -2707,7 +2801,8 @@ const GAMES = [
       "Turn Order: Claim Action",
       "Variable Player Powers"
     ],
-    "description": "An epic solo or cooperative exploration game where legendary Mage Knights traverse a magical land, conquering dungeons and cities while building powerful spell combinations through deck construction."
+    "description": "An epic solo or cooperative exploration game where legendary Mage Knights traverse a magical land, conquering dungeons and cities while building powerful spell combinations through deck construction.",
+    "meal": "Feast"
   },
   {
     "id": 96,
@@ -2742,7 +2837,8 @@ const GAMES = [
       "Turn Order: Progressive",
       "Worker Placement"
     ],
-    "description": "A deck-building and worker placement hybrid where archaeologists explore a mysterious island, discovering ancient temples and researching artifacts while racing rival expeditions to the ruins."
+    "description": "A deck-building and worker placement hybrid where archaeologists explore a mysterious island, discovering ancient temples and researching artifacts while racing rival expeditions to the ruins.",
+    "meal": "Main Course"
   },
   {
     "id": 97,
@@ -2771,7 +2867,8 @@ const GAMES = [
       "Tile Placement",
       "Turn Order: Claim Action"
     ],
-    "description": "A gorgeous abstract game where players draft colorful tiles to complete patterns on their mosaic board, balancing careful planning with the tactical sabotage of denying opponents key tiles."
+    "description": "A gorgeous abstract game where players draft colorful tiles to complete patterns on their mosaic board, balancing careful planning with the tactical sabotage of denying opponents key tiles.",
+    "meal": "Appetizer"
   },
   {
     "id": 98,
@@ -2799,7 +2896,8 @@ const GAMES = [
       "Scenario / Mission / Campaign Game",
       "Solo / Solitaire Game"
     ],
-    "description": "A cooperative card game where elemental mages channel the power of storms together, combining their abilities to overcome escalating natural challenges threatening the land."
+    "description": "A cooperative card game where elemental mages channel the power of storms together, combining their abilities to overcome escalating natural challenges threatening the land.",
+    "meal": "Feast"
   },
   {
     "id": 99,
@@ -2828,7 +2926,8 @@ const GAMES = [
       "Simultaneous Action Selection",
       "Strategy Games"
     ],
-    "description": "A fast bidding game where players recruit legendary dwarven heroes using a clever coin upgrade economy, assembling the mightiest company to face the fearsome dragon Fafnir."
+    "description": "A fast bidding game where players recruit legendary dwarven heroes using a clever coin upgrade economy, assembling the mightiest company to face the fearsome dragon Fafnir.",
+    "meal": "Appetizer"
   },
   {
     "id": 100,
@@ -2848,7 +2947,8 @@ const GAMES = [
       "Puzzle",
       "Real-time"
     ],
-    "description": "An escape room puzzle experience set in the world of Catan, where players solve interconnected riddles using familiar Catan components, locations, and lore."
+    "description": "An escape room puzzle experience set in the world of Catan, where players solve interconnected riddles using familiar Catan components, locations, and lore.",
+    "meal": "Main Course"
   },
   {
     "id": 101,
@@ -2885,7 +2985,8 @@ const GAMES = [
       "Tug of War",
       "Variable Set-up"
     ],
-    "description": "A tight 2-player adaptation of 7 Wonders played over a shared card pyramid, creating intense push-and-pull as players draft cards to claim scientific, military, or civic dominance."
+    "description": "A tight 2-player adaptation of 7 Wonders played over a shared card pyramid, creating intense push-and-pull as players draft cards to claim scientific, military, or civic dominance.",
+    "meal": "Appetizer"
   },
   {
     "id": 102,
@@ -2910,7 +3011,8 @@ const GAMES = [
       "Set Collection",
       "Strategy Games"
     ],
-    "description": "A 2-player evolution of Splendor played on a shared gem grid, with scrolls, privileges, and three distinct paths to victory adding strategic depth to the jewel merchant duel."
+    "description": "A 2-player evolution of Splendor played on a shared gem grid, with scrolls, privileges, and three distinct paths to victory adding strategic depth to the jewel merchant duel.",
+    "meal": "Appetizer"
   },
   {
     "id": 103,
@@ -2934,7 +3036,8 @@ const GAMES = [
       "Solo / Solitaire Game",
       "Turn Order: Progressive"
     ],
-    "description": "A strategy game where players embody rival Greek gods, wielding divine powers and mythological champions to expand their celestial influence across the ancient world."
+    "description": "A strategy game where players embody rival Greek gods, wielding divine powers and mythological champions to expand their celestial influence across the ancient world.",
+    "meal": "Appetizer"
   },
   {
     "id": 104,
@@ -2955,7 +3058,8 @@ const GAMES = [
       "Party Game",
       "Voting"
     ],
-    "description": "A party game where players anonymously vote for who among their group best fits outrageous prompts, then debate and reveal the results to rousing effect."
+    "description": "A party game where players anonymously vote for who among their group best fits outrageous prompts, then debate and reveal the results to rousing effect.",
+    "meal": "Dessert"
   },
   {
     "id": 105,
@@ -2983,7 +3087,8 @@ const GAMES = [
       "Variable Player Powers",
       "Voting"
     ],
-    "description": "A fast social deduction game where an entire round plays out in minutes — players secretly take roles as werewolves or villagers and must identify the monsters by dawn."
+    "description": "A fast social deduction game where an entire round plays out in minutes — players secretly take roles as werewolves or villagers and must identify the monsters by dawn.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 106,
@@ -3016,7 +3121,8 @@ const GAMES = [
       "Traitor Game",
       "Variable Player Powers"
     ],
-    "description": "A semi-cooperative survival horror set on a Mars base overrun by alien creatures, where players pursue personal secret objectives that may bring them into direct conflict with each other."
+    "description": "A semi-cooperative survival horror set on a Mars base overrun by alien creatures, where players pursue personal secret objectives that may bring them into direct conflict with each other.",
+    "meal": "Feast"
   },
   {
     "id": 107,
@@ -3063,7 +3169,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A massive campaign dungeon crawl where a rotating cast of mercenaries battles through a living, evolving city whose story permanently changes based on the choices players make."
+    "description": "A massive campaign dungeon crawl where a rotating cast of mercenaries battles through a living, evolving city whose story permanently changes based on the choices players make.",
+    "meal": "Feast"
   },
   {
     "id": 108,
@@ -3096,7 +3203,8 @@ const GAMES = [
       "Storytelling",
       "Thematic Games"
     ],
-    "description": "A dark, mature Arthurian adventure game where players navigate a dying kingdom of fallen heroes and creeping corruption, with story choices that leave permanent marks on the world."
+    "description": "A dark, mature Arthurian adventure game where players navigate a dying kingdom of fallen heroes and creeping corruption, with story choices that leave permanent marks on the world.",
+    "meal": "Feast"
   },
   {
     "id": 109,
@@ -3128,7 +3236,8 @@ const GAMES = [
       "Worker Placement",
       "Worker Placement with Dice Workers"
     ],
-    "description": "A cooperative persistent adventure game with no campaign end — players build up their town, complete quests, and return for open-ended sessions in a whimsical world without a final boss."
+    "description": "A cooperative persistent adventure game with no campaign end — players build up their town, complete quests, and return for open-ended sessions in a whimsical world without a final boss.",
+    "meal": "Main Course"
   },
   {
     "id": 110,
@@ -3150,7 +3259,8 @@ const GAMES = [
       "Team-Based Game",
       "Word Game"
     ],
-    "description": "A classic party word game where you must get your team to guess a word without using any of the forbidden clue words, with an opponent hovering to buzz you for any slip."
+    "description": "A classic party word game where you must get your team to guess a word without using any of the forbidden clue words, with an opponent hovering to buzz you for any slip.",
+    "meal": "Dessert"
   },
   {
     "id": 111,
@@ -3173,7 +3283,8 @@ const GAMES = [
       "Party Games",
       "Real-time"
     ],
-    "description": "The adults-only version of the drawing telephone game, where sketches and guesses spiral into gloriously inappropriate misinterpretations round after round."
+    "description": "The adults-only version of the drawing telephone game, where sketches and guesses spiral into gloriously inappropriate misinterpretations round after round.",
+    "meal": "Dessert"
   },
   {
     "id": 112,
@@ -3193,7 +3304,8 @@ const GAMES = [
       "Mature / Adult",
       "Party Game"
     ],
-    "description": "A party game where players attempt to decipher phrases spoken through a muffling card, trying to decode scrambled phonetic nonsense into something recognizable."
+    "description": "A party game where players attempt to decipher phrases spoken through a muffling card, trying to decode scrambled phonetic nonsense into something recognizable.",
+    "meal": "Dessert"
   },
   {
     "id": 113,
@@ -3214,7 +3326,8 @@ const GAMES = [
       "Religious",
       "Roll / Spin and Move"
     ],
-    "description": "A classic family race game featuring the iconic pop-o-matic bubble dice roller, where you race pawns around the board and send opponents back to start with a satisfying bump."
+    "description": "A classic family race game featuring the iconic pop-o-matic bubble dice roller, where you race pawns around the board and send opponents back to start with a satisfying bump.",
+    "meal": "Dessert"
   },
   {
     "id": 114,
@@ -3235,7 +3348,8 @@ const GAMES = [
       "Party Games",
       "Stacking and Balancing"
     ],
-    "description": "A dexterity balancing game where players hang notched wire pieces from a central stand, adding them turn by turn without toppling the increasingly precarious construction."
+    "description": "A dexterity balancing game where players hang notched wire pieces from a central stand, adding them turn by turn without toppling the increasingly precarious construction.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 115,
@@ -3256,7 +3370,8 @@ const GAMES = [
       "Set Collection",
       "Trivia"
     ],
-    "description": "The definitive trivia game where players answer questions across six knowledge categories, collecting pie wedges to complete their game piece and claim the title of trivia champion."
+    "description": "The definitive trivia game where players answer questions across six knowledge categories, collecting pie wedges to complete their game piece and claim the title of trivia champion.",
+    "meal": "Dessert"
   },
   {
     "id": 116,
@@ -3284,7 +3399,8 @@ const GAMES = [
       "Variable Player Powers",
       "Variable Set-up"
     ],
-    "description": "A standalone cooperative game in the Horrified universe where heroes face off against mythological Greek monsters including Medusa, the Minotaur, and Cerberus."
+    "description": "A standalone cooperative game in the Horrified universe where heroes face off against mythological Greek monsters including Medusa, the Minotaur, and Cerberus.",
+    "meal": "Main Course"
   },
   {
     "id": 117,
@@ -3309,7 +3425,8 @@ const GAMES = [
       "Spies / Secret Agents",
       "Word Game"
     ],
-    "description": "A fully cooperative 2-player version of Codenames where both players act as spymasters simultaneously, working together to identify all agents before running out of turns."
+    "description": "A fully cooperative 2-player version of Codenames where both players act as spymasters simultaneously, working together to identify all agents before running out of turns.",
+    "meal": "Appetizer"
   },
   {
     "id": 118,
@@ -3334,7 +3451,8 @@ const GAMES = [
       "Print & Play",
       "Simultaneous Action Selection"
     ],
-    "description": "The notorious adults-only party game where players complete fill-in-the-blank statements with the most outrageous, offensive, or absurd card combinations possible."
+    "description": "The notorious adults-only party game where players complete fill-in-the-blank statements with the most outrageous, offensive, or absurd card combinations possible.",
+    "meal": "Dessert"
   },
   {
     "id": 119,
@@ -3362,7 +3480,8 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A rowdy party game where fantasy adventurers celebrate after a dungeon raid — gambling, drinking, and using dirty tricks on each other to be the last hero still standing and solvent."
+    "description": "A rowdy party game where fantasy adventurers celebrate after a dungeon raid — gambling, drinking, and using dirty tricks on each other to be the last hero still standing and solvent.",
+    "meal": "Dessert"
   },
   {
     "id": 120,
@@ -3393,7 +3512,8 @@ const GAMES = [
       "Storytelling",
       "Thematic Games"
     ],
-    "description": "A cooperative open-world campaign game where the crew of the steamship Manticore awakens in a mysterious realm, sailing a vast map and completing quests to find the totems that will send them home."
+    "description": "A cooperative open-world campaign game where the crew of the steamship Manticore awakens in a mysterious realm, sailing a vast map and completing quests to find the totems that will send them home.",
+    "meal": "Main Course"
   },
   {
     "id": 121,
@@ -3419,7 +3539,8 @@ const GAMES = [
       "Take That",
       "Variable Player Powers"
     ],
-    "description": "A quick bluffing game where players hold secret role cards and lie freely about their abilities — call a bluff correctly to eliminate an opponent, or get caught and lose your own influence."
+    "description": "A quick bluffing game where players hold secret role cards and lie freely about their abilities — call a bluff correctly to eliminate an opponent, or get caught and lose your own influence.",
+    "meal": "Amuse-Bouche"
   },
   {
     "id": 122,
@@ -3442,7 +3563,8 @@ const GAMES = [
       "Predictive Bid",
       "Trick-taking"
     ],
-    "description": "A pirate-themed trick-taking game where players must bid exactly how many tricks they'll win each round, with Skull Kings, Mermaids, and Pirates constantly upending the hierarchy."
+    "description": "A pirate-themed trick-taking game where players must bid exactly how many tricks they'll win each round, with Skull Kings, Mermaids, and Pirates constantly upending the hierarchy.",
+    "meal": "Appetizer"
   },
   {
     "id": 123,
@@ -3472,6 +3594,7 @@ const GAMES = [
       "Thematic Games",
       "Variable Player Powers"
     ],
-    "description": "A cooperative campaign game where players crew Earth's first interstellar spaceship, exploring alien planets through a branching narrative driven by a companion app and an enormous discovery book."
+    "description": "A cooperative campaign game where players crew Earth's first interstellar spaceship, exploring alien planets through a branching narrative driven by a companion app and an enormous discovery book.",
+    "meal": "Main Course"
   }
 ];
