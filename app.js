@@ -347,10 +347,10 @@ document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
 // Reset
 document.getElementById("reset-btn").addEventListener("click", () => {
   state.search = "";
-  state.players = 10;
+  state.players = 1;
   state.time = "all";
   state.crunchMin = 1;
-  state.crunchMax = 9;
+  state.crunchMax = 10;
   state.tags = new Set();
   state.sort = "name-asc";
 
