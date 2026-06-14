@@ -6,7 +6,7 @@ const state = {
   crunchMin: 1,
   crunchMax: 9,
   mechanic: "all",
-  sort: "name",
+  sort: "name-asc",
 };
 
 // ── Helpers ────────────────────────────────────────────
@@ -19,7 +19,7 @@ function parsePlayers(str) {
 function matchesPlayers(game, filter) {
   if (filter === 1) return true;
   const [min, max] = parsePlayers(game.players);
-  if (filter === 10) return max >= 10;
+  if (filter === 12) return max >= 12;
   return min <= filter && max >= filter;
 }
 
@@ -51,11 +51,16 @@ function filterGames() {
 function sortGames(games) {
   return [...games].sort((a, b) => {
     switch (state.sort) {
-      case "name": return a.name.localeCompare(b.name);
-      case "rating": return (b.rating ?? 0) - (a.rating ?? 0);
-      case "crunch-asc": return a.crunch - b.crunch;
+      case "name-asc":  return a.name.localeCompare(b.name);
+      case "name-desc": return b.name.localeCompare(a.name);
+      case "players-asc":  return parsePlayers(a.players)[0] - parsePlayers(b.players)[0];
+      case "players-desc": return parsePlayers(b.players)[0] - parsePlayers(a.players)[0];
+      case "time-asc":  return a.timeMin - b.timeMin;
+      case "time-desc": return b.timeMin - a.timeMin;
+      case "crunch-asc":  return a.crunch - b.crunch;
       case "crunch-desc": return b.crunch - a.crunch;
-      case "time-asc": return a.timeMin - b.timeMin;
+      case "rating-desc": return (b.rating ?? -1) - (a.rating ?? -1);
+      case "rating-asc":  return (a.rating ?? 11) - (b.rating ?? 11);
       default: return 0;
     }
   });
@@ -102,10 +107,16 @@ function renderCard(game) {
           ${game.playTime}
         </span>
         <div class="row-crunch">
-          <div class="pips">${crunchPips(game.crunch)}</div>
-          <span class="mono crunch-num">${game.crunch}</span>
+          <span class="stat-label">Crunch</span>
+          <div class="crunch-bar">
+            <div class="pips">${crunchPips(game.crunch)}</div>
+            <span class="mono crunch-num">${game.crunch}</span>
+          </div>
         </div>
-        ${ratingBadge(game.rating)}
+        <div class="row-rating">
+          <span class="stat-label">BGG</span>
+          ${ratingBadge(game.rating)}
+        </div>
       </div>
     </a>
   `;
@@ -206,9 +217,13 @@ function wirePillGroup(parentId, stateKey) {
   document.getElementById(parentId).addEventListener("click", e => {
     const pill = e.target.closest(".filter-pill");
     if (!pill) return;
+    const isActive = pill.classList.contains("active");
+    const isAny = pill.dataset[stateKey] === "all";
+    // Clicking the active non-Any pill toggles it off (back to Any)
+    const target = (isActive && !isAny) ? "all" : pill.dataset[stateKey];
     document.querySelectorAll(`#${parentId} .filter-pill`).forEach(p => p.classList.remove("active"));
-    pill.classList.add("active");
-    state[stateKey] = pill.dataset[stateKey];
+    document.querySelector(`#${parentId} [data-${stateKey}="${target}"]`)?.classList.add("active");
+    state[stateKey] = target;
     render();
   });
 }
@@ -221,11 +236,11 @@ function updatePlayersFill() {
   const fill = document.getElementById("players-fill");
   if (!fill) return;
   const val = parseInt(playersSlider.value);
-  const pct = (val - 1) / 9 * 100;
+  const pct = (val - 1) / 11 * 100;
   fill.style.left = "0%";
   fill.style.right = (100 - pct) + "%";
   fill.style.opacity = val === 1 ? "0" : "1";
-  playersLabel.textContent = val === 1 ? "Any" : val === 10 ? "10+" : String(val);
+  playersLabel.textContent = val === 1 ? "Any" : val === 12 ? "12+" : String(val);
 }
 
 playersSlider.addEventListener("input", () => {
@@ -263,12 +278,19 @@ function initMechanicPills() {
   GAMES.forEach(g => g.mechanics.forEach(m => { counts[m] = (counts[m] || 0) + 1; }));
   const top = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 15)
-    .map(([m]) => m);
+    .slice(0, 30)
+    .map(([m]) => m)
+    .sort((a, b) => a.localeCompare(b));
   document.getElementById("mechanic-filters").innerHTML =
     `<button class="filter-pill active" data-mechanic="all">Any</button>` +
     top.map(m => `<button class="filter-pill" data-mechanic="${m}">${m}</button>`).join("");
 }
+
+// Auto-tag games with min player count of 1 as Solo
+GAMES.forEach(g => {
+  const [min] = parsePlayers(g.players);
+  if (min === 1 && !g.mechanics.includes("Solo")) g.mechanics.push("Solo");
+});
 
 initMechanicPills();
 wirePillGroup("mechanic-filters", "mechanic");
@@ -299,15 +321,15 @@ document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
 // Reset
 document.getElementById("reset-btn").addEventListener("click", () => {
   state.search = "";
-  state.players = 1;
+  state.players = 10;
   state.time = "all";
   state.crunchMin = 1;
   state.crunchMax = 9;
   state.mechanic = "all";
-  state.sort = "name";
+  state.sort = "name-asc";
 
   document.getElementById("search-input").value = "";
-  document.getElementById("sort-select").value = "name";
+  document.getElementById("sort-select").value = "name-asc";
   crunchMinEl.value = 1;
   crunchMaxEl.value = 9;
   crunchMinLabel.textContent = 1;

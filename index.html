@@ -48,7 +48,7 @@
             <div class="range-track" style="touch-action:none">
               <div class="range-track-bg"></div>
               <div class="range-fill" id="players-fill"></div>
-              <input type="range" id="players-slider" min="1" max="10" value="1" />
+              <input type="range" id="players-slider" min="1" max="12" value="1" />
             </div>
             <span class="mono" id="players-label">Any</span>
           </div>
@@ -88,11 +88,26 @@
         <div class="sidebar-section">
           <label class="sidebar-label">Sort by</label>
           <select id="sort-select" class="sort-select">
-            <option value="name">Name A–Z</option>
-            <option value="rating">BGG Rating ↓</option>
-            <option value="crunch-asc">Crunchiness ↑</option>
-            <option value="crunch-desc">Crunchiness ↓</option>
-            <option value="time-asc">Play Time ↑</option>
+            <optgroup label="Name">
+              <option value="name-asc">Name A–Z</option>
+              <option value="name-desc">Name Z–A</option>
+            </optgroup>
+            <optgroup label="Players">
+              <option value="players-asc">Players ↑</option>
+              <option value="players-desc">Players ↓</option>
+            </optgroup>
+            <optgroup label="Time">
+              <option value="time-asc">Time ↑</option>
+              <option value="time-desc">Time ↓</option>
+            </optgroup>
+            <optgroup label="Crunch">
+              <option value="crunch-asc">Crunch ↑</option>
+              <option value="crunch-desc">Crunch ↓</option>
+            </optgroup>
+            <optgroup label="BGG Rating">
+              <option value="rating-desc">BGG Rating ↓</option>
+              <option value="rating-asc">BGG Rating ↑</option>
+            </optgroup>
           </select>
         </div>
 
@@ -101,6 +116,15 @@
     </aside>
 
     <main class="catalog">
+      <div class="catalog-header">
+        <div class="ch-spacer"></div>
+        <div class="ch-stats">
+          <span>Players</span>
+          <span>Time</span>
+          <span>Crunchiness</span>
+          <span>BGG Rating</span>
+        </div>
+      </div>
       <div class="catalog-grid" id="catalog-grid"></div>
       <div class="empty-state" id="empty-state" style="display:none">
         <span class="empty-die">⚄</span>
