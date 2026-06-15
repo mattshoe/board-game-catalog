@@ -1434,10 +1434,41 @@ input[type=range]::-moz-range-track {
   padding: 9px 12px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   color: var(--parch);
+  vertical-align: middle;
 }
 
 .trend-crowd-table tr:last-child td { border-bottom: none; }
 .trend-crowd-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.trend-crowd-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trend-crowd-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.trend-crowd-name {
+  color: var(--parch);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.trend-crowd-name:hover { color: var(--amber); text-decoration: underline; }
+
+.trend-crowd-bgg {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--slate);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.trend-crowd-bgg:hover { color: var(--amber); }
 
 .trend-crowd-backers {
   font-family: var(--font-mono);

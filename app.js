@@ -935,9 +935,15 @@ function renderCrowdfundingTable() {
   const latestDate = new Date(latest.date);
 
   const rows = items.map(item => {
-    const nameHtml = item.bgg
-      ? `<a href="${item.bgg}" target="_blank" rel="noopener" style="color:var(--parch);text-decoration:none">${item.name}</a>`
-      : item.name;
+    const thumbHtml = item.img
+      ? `<img class="trend-thumb" src="${item.img}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="trend-thumb-placeholder" style="display:none">🎲</div>`
+      : `<div class="trend-thumb-placeholder">🎲</div>`;
+    const nameHtml = item.url
+      ? `<a href="${item.url}" target="_blank" rel="noopener" class="trend-crowd-name">${item.name}</a>`
+      : `<span class="trend-crowd-name">${item.name}</span>`;
+    const bggHtml = item.bgg
+      ? `<a href="${item.bgg}" target="_blank" rel="noopener" class="trend-crowd-bgg" title="BoardGameGeek">BGG</a>`
+      : "";
     let endsHtml = `<span class="trend-crowd-ends">Ongoing</span>`;
     if (item.ends) {
       const endDate = new Date(item.ends);
@@ -946,7 +952,10 @@ function renderCrowdfundingTable() {
       endsHtml = `<span class="${cls}">${item.ends} (${daysLeft}d)</span>`;
     }
     return `<tr>
-      <td>${nameHtml}</td>
+      <td class="trend-crowd-name-cell">
+        ${thumbHtml}
+        <span class="trend-crowd-name-wrap">${nameHtml}${bggHtml}</span>
+      </td>
       <td class="trend-crowd-backers">${item.backers.toLocaleString()}</td>
       <td class="trend-crowd-pct">${item.pct.toLocaleString()}%</td>
       <td class="trend-crowd-platform">${item.platform}</td>
