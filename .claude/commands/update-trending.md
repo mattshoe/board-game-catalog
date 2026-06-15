@@ -2,7 +2,7 @@
 
 Scrape board gaming subreddits, score games, fetch BGG metadata, and append a new daily snapshot to `trending-data.js`. Then commit and push so GitHub Pages redeploys automatically.
 
-**Run this once per day.** If today's date already exists in `TRENDING_DATA.history`, stop — the snapshot is already present.
+**Run this once per day.** If today's date already exists in `TRENDING_DATA.history`, replace that entry with the freshly scraped data rather than appending a duplicate.
 
 ---
 
@@ -155,7 +155,10 @@ Use today's actual date in `YYYY-MM-DD` format (not hardcoded).
 
 ## Step 6 — Update trending-data.js
 
-Read the file. Append today's snapshot to `TRENDING_DATA.history`. If the array already has **30 entries**, remove index `0` (the oldest) before appending — the array must never exceed 30.
+Read the file. Then:
+
+- If an entry with today's date already exists in `TRENDING_DATA.history`, replace it in-place with today's new snapshot.
+- Otherwise, append the new snapshot. If the array already has **30 entries**, remove index `0` (the oldest) before appending — the array must never exceed 30.
 
 Write the full file back. Keep the existing formatting style (the `const TRENDING_DATA = { ... };` wrapper must be preserved exactly).
 
