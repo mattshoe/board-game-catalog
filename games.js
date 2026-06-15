@@ -3597,5 +3597,26 @@ const GAMES = [
     ],
     "description": "A sprawling cooperative horror game set in 1920s Arkham where investigators explore monster-infested locations, close dimensional gates, and race to prevent an Ancient One from awakening — infamous for its lengthy playtime and encyclopedic rulebook.",
     "meal": "Main Course"
+  },
+  {
+    "id": 125,
+    "name": "Euchre",
+    "players": "2–7",
+    "playTime": "45 min",
+    "timeMin": 45,
+    "timeMax": 45,
+    "crunch": 2,
+    "rating": 6.0,
+    "bgg": "https://boardgamegeek.com/boardgame/6901/euchre",
+    "coop": false,
+    "img": "https://cf.geekdo-images.com/RsdsjiY3uk3S2GpcLXDE7w__square200/img/tT25LVSlW9uD4kjSxKYTYWBJ_HA=/200x200/filters:strip_icc()/pic1128756.jpg",
+    "tags": [
+      "Card Game",
+      "Family Games",
+      "Team-Based Game",
+      "Trick-taking"
+    ],
+    "description": "A classic American trick-taking card game for two competing teams where players bid on trump suits and must take at least the tricks they declared — fast to play and deeply embedded in Midwestern card game tradition.",
+    "meal": "Appetizer"
   }
 ];
