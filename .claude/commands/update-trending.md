@@ -45,12 +45,14 @@ Field reference:
 
 ## Step 1 — Scrape Reddit
 
-Use `mcp__reddit__fetch_reddit_hot_threads` (limit: 25) for each subreddit:
+Use `mcp__reddit__fetch_reddit_hot_threads` (limit: 50) for each subreddit:
 - `boardgames`
 - `soloboardgaming`
 - `boardgamescirclejerk`
 
-Also use `mcp__reddit__fetch_reddit_post_content` on any post whose title contains "Weekly Crowdfunding Roundup" found in r/boardgames hot threads — this is the source for the crowdfunding section.
+After fetching, **filter posts to only those created within the last 48 hours** using the post's `created_utc` timestamp. Discard any post older than 48 hours before scoring. Use a higher limit (50) to ensure enough recent posts survive the filter.
+
+Also use `mcp__reddit__fetch_reddit_post_content` on any post whose title contains "Weekly Crowdfunding Roundup" found in r/boardgames hot threads — this is the source for the crowdfunding section. Include this post regardless of age (roundup posts are often pinned and may be older than 48 hours).
 
 ---
 
