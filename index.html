@@ -37,6 +37,7 @@
       <button class="tab active" data-tab="catalog">Catalog</button>
       <button class="tab" data-tab="planner">Game Night</button>
       <button class="tab" data-tab="solo">Solo</button>
+      <button class="tab" data-tab="trending">Trending</button>
     </div>
   </nav>
 
@@ -298,7 +299,66 @@
     </div>
   </div>
 
+  <div id="tab-trending" hidden>
+    <div class="trending-page">
+      <div class="trending-header">
+        <div class="trending-title-row">
+          <h2 class="trending-title">Trending Games</h2>
+          <span class="trending-updated" id="trending-updated"></span>
+        </div>
+        <p class="trending-subtitle">Live Reddit leaderboard — scraped daily from r/boardgames, r/soloboardgaming &amp; more</p>
+        <div class="trending-view-toggle">
+          <button class="trending-view-btn active" data-view="today">Today</button>
+          <button class="trending-view-btn" data-view="history">History</button>
+          <button class="trending-view-btn" data-view="crowdfunding">Crowdfunding</button>
+        </div>
+      </div>
+
+      <div id="trending-today">
+        <div class="trending-boards">
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🏆</span>
+              <span class="trend-board-title">Overall</span>
+            </div>
+            <ol class="trend-list" id="trend-overall"></ol>
+          </div>
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🧩</span>
+              <span class="trend-board-title">Solo</span>
+            </div>
+            <ol class="trend-list" id="trend-solo"></ol>
+          </div>
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🎉</span>
+              <span class="trend-board-title">Party</span>
+            </div>
+            <ol class="trend-list" id="trend-party"></ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="trending-history" hidden>
+        <div class="trend-history-wrap">
+          <p class="trend-history-hint">Select a date to see that day's full leaderboard.</p>
+          <div class="trend-date-strip" id="trend-date-strip"></div>
+          <div class="trend-history-snapshot" id="trend-history-snapshot"></div>
+        </div>
+      </div>
+
+      <div id="trending-crowdfunding" hidden>
+        <div class="trend-crowd-wrap">
+          <p class="trend-history-hint">Active crowdfunding campaigns sorted by backer count.</p>
+          <table class="trend-crowd-table" id="trend-crowd-table"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="games.js?v=6"></script>
-  <script src="app.js?v=7"></script>
+  <script src="trending-data.js?v=1"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

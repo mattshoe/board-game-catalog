@@ -85,7 +85,7 @@ function loadFromURL() {
 
   // Switch tab last so planner/solo state is already applied when their init runs
   const tab = p.get("tab");
-  if (tab && ["catalog", "planner", "solo"].includes(tab)) switchTab(tab);
+  if (tab && ["catalog", "planner", "solo", "trending"].includes(tab)) switchTab(tab);
 
   // Override planner picks from URL (switchTab/planBuild already ran with random picks above)
   const PICK_KEYS = {"Amuse-Bouche": "pab", "Appetizer": "pa", "Main Course": "pm", "Feast": "pf", "Dessert": "pd"};
@@ -569,10 +569,15 @@ function switchTab(name) {
   document.querySelectorAll(".tab").forEach(t =>
     t.classList.toggle("active", t.dataset.tab === name)
   );
-  document.getElementById("tab-catalog").hidden = name !== "catalog";
-  document.getElementById("tab-planner").hidden = name !== "planner";
-  document.getElementById("tab-solo").hidden = name !== "solo";
+  document.getElementById("tab-catalog").hidden  = name !== "catalog";
+  document.getElementById("tab-planner").hidden  = name !== "planner";
+  document.getElementById("tab-solo").hidden     = name !== "solo";
+  document.getElementById("tab-trending").hidden = name !== "trending";
 
+  if (name === "trending" && !trendingInited) {
+    renderTrending();
+    trendingInited = true;
+  }
   if (name === "planner" && !plannerInited) {
     planBuild();
     plannerInited = true;
@@ -842,6 +847,140 @@ document.getElementById("solo-reset-btn").addEventListener("click", () => {
 
 document.getElementById("solo-sidebar-toggle")?.addEventListener("click", () => {
   document.getElementById("solo-sidebar").classList.toggle("open");
+});
+
+// ── Trending ───────────────────────────────────────────
+let trendingInited = false;
+let activeTrendView = "today";
+let activeHistoryDate = null;
+
+function trendItemHtml(item, i) {
+  const rank = i + 1;
+  const rankClass = rank === 1 ? "trend-rank-1" : rank === 2 ? "trend-rank-2" : rank === 3 ? "trend-rank-3" : "";
+  let changeHtml = "";
+  if (item.change === null) {
+    changeHtml = `<span class="trend-change trend-change-new">NEW</span>`;
+  } else if (item.change > 0) {
+    changeHtml = `<span class="trend-change trend-change-up">▲${item.change}</span>`;
+  } else if (item.change < 0) {
+    changeHtml = `<span class="trend-change trend-change-down">▼${Math.abs(item.change)}</span>`;
+  } else {
+    changeHtml = `<span class="trend-change trend-change-same">—</span>`;
+  }
+  const thumbHtml = item.img
+    ? `<img class="trend-thumb" src="${item.img}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    : "";
+  const placeholderHtml = `<div class="trend-thumb-placeholder" ${item.img ? 'style="display:none"' : ""}>🎲</div>`;
+  const tag = item.bgg ? "a" : "li";
+  const attrs = item.bgg ? `href="${item.bgg}" target="_blank" rel="noopener"` : "";
+  return `<${tag} class="trend-item" ${attrs}>
+    <span class="trend-rank ${rankClass}">${rank}</span>
+    ${thumbHtml}${placeholderHtml}
+    <span class="trend-name" title="${item.name}">${item.name}</span>
+    <span class="trend-score">${item.score}pts</span>
+    ${changeHtml}
+  </${tag}>`;
+}
+
+function renderTrendList(listEl, items) {
+  listEl.innerHTML = items.map(trendItemHtml).join("");
+}
+
+function renderHistorySnapshot(date) {
+  activeHistoryDate = date;
+  document.querySelectorAll(".trend-date-chip").forEach(c =>
+    c.classList.toggle("active", c.dataset.date === date)
+  );
+  const snap = TRENDING_DATA.history.find(h => h.date === date);
+  if (!snap) return;
+
+  const boards = [
+    { icon: "🏆", title: "Overall", key: "overall" },
+    { icon: "🧩", title: "Solo",    key: "solo"    },
+    { icon: "🎉", title: "Party",   key: "party"   },
+  ];
+
+  const boardsHtml = boards.map(b => `
+    <div class="trend-board">
+      <div class="trend-board-head">
+        <span class="trend-board-icon">${b.icon}</span>
+        <span class="trend-board-title">${b.title}</span>
+      </div>
+      <ol class="trend-list">
+        ${(snap[b.key] || []).map(trendItemHtml).join("")}
+      </ol>
+    </div>`).join("");
+
+  document.getElementById("trend-history-snapshot").innerHTML = `
+    <h3>${date}</h3>
+    <div class="trend-history-boards">${boardsHtml}</div>`;
+}
+
+function renderDateStrip() {
+  const strip = document.getElementById("trend-date-strip");
+  const dates = [...TRENDING_DATA.history].reverse().map(h => h.date);
+  strip.innerHTML = dates.map(d =>
+    `<button class="trend-date-chip" data-date="${d}">${d}</button>`
+  ).join("");
+  strip.querySelectorAll(".trend-date-chip").forEach(chip => {
+    chip.addEventListener("click", () => renderHistorySnapshot(chip.dataset.date));
+  });
+  if (dates.length > 0) renderHistorySnapshot(dates[0]);
+}
+
+function renderCrowdfundingTable() {
+  const table = document.getElementById("trend-crowd-table");
+  const latest = TRENDING_DATA.history[TRENDING_DATA.history.length - 1];
+  const items = [...(latest.crowdfunding || [])].sort((a, b) => b.backers - a.backers);
+  const latestDate = new Date(latest.date);
+
+  const rows = items.map(item => {
+    const nameHtml = item.bgg
+      ? `<a href="${item.bgg}" target="_blank" rel="noopener" style="color:var(--parch);text-decoration:none">${item.name}</a>`
+      : item.name;
+    let endsHtml = `<span class="trend-crowd-ends">Ongoing</span>`;
+    if (item.ends) {
+      const endDate = new Date(item.ends);
+      const daysLeft = Math.ceil((endDate - latestDate) / 86400000);
+      const cls = daysLeft <= 3 ? "trend-crowd-ending-soon" : "trend-crowd-ends";
+      endsHtml = `<span class="${cls}">${item.ends} (${daysLeft}d)</span>`;
+    }
+    return `<tr>
+      <td>${nameHtml}</td>
+      <td class="trend-crowd-backers">${item.backers.toLocaleString()}</td>
+      <td class="trend-crowd-pct">${item.pct.toLocaleString()}%</td>
+      <td class="trend-crowd-platform">${item.platform}</td>
+      <td>${endsHtml}</td>
+    </tr>`;
+  }).join("");
+
+  table.innerHTML = `<thead><tr>
+    <th>Campaign</th><th>Backers</th><th>Funded</th><th>Platform</th><th>Ends</th>
+  </tr></thead><tbody>${rows}</tbody>`;
+}
+
+function renderTrending() {
+  const latest = TRENDING_DATA.history[TRENDING_DATA.history.length - 1];
+  document.getElementById("trending-updated").textContent = `Updated ${latest.date}`;
+  renderTrendList(document.getElementById("trend-overall"), latest.overall || []);
+  renderTrendList(document.getElementById("trend-solo"),    latest.solo    || []);
+  renderTrendList(document.getElementById("trend-party"),   latest.party   || []);
+  renderDateStrip();
+  renderCrowdfundingTable();
+}
+
+function switchTrendView(view) {
+  activeTrendView = view;
+  document.querySelectorAll(".trending-view-btn").forEach(b =>
+    b.classList.toggle("active", b.dataset.view === view)
+  );
+  document.getElementById("trending-today").hidden        = view !== "today";
+  document.getElementById("trending-history").hidden      = view !== "history";
+  document.getElementById("trending-crowdfunding").hidden = view !== "crowdfunding";
+}
+
+document.querySelectorAll(".trending-view-btn").forEach(btn => {
+  btn.addEventListener("click", () => switchTrendView(btn.dataset.view));
 });
 
 // ── Init ───────────────────────────────────────────────
