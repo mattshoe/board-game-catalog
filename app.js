@@ -851,7 +851,7 @@ document.getElementById("solo-sidebar-toggle")?.addEventListener("click", () => 
 
 // ── Trending ───────────────────────────────────────────
 let trendingInited = false;
-let activeTrendView = "today";
+let activeTrendView = "alltime";
 let activeHistoryDate = null;
 
 function trendItemHtml(item, i) {
@@ -959,14 +959,55 @@ function renderCrowdfundingTable() {
   </tr></thead><tbody>${rows}</tbody>`;
 }
 
+function buildAlltimeRankings() {
+  const totals = { overall: {}, solo: {}, party: {} };
+  for (const snap of TRENDING_DATA.history) {
+    for (const category of ["overall", "solo", "party"]) {
+      for (const item of (snap[category] || [])) {
+        const key = item.name;
+        if (!totals[category][key]) {
+          totals[category][key] = { name: item.name, score: 0, appearances: 0, bgg: item.bgg, img: item.img, sources: new Set() };
+        }
+        const t = totals[category][key];
+        t.score += item.score;
+        t.appearances++;
+        (item.sources || []).forEach(s => t.sources.add(s));
+        if (!t.bgg && item.bgg) t.bgg = item.bgg;
+        if (!t.img && item.img) t.img = item.img;
+      }
+    }
+  }
+  const rank = (obj, limit) =>
+    Object.values(obj)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map((item, i) => ({ ...item, sources: [...item.sources], change: null,
+        mentions: item.appearances }));
+  return {
+    overall: rank(totals.overall, 15),
+    solo:    rank(totals.solo,    15),
+    party:   rank(totals.party,   10),
+  };
+}
+
+function renderAllTime() {
+  const rankings = buildAlltimeRankings();
+  const days = TRENDING_DATA.history.length;
+  renderTrendList(document.getElementById("trend-alltime-overall"), rankings.overall);
+  renderTrendList(document.getElementById("trend-alltime-solo"),    rankings.solo);
+  renderTrendList(document.getElementById("trend-alltime-party"),   rankings.party);
+}
+
 function renderTrending() {
   const latest = TRENDING_DATA.history[TRENDING_DATA.history.length - 1];
   document.getElementById("trending-updated").textContent = `Updated ${latest.date}`;
+  renderAllTime();
   renderTrendList(document.getElementById("trend-overall"), latest.overall || []);
   renderTrendList(document.getElementById("trend-solo"),    latest.solo    || []);
   renderTrendList(document.getElementById("trend-party"),   latest.party   || []);
   initDatePicker();
   renderCrowdfundingTable();
+  switchTrendView("alltime");
 }
 
 function switchTrendView(view) {
@@ -974,6 +1015,7 @@ function switchTrendView(view) {
   document.querySelectorAll(".trending-view-btn").forEach(b =>
     b.classList.toggle("active", b.dataset.view === view)
   );
+  document.getElementById("trending-alltime").hidden      = view !== "alltime";
   document.getElementById("trending-today").hidden        = view !== "today";
   document.getElementById("trending-history").hidden      = view !== "history";
   document.getElementById("trending-crowdfunding").hidden = view !== "crowdfunding";

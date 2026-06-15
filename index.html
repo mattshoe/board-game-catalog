@@ -308,13 +308,40 @@
         </div>
         <p class="trending-subtitle">Live Reddit leaderboard — scraped daily from r/boardgames, r/soloboardgaming &amp; more</p>
         <div class="trending-view-toggle">
-          <button class="trending-view-btn active" data-view="today">Today</button>
+          <button class="trending-view-btn active" data-view="alltime">All Time</button>
+          <button class="trending-view-btn" data-view="today">Today</button>
           <button class="trending-view-btn" data-view="history">History</button>
           <button class="trending-view-btn" data-view="crowdfunding">Crowdfunding</button>
         </div>
       </div>
 
-      <div id="trending-today">
+      <div id="trending-alltime" hidden>
+        <div class="trending-boards">
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🏆</span>
+              <span class="trend-board-title">Overall</span>
+            </div>
+            <ol class="trend-list" id="trend-alltime-overall"></ol>
+          </div>
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🧩</span>
+              <span class="trend-board-title">Solo</span>
+            </div>
+            <ol class="trend-list" id="trend-alltime-solo"></ol>
+          </div>
+          <div class="trend-board">
+            <div class="trend-board-head">
+              <span class="trend-board-icon">🎉</span>
+              <span class="trend-board-title">Party</span>
+            </div>
+            <ol class="trend-list" id="trend-alltime-party"></ol>
+          </div>
+        </div>
+      </div>
+
+      <div id="trending-today" hidden>
         <div class="trending-boards">
           <div class="trend-board">
             <div class="trend-board-head">
