@@ -957,7 +957,7 @@ function renderCrowdfundingTable() {
         <span class="trend-crowd-name-wrap">${nameHtml}${bggHtml}</span>
       </td>
       <td class="trend-crowd-backers">${item.backers.toLocaleString()}</td>
-      <td class="trend-crowd-pct">${item.pct.toLocaleString()}%</td>
+      <td class="trend-crowd-pct">${item.pct != null ? item.pct.toLocaleString() + "%" : "—"}</td>
       <td class="trend-crowd-platform">${item.platform}</td>
       <td>${endsHtml}</td>
     </tr>`;
