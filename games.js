@@ -3640,7 +3640,7 @@ const GAMES = [
       "Strategy Games"
     ],
     "description": "The canonical gambling card game where players build the best five-card hand or bluff opponents into folding — endlessly studied for its balance of probability, psychology, and controlled aggression.",
-    "meal": "Appetizer"
+    "meal": "Main Course"
   },
   {
     "id": 127,
