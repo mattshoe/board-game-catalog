@@ -38,15 +38,16 @@ Load the current `trending-data.js`. Find the most recent history entry. For eac
 
 For each unique game name across all categories today, check if it already has a `bgg` URL in any prior history entry. If so, reuse it.
 
-For any game **without** a known `bgg` URL: use WebFetch to query:
-`https://boardgamegeek.com/xmlapi2/search?query={GAME_NAME}&type=boardgame&exact=1`
+For any game **without** a known `bgg` URL: use WebSearch to find the BGG page URL (search: `{GAME_NAME} boardgamegeek.com`), extract the numeric ID from the URL, and set `bgg` to the full BGG URL.
 
-If that returns 401, try the BGG website directly for the og:image:
-`https://boardgamegeek.com/boardgame/{id}/{slug}`
+If no BGG page can be found, leave `bgg: null` and `img: null`.
 
-If BGG is unreachable, leave `bgg: null` and `img: null` for unknown games.
+For **all games with a known `bgg` URL** (whether from prior history, catalog cross-reference, or newly found via WebSearch): extract the numeric ID from the URL and fetch:
+`https://api.geekdo.com/api/geekitems?objecttype=boardgame&objectid={ID}`
 
-For **games already in the catalog** (`games.js`), cross-reference by name to get their `bgg` and `img` fields — these are already stored there and don't require an API call.
+Parse the `images.square200` field from the JSON response for the thumbnail URL.
+
+For **games already in the catalog** (`games.js`), cross-reference by name to get their `bgg` field — this avoids needing to search BGG.
 
 Store results as:
 - `bgg`: full BGG URL, e.g. `"https://boardgamegeek.com/boardgame/237182/root"`
