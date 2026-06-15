@@ -3618,5 +3618,51 @@ const GAMES = [
     ],
     "description": "A classic American trick-taking card game for two competing teams where players bid on trump suits and must take at least the tricks they declared — fast to play and deeply embedded in Midwestern card game tradition.",
     "meal": "Appetizer"
+  },
+  {
+    "id": 126,
+    "name": "Poker",
+    "players": "2–10",
+    "playTime": "60 min",
+    "timeMin": 60,
+    "timeMax": 60,
+    "crunch": 4,
+    "rating": 6.5,
+    "bgg": "https://boardgamegeek.com/boardgame/1115/poker",
+    "coop": false,
+    "img": "https://cf.geekdo-images.com/QhsvR9GY0LbTpj27fairWA__square200/img/uaeGE_YCg_yXxCIUnXFrPGTZVFU=/200x200/filters:strip_icc()/pic186610.jpg",
+    "tags": [
+      "Betting and Bluffing",
+      "Bluffing",
+      "Card Game",
+      "Player Elimination",
+      "Set Collection",
+      "Strategy Games"
+    ],
+    "description": "The canonical gambling card game where players build the best five-card hand or bluff opponents into folding — endlessly studied for its balance of probability, psychology, and controlled aggression.",
+    "meal": "Appetizer"
+  },
+  {
+    "id": 127,
+    "name": "Blackjack",
+    "players": "2–10",
+    "playTime": "30 min",
+    "timeMin": 30,
+    "timeMax": 30,
+    "crunch": 2,
+    "rating": 5.5,
+    "bgg": "https://boardgamegeek.com/boardgame/10816/blackjack",
+    "coop": false,
+    "img": "https://cf.geekdo-images.com/hDixWez4o3x9D0f4pVl5bA__square200/img/KpJRwjRphOU-XtgMNysy3YYVrjY=/200x200/filters:strip_icc()/pic163405.jpg",
+    "tags": [
+      "Abstract Games",
+      "Betting and Bluffing",
+      "Card Game",
+      "Number",
+      "Party Games",
+      "Push Your Luck"
+    ],
+    "description": "The ubiquitous casino card game where players race to reach 21 without busting — deceptively simple on the surface with well-documented optimal strategy lurking underneath.",
+    "meal": "Appetizer"
   }
 ];
