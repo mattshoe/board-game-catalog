@@ -1,6 +1,47 @@
 # Update Trending Games
 
-Scrape board gaming subreddits, compile ranked game lists by category, fetch BGG metadata, and update `trending-data.js` with today's snapshot. Then commit and push.
+Scrape board gaming subreddits, score games, fetch BGG metadata, and append a new daily snapshot to `trending-data.js`. Then commit and push so GitHub Pages redeploys automatically.
+
+**Run this once per day.** If today's date already exists in `TRENDING_DATA.history`, stop — the snapshot is already present.
+
+---
+
+## Context: data file
+
+All data lives in one file:
+```
+/Users/matthewshoemaker/repos/board-game-catalog/trending-data.js
+```
+
+It exports a single global `TRENDING_DATA` object:
+```js
+const TRENDING_DATA = {
+  meta: { subreddits: [...] },
+  history: [
+    {
+      date: "YYYY-MM-DD",
+      overall:      [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 15
+      solo:         [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 15
+      party:        [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 10
+      crowdfunding: [ { name, backers, pct, platform, ends, url, bgg, img }, ... ]
+    },
+    ...  // up to 30 entries, oldest first
+  ]
+};
+```
+
+Field reference:
+- `score` — weighted upvote sum across all posts mentioning the game
+- `mentions` — number of posts that referenced the game
+- `sources` — array of subreddit strings, e.g. `["r/boardgames", "r/soloboardgaming"]`
+- `change` — rank delta vs. prior snapshot: positive = moved up, negative = moved down, `0` = same rank, `null` = new entry not in prior snapshot
+- `bgg` — full BGG URL, e.g. `"https://boardgamegeek.com/boardgame/237182/root"` (null if unknown)
+- `img` — BGG CDN square thumbnail URL, e.g. `"https://cf.geekdo-images.com/...square200.../pic....jpg"` (null if unknown)
+- `url` — direct crowdfunding campaign URL on Kickstarter or Gamefound (crowdfunding only)
+- `pct` — funding percentage as an integer, e.g. `10044` means 10,044% funded
+- `ends` — campaign end date as `"YYYY-MM-DD"` string, or `null` if ongoing/unknown
+
+---
 
 ## Step 1 — Scrape Reddit
 
@@ -9,69 +50,116 @@ Use `mcp__reddit__fetch_reddit_hot_threads` (limit: 25) for each subreddit:
 - `soloboardgaming`
 - `boardgamescirclejerk`
 
-Also fetch comments from any "Weekly Crowdfunding Roundup" post found in r/boardgames hot threads.
+Also use `mcp__reddit__fetch_reddit_post_content` on any post whose title contains "Weekly Crowdfunding Roundup" found in r/boardgames hot threads — this is the source for the crowdfunding section.
+
+---
 
 ## Step 2 — Score games
 
-For each post, extract every board game name mentioned in the title and body. Score:
+For each post (title + body text), extract every board game name mentioned.
 
-- **score** = sum of (post upvotes × weight) across all posts mentioning the game
-  - r/boardgames weight: 1.0
-  - r/soloboardgaming weight: 1.0
-  - r/boardgamescirclejerk weight: 0.5
-- **mentions** = count of posts referencing the game
-- **sources** = list of subreddits where it appeared
+**Scoring:**
+- `score` = sum of (post.upvotes × subreddit_weight) across every post that mentions the game
+  - r/boardgames: weight **1.0**
+  - r/soloboardgaming: weight **1.0**
+  - r/boardgamescirclejerk: weight **0.5**
+- `mentions` = count of distinct posts referencing the game
+- `sources` = deduplicated list of subreddits where it appeared
 
-Category rules:
-- **solo**: games mentioned in r/soloboardgaming, or in a solo context elsewhere
-- **party**: games described as party, social deduction, or large-group (6+ players)
-- **overall**: all games by total score
+**Category assignment:**
+- **overall** — all games, ranked by total score. Top 15.
+- **solo** — games mentioned in r/soloboardgaming, OR mentioned in a solo/solitaire context in any subreddit. Top 15.
+- **party** — games described as party games, social deduction, or designed for 6+ players. Top 10.
 
-Return top 15 for overall and solo, top 10 for party. For crowdfunding, extract the top campaigns from the roundup post (backers, platform, end date).
+A game can appear in multiple categories.
+
+**Crowdfunding** — from the Weekly Roundup post comments/body, extract each campaign:
+- `name` — game name
+- `backers` — backer count (integer)
+- `pct` — funded percentage (integer, e.g. 1028 for 1028%)
+- `platform` — `"Kickstarter"` or `"Gamefound"`
+- `ends` — end date as `"YYYY-MM-DD"` or `null`
+- `url` — direct campaign URL on kickstarter.com or gamefound.com
+- `bgg` — BGG URL (populate in Step 4)
+- `img` — BGG thumbnail (populate in Step 4)
+
+---
 
 ## Step 3 — Compute rank changes
 
-Load the current `trending-data.js`. Find the most recent history entry. For each game in today's rankings, compare its rank to the prior snapshot:
-- `change`: +N (moved up N spots), -N (moved down), 0 (same), null (not in prior snapshot = new)
+Read `trending-data.js` and find `TRENDING_DATA.history[history.length - 1]` (the most recent snapshot).
+
+For each game in today's overall/solo/party rankings, find its rank in the matching category of the prior snapshot:
+- If the game was rank 3 before and is rank 1 today → `change: +2` (moved up 2)
+- If the game was rank 2 before and is rank 5 today → `change: -3` (moved down 3)
+- If the rank is unchanged → `change: 0`
+- If the game was not in the prior snapshot at all → `change: null`
+
+Crowdfunding entries always use `change: null` (not ranked).
+
+---
 
 ## Step 4 — Fetch BGG metadata
 
-For each unique game name across all categories today, check if it already has a `bgg` URL in any prior history entry. If so, reuse it.
+For every unique game across all categories (overall + solo + party + crowdfunding):
 
-For any game **without** a known `bgg` URL: use WebSearch to find the BGG page URL (search: `{GAME_NAME} boardgamegeek.com`), extract the numeric ID from the URL, and set `bgg` to the full BGG URL.
+**1. Check prior history first** — scan all entries in `TRENDING_DATA.history` for any entry with the same name that already has a `bgg` URL. If found, reuse it (skip API calls).
 
-If no BGG page can be found, leave `bgg: null` and `img: null`.
+**2. Check games.js** — Read `/Users/matthewshoemaker/repos/board-game-catalog/games.js`. If the game name matches an entry there, use its `bgg` field.
 
-For **all games with a known `bgg` URL** (whether from prior history, catalog cross-reference, or newly found via WebSearch): extract the numeric ID from the URL and fetch:
-`https://api.geekdo.com/api/geekitems?objecttype=boardgame&objectid={ID}`
+**3. Search BGG for unknown games** — If still no `bgg` URL, use WebSearch:
+```
+{GAME_NAME} site:boardgamegeek.com boardgame
+```
+Find the BGG page URL (pattern: `https://boardgamegeek.com/boardgame/{ID}/{slug}`). Set `bgg` to that full URL. If nothing found, leave `bgg: null` and `img: null`.
 
-Parse the `images.square200` field from the JSON response for the thumbnail URL.
+**4. Fetch the thumbnail** — For every game that now has a `bgg` URL, extract the numeric ID from the URL and call:
+```
+https://api.geekdo.com/api/geekitems?objecttype=boardgame&objectid={ID}
+```
+This returns JSON. The square thumbnail is in the `images` object — look for the `square200` key. The URL looks like:
+```
+https://cf.geekdo-images.com/{hash}__square200/img/{hash}=/200x200/filters:strip_icc()/{filename}.jpg
+```
+Set that as `img`. If the API call fails or returns no image, leave `img: null`.
 
-For **games already in the catalog** (`games.js`), cross-reference by name to get their `bgg` field — this avoids needing to search BGG.
+---
 
-Store results as:
-- `bgg`: full BGG URL, e.g. `"https://boardgamegeek.com/boardgame/237182/root"`
-- `img`: square thumbnail URL from BGG CDN, e.g. `"https://cf.geekdo-images.com/...square200.../pic....jpg"`
+## Step 5 — Build today's snapshot
 
-## Step 5 — Build today's snapshot object
+Use today's actual date in `YYYY-MM-DD` format (not hardcoded).
 
 ```js
 {
-  date: "YYYY-MM-DD",   // today's actual date
-  overall:      [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 15
-  solo:         [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 15
-  party:        [ { name, score, mentions, sources, change, bgg, img }, ... ],  // top 10
-  crowdfunding: [ { name, backers, pct, platform, ends, bgg }, ... ]
+  date: "YYYY-MM-DD",
+  overall: [
+    { name, score, mentions, sources, change, bgg, img },
+    // ... top 15, sorted by score descending
+  ],
+  solo: [
+    { name, score, mentions, sources, change, bgg, img },
+    // ... top 15, sorted by score descending
+  ],
+  party: [
+    { name, score, mentions, sources, change, bgg, img },
+    // ... top 10, sorted by score descending
+  ],
+  crowdfunding: [
+    { name, backers, pct, platform, ends, url, bgg, img },
+    // ... all campaigns found, sorted by backers descending
+  ]
 }
 ```
 
+---
+
 ## Step 6 — Update trending-data.js
 
-Read `/Users/matthewshoemaker/repos/board-game-catalog/trending-data.js`.
+Read the file. Append today's snapshot to `TRENDING_DATA.history`. If the array already has **30 entries**, remove index `0` (the oldest) before appending — the array must never exceed 30.
 
-Append today's snapshot to `TRENDING_DATA.history`. If the array already has 30 entries, remove index 0 (oldest) before appending.
+Write the full file back. Keep the existing formatting style (the `const TRENDING_DATA = { ... };` wrapper must be preserved exactly).
 
-Write the file back.
+---
 
 ## Step 7 — Commit and push
 
@@ -82,4 +170,4 @@ git commit -m "chore: update trending games $(date +%Y-%m-%d)"
 git push
 ```
 
-GitHub Pages redeploys automatically after the push.
+GitHub Pages redeploys automatically after the push. No other files need to be changed — the site reads `trending-data.js` directly.
