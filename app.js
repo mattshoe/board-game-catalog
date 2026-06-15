@@ -888,11 +888,13 @@ function renderTrendList(listEl, items) {
 
 function renderHistorySnapshot(date) {
   activeHistoryDate = date;
-  document.querySelectorAll(".trend-date-chip").forEach(c =>
-    c.classList.toggle("active", c.dataset.date === date)
-  );
   const snap = TRENDING_DATA.history.find(h => h.date === date);
-  if (!snap) return;
+  const el = document.getElementById("trend-history-snapshot");
+
+  if (!snap) {
+    el.innerHTML = `<p class="trend-no-data">No data available for ${date}.</p>`;
+    return;
+  }
 
   const boards = [
     { icon: "🏆", title: "Overall", key: "overall" },
@@ -911,21 +913,19 @@ function renderHistorySnapshot(date) {
       </ol>
     </div>`).join("");
 
-  document.getElementById("trend-history-snapshot").innerHTML = `
-    <h3>${date}</h3>
-    <div class="trend-history-boards">${boardsHtml}</div>`;
+  el.innerHTML = `<div class="trend-history-boards">${boardsHtml}</div>`;
 }
 
-function renderDateStrip() {
-  const strip = document.getElementById("trend-date-strip");
-  const dates = [...TRENDING_DATA.history].reverse().map(h => h.date);
-  strip.innerHTML = dates.map(d =>
-    `<button class="trend-date-chip" data-date="${d}">${d}</button>`
-  ).join("");
-  strip.querySelectorAll(".trend-date-chip").forEach(chip => {
-    chip.addEventListener("click", () => renderHistorySnapshot(chip.dataset.date));
-  });
-  if (dates.length > 0) renderHistorySnapshot(dates[0]);
+function initDatePicker() {
+  const input = document.getElementById("trend-date-input");
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(today.getDate() - 1);
+  const yStr = yesterday.toISOString().slice(0, 10);
+  input.max = yStr;
+  input.value = yStr;
+  renderHistorySnapshot(yStr);
+  input.addEventListener("change", () => renderHistorySnapshot(input.value));
 }
 
 function renderCrowdfundingTable() {
@@ -965,7 +965,7 @@ function renderTrending() {
   renderTrendList(document.getElementById("trend-overall"), latest.overall || []);
   renderTrendList(document.getElementById("trend-solo"),    latest.solo    || []);
   renderTrendList(document.getElementById("trend-party"),   latest.party   || []);
-  renderDateStrip();
+  initDatePicker();
   renderCrowdfundingTable();
 }
 

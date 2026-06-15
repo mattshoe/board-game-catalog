@@ -1348,33 +1348,43 @@ input[type=range]::-moz-range-track {
   padding: 20px;
 }
 
-.trend-history-hint {
-  font-size: 0.82rem;
-  color: var(--slate-2);
-  margin-bottom: 14px;
-}
-
-.trend-date-strip {
+.trend-date-picker-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
-.trend-date-chip {
-  background: var(--navy-3);
-  border: 1px solid var(--card-border);
+.trend-date-label {
+  font-size: 0.82rem;
   color: var(--slate-2);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 5px 12px;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.trend-date-chip:hover { color: var(--parch); border-color: var(--slate); }
-.trend-date-chip.active { background: var(--amber); border-color: var(--amber); color: var(--navy); font-weight: 700; }
+.trend-date-input {
+  background: var(--navy-3);
+  border: 1px solid var(--card-border);
+  color: var(--parch);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  color-scheme: dark;
+}
+
+.trend-date-input:hover { border-color: var(--slate); }
+.trend-date-input:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 2px color-mix(in srgb, var(--amber) 25%, transparent); }
+
+.trend-no-data {
+  color: var(--slate-2);
+  font-size: 0.9rem;
+  padding: 32px 0;
+  text-align: center;
+}
 
 .trend-history-snapshot h3 {
   font-family: var(--font-display);
