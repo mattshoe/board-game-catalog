@@ -188,18 +188,27 @@ Use the `mcp__discord-mcp__send_message` tool to post to three channels in the "
 - `#solo-gaming` → `1516429914054852789`
 - `#kickstarters` → `1516429197193773166`
 
+All three messages must end with a link to the website:
+```
+🌐 Full leaderboards: https://boardgames.mattshoe.org
+```
+
+Game names are formatted as markdown links to their BGG page: `[Root](https://boardgamegeek.com/boardgame/237182/root)`. Do not include scores.
+
 ### #trending-games — overall leaderboard
 
-Post today's `overall` rankings as a plain numbered list. Include the game name and score. No intro fluff.
+Post today's `overall` rankings as a numbered list. No scores.
 
 Example format:
 ```
 📊 Trending Board Games — 2026-06-16
 
-1. Mansions of Madness — 572
-2. Root — 235
-3. Death May Die — 174
+1. [Mansions of Madness](https://boardgamegeek.com/boardgame/205059/...)
+2. [Root](https://boardgamegeek.com/boardgame/237182/root)
+3. [Death May Die](https://boardgamegeek.com/boardgame/253344/...)
 ...
+
+🌐 Full leaderboards: https://boardgames.mattshoe.org
 ```
 
 ### #solo-gaming — solo leaderboard
@@ -209,9 +218,11 @@ Same format, using today's `solo` rankings.
 ```
 🧍 Solo Gaming Trending — 2026-06-16
 
-1. Vantage — 168
-2. Ruins: Death Binder — 126
+1. [Vantage](https://boardgamegeek.com/boardgame/420033/vantage)
+2. [Ruins: Death Binder](https://boardgamegeek.com/boardgame/280984/...)
 ...
+
+🌐 Full leaderboards: https://boardgames.mattshoe.org
 ```
 
 ### #kickstarters — crowdfunding campaigns
@@ -224,8 +235,10 @@ List today's `crowdfunding` entries. Include the platform, backer count, funding
 1. [SHUG](https://www.kickstarter.com/...) — Kickstarter — 12,253 backers — 10,044% funded — ends Jun 17
 2. [Arydia: 2nd Printing](https://gamefound.com/...) — Gamefound — 11,905 backers — 1,028% funded
 ...
+
+🌐 Full leaderboards: https://boardgames.mattshoe.org
 ```
 
-Omit the "ends" line if `ends` is null. Format backer counts with commas. Format `pct` as a percentage integer (e.g. `10044` → `10,044%`).
+Omit the "ends" field if `ends` is null. Format backer counts with commas. Format `pct` as a percentage integer (e.g. `10044` → `10,044%`).
 
-Discord has a 2000 character limit per message. If the crowdfunding list is too long, split it into two consecutive messages (continue numbering from where you left off).
+Discord has a 2000 character limit per message. If a list is too long, split it into consecutive messages and put the website link only at the end of the final message. Continue numbering from where you left off.
