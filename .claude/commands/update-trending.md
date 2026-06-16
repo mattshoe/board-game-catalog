@@ -201,8 +201,8 @@ Post today's `overall` rankings as a numbered list. No scores.
 
 Example format:
 ```
-📊 Trending Board Games — 2026-06-16
-🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
+## 📊 Trending Board Games — 2026-06-16
+### 🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 
 1. [Mansions of Madness](https://boardgamegeek.com/boardgame/205059/...)
 2. [Root](https://boardgamegeek.com/boardgame/237182/root)
@@ -215,8 +215,8 @@ Example format:
 Same format, using today's `solo` rankings.
 
 ```
-🧍 Solo Gaming Trending — 2026-06-16
-🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
+## 🧍 Solo Gaming Trending — 2026-06-16
+### 🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 
 1. [Vantage](https://boardgamegeek.com/boardgame/420033/vantage)
 2. [Ruins: Death Binder](https://boardgamegeek.com/boardgame/280984/...)
@@ -228,8 +228,8 @@ Same format, using today's `solo` rankings.
 List today's `crowdfunding` entries. Include the platform, backer count, funding percentage, and end date if known. Link the campaign name to its URL using Discord markdown `[name](url)`.
 
 ```
-🎲 Active Crowdfunding — 2026-06-16
-🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
+## 🎲 Active Crowdfunding — 2026-06-16
+### 🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 
 1. [SHUG](https://www.kickstarter.com/...) — Kickstarter — 12,253 backers — 10,044% funded — ends Jun 17
 2. [Arydia: 2nd Printing](https://gamefound.com/...) — Gamefound — 11,905 backers — 1,028% funded
