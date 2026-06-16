@@ -225,7 +225,7 @@ Same format, using today's `solo` rankings.
 
 ### #kickstarters — crowdfunding campaigns
 
-List today's `crowdfunding` entries. Include the platform, backer count, funding percentage, and end date if known. Link the campaign name to its URL using Discord markdown `[name](url)`.
+List the top 5 `crowdfunding` entries (by backer count). Include the platform, backer count, funding percentage, and end date if known. Link the campaign name to its URL using Discord markdown `[name](url)`.
 
 ```
 ## 🎲 Active Crowdfunding — 2026-06-16
