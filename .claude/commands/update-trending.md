@@ -190,7 +190,7 @@ Use the `mcp__discord-mcp__send_message` tool to post to three channels in the "
 
 All three messages must end with a link to the website:
 ```
-🌐 Full leaderboards: https://boardgames.mattshoe.org
+🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 ```
 
 Game names are formatted as markdown links to their BGG page: `[Root](https://boardgamegeek.com/boardgame/237182/root)`. Do not include scores.
@@ -208,7 +208,7 @@ Example format:
 3. [Death May Die](https://boardgamegeek.com/boardgame/253344/...)
 ...
 
-🌐 Full leaderboards: https://boardgames.mattshoe.org
+🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 ```
 
 ### #solo-gaming — solo leaderboard
@@ -222,7 +222,7 @@ Same format, using today's `solo` rankings.
 2. [Ruins: Death Binder](https://boardgamegeek.com/boardgame/280984/...)
 ...
 
-🌐 Full leaderboards: https://boardgames.mattshoe.org
+🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 ```
 
 ### #kickstarters — crowdfunding campaigns
@@ -236,7 +236,7 @@ List today's `crowdfunding` entries. Include the platform, backer count, funding
 2. [Arydia: 2nd Printing](https://gamefound.com/...) — Gamefound — 11,905 backers — 1,028% funded
 ...
 
-🌐 Full leaderboards: https://boardgames.mattshoe.org
+🌐 Full leaderboards: https://boardgames.mattshoe.org/#tab=trending
 ```
 
 Omit the "ends" field if `ends` is null. Format backer counts with commas. Format `pct` as a percentage integer (e.g. `10044` → `10,044%`).
