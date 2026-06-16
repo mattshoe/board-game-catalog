@@ -176,3 +176,54 @@ git push
 ```
 
 GitHub Pages redeploys automatically after the push. No other files need to be changed — the site reads `trending-data.js` directly.
+
+---
+
+## Step 8 — Post to Discord
+
+Use the `mcp__discord-mcp__send_message` tool to post to three channels in the "Game Night" server.
+
+**Channel IDs:**
+- `#trending-games` → `1516429115992047744`
+- `#solo-gaming` → `1516429914054852789`
+- `#kickstarters` → `1516429197193773166`
+
+### #trending-games — overall leaderboard
+
+Post today's `overall` rankings as a plain numbered list. Include the game name and score. No intro fluff.
+
+Example format:
+```
+📊 Trending Board Games — 2026-06-16
+
+1. Mansions of Madness — 572
+2. Root — 235
+3. Death May Die — 174
+...
+```
+
+### #solo-gaming — solo leaderboard
+
+Same format, using today's `solo` rankings.
+
+```
+🧍 Solo Gaming Trending — 2026-06-16
+
+1. Vantage — 168
+2. Ruins: Death Binder — 126
+...
+```
+
+### #kickstarters — crowdfunding campaigns
+
+List today's `crowdfunding` entries. Include the platform, backer count, funding percentage, and end date if known. Link the campaign name to its URL using Discord markdown `[name](url)`.
+
+```
+🎲 Active Crowdfunding — 2026-06-16
+
+1. [SHUG](https://www.kickstarter.com/...) — Kickstarter — 12,253 backers — 10,044% funded — ends Jun 17
+2. [Arydia: 2nd Printing](https://gamefound.com/...) — Gamefound — 11,905 backers — 1,028% funded
+...
+```
+
+Omit the "ends" line if `ends` is null. Format backer counts with commas. Format `pct` as a percentage integer (e.g. `10044` → `10,044%`).
