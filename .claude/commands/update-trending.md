@@ -227,3 +227,5 @@ List today's `crowdfunding` entries. Include the platform, backer count, funding
 ```
 
 Omit the "ends" line if `ends` is null. Format backer counts with commas. Format `pct` as a percentage integer (e.g. `10044` → `10,044%`).
+
+Discord has a 2000 character limit per message. If the crowdfunding list is too long, split it into two consecutive messages (continue numbering from where you left off).
