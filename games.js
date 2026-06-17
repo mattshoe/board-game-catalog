@@ -3664,5 +3664,38 @@ const GAMES = [
     ],
     "description": "The ubiquitous casino card game where players race to reach 21 without busting — deceptively simple on the surface with well-documented optimal strategy lurking underneath.",
     "meal": "Appetizer"
+  },
+  {
+    "id": 128,
+    "name": "Cosmic Encounter",
+    "players": "3–5",
+    "playTime": "60–120 min",
+    "timeMin": 60,
+    "timeMax": 120,
+    "crunch": 4,
+    "rating": 7.2,
+    "bgg": "https://boardgamegeek.com/boardgame/39463/cosmic-encounter",
+    "coop": false,
+    "img": "https://cf.geekdo-images.com/S8cE-Ld7XP5sVz-upKJ-Bg__square200/img/a7yDf_m7bjcUsZiqKfqT21tIrc4=/200x200/filters:strip_icc()/pic1521633.jpg",
+    "tags": [
+      "Alliances",
+      "Bluffing",
+      "Card Play Conflict Resolution",
+      "Hand Management",
+      "Interrupts",
+      "Negotiation",
+      "Prisoner's Dilemma",
+      "Race",
+      "Science Fiction",
+      "Simultaneous Action Selection",
+      "Space Exploration",
+      "Strategy Games",
+      "Take That",
+      "Thematic Games",
+      "Trading",
+      "Variable Player Powers"
+    ],
+    "description": "A landmark alien negotiation game where each player is a unique alien species with a special power that bends or breaks the rules, as you race to establish five foreign colonies through combat, alliances, and cosmic chaos.",
+    "meal": "Main Course"
   }
 ];
