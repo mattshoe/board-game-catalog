@@ -3606,7 +3606,7 @@ const GAMES = [
     "timeMin": 45,
     "timeMax": 45,
     "crunch": 2,
-    "rating": 6.0,
+    "rating": 6,
     "bgg": "https://boardgamegeek.com/boardgame/6901/euchre",
     "coop": false,
     "img": "https://cf.geekdo-images.com/RsdsjiY3uk3S2GpcLXDE7w__square200/img/tT25LVSlW9uD4kjSxKYTYWBJ_HA=/200x200/filters:strip_icc()/pic1128756.jpg",
@@ -3697,5 +3697,31 @@ const GAMES = [
     ],
     "description": "A landmark alien negotiation game where each player is a unique alien species with a special power that bends or breaks the rules, as you race to establish five foreign colonies through combat, alliances, and cosmic chaos.",
     "meal": "Main Course"
+  },
+  {
+    "id": 129,
+    "name": "Dominion",
+    "players": "2–4",
+    "playTime": "30 min",
+    "timeMin": 30,
+    "timeMax": 30,
+    "crunch": 3,
+    "rating": 7.6,
+    "bgg": "https://boardgamegeek.com/boardgame/36218/dominion",
+    "coop": false,
+    "img": "https://cf.geekdo-images.com/j6iQpZ4XkemZP07HNCODBA__square200/img/bdy0EAVNphNdyTwHjVOiddTaUFQ=/200x200/filters:strip_icc()/pic394356.jpg",
+    "tags": [
+      "Card Game",
+      "Deck, Bag, and Pool Building",
+      "Delayed Purchase",
+      "Hand Management",
+      "Medieval",
+      "Open Drafting",
+      "Strategy Games",
+      "Take That",
+      "Variable Set-up"
+    ],
+    "description": "The original deck-builder that launched a genre — players draft kingdom cards each turn to build an ever-evolving personal deck, racing to stockpile the most victory points before the supply runs out.",
+    "meal": "Appetizer"
   }
 ];
