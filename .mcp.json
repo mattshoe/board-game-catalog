@@ -2,7 +2,13 @@
   "mcpServers": {
     "reddit": {
       "command": "/Users/matthewshoemaker/.local/bin/uvx",
-      "args": ["--from", "git+https://github.com/adhikasp/mcp-reddit.git", "mcp-reddit"]
+      "args": [
+        "--with",
+        "httpx",
+        "--from",
+        "git+https://github.com/adhikasp/mcp-reddit.git",
+        "mcp-reddit"
+      ]
     }
   }
 }
