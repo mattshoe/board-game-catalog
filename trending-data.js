@@ -8,374 +8,6 @@ const TRENDING_DATA = {
   },
   "history": [
     {
-      "date": "2026-08-18",
-      "overall": [
-        {
-          "name": "Azul",
-          "score": 484.5,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/boardgamescirclejerk"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/230802/azul",
-          "img": "https://cf.geekdo-images.com/aPSHJO0d0XOpQR5X-wJonw__square200/img/3SujmcsLunL1xALI1xJzgbfDndE=/200x200/filters:strip_icc()/pic6973671.png"
-        },
-        {
-          "name": "Munchkin",
-          "score": 452,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/1927/munchkin",
-          "img": "https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__square200/img/uD1CHovTtvMZ3qWMD3cFc3Y7bxQ=/200x200/filters:strip_icc()/pic1871016.jpg"
-        },
-        {
-          "name": "The White Castle",
-          "score": 74,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/371942/the-white-castle",
-          "img": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__square200/img/dhL41LnGHG3_goo6-PGqOIYH-no=/200x200/filters:strip_icc()/pic7754663.jpg"
-        },
-        {
-          "name": "Wavelength",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/262543/wavelength",
-          "img": "https://cf.geekdo-images.com/z4fbPdmJg_5yphJEvql4ZA__square200/img/ojwhvyvB8dMmyzHgEYj5_TxZQ0w=/200x200/filters:strip_icc()/pic4552862.png"
-        },
-        {
-          "name": "Avalon",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/128882/the-resistance-avalon",
-          "img": "https://cf.geekdo-images.com/LPa6rsGcv8S0-OeNjCOAEQ__square200/img/E6EKPkVz2KrmRZVgwCHFYeZXzJU=/200x200/filters:strip_icc()/pic1398895.jpg"
-        },
-        {
-          "name": "Jaipur",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/54043/jaipur",
-          "img": "https://cf.geekdo-images.com/_LTujSe_o16nvjDC-J0seA__square200/img/5zNKM4zOwFGtw3i8flDJBPaW13k=/200x200/filters:strip_icc()/pic5100947.jpg"
-        },
-        {
-          "name": "GIPF",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/527/gipf",
-          "img": "https://cf.geekdo-images.com/3L6ZtOll9W5O6-3-EwSMyw__square200/img/bWrkWbzfhvWAr0czLnC09w2170=/200x200/filters:strip_icc()/pic1899157.jpg"
-        },
-        {
-          "name": "Slay the Spire: The Board Game",
-          "score": 68,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
-          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
-        },
-        {
-          "name": "Railroad Ink",
-          "score": 66,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/245654/railroad-ink-deep-blue-edition",
-          "img": "https://cf.geekdo-images.com/x3hjEgkxZE9M96o6wgj6Tw__square200/img/TKQD4DwhfMEtTs-XCLESScdyZuM=/200x200/filters:strip_icc()/pic4097632.png"
-        },
-        {
-          "name": "Catan",
-          "score": 59,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/13/catan",
-          "img": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__square200/img/0YXkSunQYJYfi_YHi0k0mvFBrxM=/200x200/filters:strip_icc()/pic9156909.png"
-        },
-        {
-          "name": "Eternal Decks",
-          "score": 57,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/424981/eternal-decks",
-          "img": "https://cf.geekdo-images.com/Bo6QYIQWzRRcn7KyO3AIPg__square200/img/lMisyX6fUky0XQ6hWnHroY4L0Uk=/200x200/filters:strip_icc()/pic8512516.png"
-        },
-        {
-          "name": "Agricola",
-          "score": 51,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/31260/agricola",
-          "img": "https://cf.geekdo-images.com/3L6ZtOll9W5O6-3-EwSMyw__square200/img/bWrkWbzfhvWAr0czLnC09w2170=/200x200/filters:strip_icc()/pic1899157.jpg"
-        },
-        {
-          "name": "Isle of Trains",
-          "score": 50,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/154906/isle-of-trains",
-          "img": "https://cf.geekdo-images.com/tzEq9B-ZsUaR6ck5-S49BA__square200/img/K8MWUlJZho46wt-3xbfHuH1TABs=/200x200/filters:strip_icc()/pic1951594.jpg"
-        },
-        {
-          "name": "Ashes Ascendancy",
-          "score": 48,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
-          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
-        },
-        {
-          "name": "Arkham Horror: The Card Game",
-          "score": 48,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/205637/arkham-horror-the-card-game",
-          "img": "https://cf.geekdo-images.com/B5F5ulz0UivNgrI9Ky0euA__square200/img/rCOvTBoMid0V821bCAJuY_gLLfc=/200x200/filters:strip_icc()/pic3122349.jpg"
-        }
-      ],
-      "solo": [
-        {
-          "name": "Munchkin",
-          "score": 452,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/1927/munchkin",
-          "img": "https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__square200/img/uD1CHovTtvMZ3qWMD3cFc3Y7bxQ=/200x200/filters:strip_icc()/pic1871016.jpg"
-        },
-        {
-          "name": "The White Castle",
-          "score": 74,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/371942/the-white-castle",
-          "img": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__square200/img/dhL41LnGHG3_goo6-PGqOIYH-no=/200x200/filters:strip_icc()/pic7754663.jpg"
-        },
-        {
-          "name": "Slay the Spire: The Board Game",
-          "score": 68,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
-          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
-        },
-        {
-          "name": "Isle of Trains",
-          "score": 50,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/154906/isle-of-trains",
-          "img": "https://cf.geekdo-images.com/tzEq9B-ZsUaR6ck5-S49BA__square200/img/K8MWUlJZho46wt-3xbfHuH1TABs=/200x200/filters:strip_icc()/pic1951594.jpg"
-        },
-        {
-          "name": "Ashes Ascendancy",
-          "score": 48,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
-          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
-        },
-        {
-          "name": "Arkham Horror: The Card Game",
-          "score": 48,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/205637/arkham-horror-the-card-game",
-          "img": "https://cf.geekdo-images.com/B5F5ulz0UivNgrI9Ky0euA__square200/img/rCOvTBoMid0V821bCAJuY_gLLfc=/200x200/filters:strip_icc()/pic3122349.jpg"
-        },
-        {
-          "name": "Concordia",
-          "score": 45,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/124361/concordia",
-          "img": "https://cf.geekdo-images.com/CzwSm8i7tkLz6cBnrILZBg__square200/img/abLYDYKOKY23BH31W6ZCyV1rDnU=/200x200/filters:strip_icc()/pic3453267.jpg"
-        },
-        {
-          "name": "Marvel Champions",
-          "score": 40,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/285774/marvel-champions-the-card-game",
-          "img": "https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__square200/img/dELqF3Nu63hBEDyV_WbyvsIVAr0=/200x200/filters:strip_icc()/pic4900321.jpg"
-        },
-        {
-          "name": "Carcassonne",
-          "score": 38,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/822/carcassonne",
-          "img": "https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__square200/img/2spDfunmsck0NXjMz6eeZmMN7xw=/200x200/filters:strip_icc()/pic8621446.jpg"
-        },
-        {
-          "name": "Hive",
-          "score": 38,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/2655/hive",
-          "img": "https://cf.geekdo-images.com/fQe85tsBZoH6ibPnm1k1UA__square200/img/fnjhJ8bLeF_PXhcmrBmKtdiUxyY=/200x200/filters:strip_icc()/pic791151.jpg"
-        },
-        {
-          "name": "Spirited",
-          "score": 33,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/457476/spirited",
-          "img": "https://cf.geekdo-images.com/HyGYCaZlDxAI2lv_DiywZw__square200/img/bXgKW1f4HA7-D5eGtootu10zy_U=/200x200/filters:strip_icc()/pic9198671.png"
-        },
-        {
-          "name": "Regicide",
-          "score": 28,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": -10,
-          "bgg": "https://boardgamegeek.com/boardgame/307002/regicide",
-          "img": "https://cf.geekdo-images.com/C9U2E51tkzLljewFEGQ74g__square200/img/C3Uv5Ftn5EHHnBDbuEvKoYk8zIk=/200x200/filters:strip_icc()/pic5837347.jpg"
-        },
-        {
-          "name": "Hadrian's Wall",
-          "score": 25,
-          "mentions": 2,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/304783/hadrians-wall",
-          "img": "https://cf.geekdo-images.com/4XzRDw3VrgNpNfZlzZl66w__square200/img/XjeEtL3mWkGPSMQdwaaRZoId-Zk=/200x200/filters:strip_icc()/pic5608818.png"
-        },
-        {
-          "name": "Spirit Island",
-          "score": 22,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/162886/spirit-island",
-          "img": "https://cf.geekdo-images.com/kjCm4ZvPjIZxS-mYgSPy1g__square200/img/MSwBm5TdhKshhkC8UVeXi8_izTA=/200x200/filters:strip_icc()/pic7013651.jpg"
-        },
-        {
-          "name": "Voidfall",
-          "score": 22,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": -5,
-          "bgg": "https://boardgamegeek.com/boardgame/337627/voidfall",
-          "img": "https://cf.geekdo-images.com/hItZjdDTNuaCZ7fEztwcUQ__square200/img/DDdkWOb1a8aIwnrMg25R1JqdNTw=/200x200/filters:strip_icc()/pic6153324.jpg"
-        }
-      ],
-      "party": [
-        {
-          "name": "Wavelength",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/262543/wavelength",
-          "img": "https://cf.geekdo-images.com/z4fbPdmJg_5yphJEvql4ZA__square200/img/ojwhvyvB8dMmyzHgEYj5_TxZQ0w=/200x200/filters:strip_icc()/pic4552862.png"
-        },
-        {
-          "name": "Avalon",
-          "score": 72,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/128882/the-resistance-avalon",
-          "img": "https://cf.geekdo-images.com/LPa6rsGcv8S0-OeNjCOAEQ__square200/img/E6EKPkVz2KrmRZVgwCHFYeZXzJU=/200x200/filters:strip_icc()/pic1398895.jpg"
-        }
-      ],
-      "crowdfunding": []
-    },
-    {
       "date": "2026-08-19",
       "overall": [
         {
@@ -16559,6 +16191,693 @@ const TRENDING_DATA = {
           "url": "https://gamefound.com/en/projects/juegos_mosquete/colonial_1700-1800",
           "bgg": "https://boardgamegeek.com/boardgame/401371/colonial-1700-1800",
           "img": "https://cf.geekdo-images.com/ioKnaLujUlZQw9Pp7IawbA__square200/img/jtVel8MimUcfqJ3NZSYiuIOUkHU=/200x200/filters:strip_icc()/pic8708444.jpg"
+        },
+        {
+          "name": "Medici Traders",
+          "backers": 645,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/apegamer/reiner-knizias-medici-traders-tile-auction-game",
+          "bgg": "https://boardgamegeek.com/boardgame/468582/medici-traders",
+          "img": "https://cf.geekdo-images.com/ohRNFR6ORz5Li8rWwWmuUw__square200/img/wmdAVx57ktYEq_tibtMHn4MjHpg=/200x200/filters:strip_icc()/pic9594794.png"
+        },
+        {
+          "name": "The Unheist of Hearthburn House",
+          "backers": 583,
+          "pct": 376,
+          "platform": "Backerkit",
+          "ends": "2026-10-08",
+          "url": "https://www.backerkit.com/c/projects/zero-strategy-games/the-unheist-of-hearthburn-house-mansion-decorating-madness",
+          "bgg": "https://boardgamegeek.com/boardgame/468804/the-unheist-of-hearthburn-house",
+          "img": "https://cf.geekdo-images.com/N9N0buvsPiicPD1CQYj25w__square200/img/5CIThf6y_4_HhbkGXnxy8A8q98M=/200x200/filters:strip_icc()/pic9545665.png"
+        },
+        {
+          "name": "Steam and Cheese",
+          "backers": 513,
+          "pct": 646,
+          "platform": "Gamefound",
+          "ends": "2026-10-08",
+          "url": "https://gamefound.com/en/projects/skellig-games/steam--cheese",
+          "bgg": "https://boardgamegeek.com/boardgame/473225/steam-and-cheese",
+          "img": "https://cf.geekdo-images.com/x5GnN-LLoF7sLnhRj17BJw__square200/img/H4WNKgqmRNdDFgDUaSsYqOn-ucg=/200x200/filters:strip_icc()/pic9757814.jpg"
+        },
+        {
+          "name": "The Stone of Madness: Dicefall",
+          "backers": 508,
+          "pct": 156,
+          "platform": "Gamefound",
+          "ends": "2026-10-10",
+          "url": "https://gamefound.com/en/projects/undigital/the-stone-of-madness---dicefall",
+          "bgg": "https://boardgamegeek.com/boardgame/460710/the-stone-of-madness-dicefall",
+          "img": "https://cf.geekdo-images.com/NK--cetWxbbKsm70x1CfsQ__square200/img/TKblksV7qyE65Ma4UteRymfS5B0=/200x200/filters:strip_icc()/pic9401110.png"
+        },
+        {
+          "name": "Chocolate Factory Remastered",
+          "backers": 502,
+          "pct": 260,
+          "platform": "Kickstarter",
+          "ends": "2026-10-08",
+          "url": "https://www.kickstarter.com/projects/alleycatgames/chocolate-factory-remastered",
+          "bgg": "https://boardgamegeek.com/boardgame/240567/chocolate-factory",
+          "img": "https://cf.geekdo-images.com/BshwmBDyZyxqvdUOWjtReA__square200/img/u3F33uvyyVdFKXVrPkRrtt9e8-0=/200x200/filters:strip_icc()/pic4287283.jpg"
+        },
+        {
+          "name": "Gods' Will",
+          "backers": 454,
+          "pct": 371,
+          "platform": "Kickstarter",
+          "ends": "2026-10-08",
+          "url": "https://www.kickstarter.com/projects/559918879/gods-will-your-chance-to-become-a-god",
+          "bgg": "https://boardgamegeek.com/boardgame/460023/gods-will",
+          "img": "https://cf.geekdo-images.com/wrckOdpbTQB9Pu8i-2nRvQ__square200/img/kdkQhfs5vNTRw9_N8URAy0gl3Jw=/200x200/filters:strip_icc()/pic9423689.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "overall": [
+        {
+          "name": "Inscryption IRL",
+          "score": 414,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/431225/inscryption-irl-2-player-adaptation",
+          "img": "https://cf.geekdo-images.com/-wUTw_hVTDCLjEl9phJBKQ__square200/img/JhuDWx-NNYDbDWozNAKyKnvpRGo=/200x200/filters:strip_icc()/pic8496620.jpg"
+        },
+        {
+          "name": "Scythe",
+          "score": 362,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/169786/scythe",
+          "img": "https://cf.geekdo-images.com/7k_nOxpO9OGIjhLq2BUZdA__square200/img/I_icGNJh7M73OZIs7Lg9JvS__Bo=/200x200/filters:strip_icc()/pic3163924.jpg"
+        },
+        {
+          "name": "Braided Skies",
+          "score": 211,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/479457/braided-skies",
+          "img": "https://cf.geekdo-images.com/BJAG1qHYEbWfot4IedUVow__square200/img/vWe72AZ-yDvU3xp7oawzPNN_2js=/200x200/filters:strip_icc()/pic9824355.jpg"
+        },
+        {
+          "name": "Harmonies",
+          "score": 182,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/414317/harmonies",
+          "img": "https://cf.geekdo-images.com/hZ9Ki0GHmDe0-QsPGdSK2Q__square200/img/8_3n5RDR_5AWTAP1i-jKHJ4tuC0=/200x200/filters:strip_icc()/pic8264433.png"
+        },
+        {
+          "name": "Star Trek: Captain's Chair",
+          "score": 160,
+          "mentions": 3,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 5,
+          "bgg": "https://boardgamegeek.com/boardgame/422541/star-trek-captains-chair",
+          "img": "https://cf.geekdo-images.com/Ft_wPFLBXESSipuF1-t8gQ__square200/img/JTgxIkgT78Ws1wp-P1DtL65K0VI=/200x200/filters:strip_icc()/pic8243925.jpg"
+        },
+        {
+          "name": "Kinfire Delve",
+          "score": 134,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 0,
+          "bgg": "https://boardgamegeek.com/boardgame/391795/kinfire-delve-vainglorys-grotto",
+          "img": "https://cf.geekdo-images.com/io5dPH2ImA5uqoLsO7K1GA__square200/img/G3oqCCakTS9bOecNdNWlO4VpISQ=/200x200/filters:strip_icc()/pic7570975.jpg"
+        },
+        {
+          "name": "Galactic Cruise",
+          "score": 131,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/391137/galactic-cruise",
+          "img": "https://cf.geekdo-images.com/l-LMcklO683dyVlnRZS3mg__square200/img/5T65qKbTPRRCM6jTEIFu7FrE5mA=/200x200/filters:strip_icc()/pic7556818.jpg"
+        },
+        {
+          "name": "Deckers",
+          "score": 118,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -1,
+          "bgg": "https://boardgamegeek.com/boardgame/443306/deckers",
+          "img": "https://cf.geekdo-images.com/QIiMCGc9zpv_XKAI-zbqmQ__square200/img/-ilIXJsY93jP9mncnByWGQSGo3M=/200x200/filters:strip_icc()/pic8907989.jpg"
+        },
+        {
+          "name": "Gloomhaven",
+          "score": 111,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 5,
+          "bgg": "https://boardgamegeek.com/boardgame/174430/gloomhaven",
+          "img": "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__square200/img/gKnqaGwGjmSUNVj6NwQ7f8cyKp8=/200x200/filters:strip_icc()/pic2437871.jpg"
+        },
+        {
+          "name": "For Northwood!",
+          "score": 98,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/334590/for-northwood-a-solo-trick-taking-game",
+          "img": "https://cf.geekdo-images.com/3MdUGB8YD_jGTDyfbAnX9Q__square200/img/TvMosw79Lh1VT0DoR0S5Qo6wfzE=/200x200/filters:strip_icc()/pic6763912.png"
+        },
+        {
+          "name": "Small Fjords",
+          "score": 93,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/15511/fjords",
+          "img": "https://cf.geekdo-images.com/5lLbSwazSo9jibcsJGvu3w__square200/img/sHSwuYqmYJhltxqlxi6XkzE9mPY=/200x200/filters:strip_icc()/pic8639545.jpg"
+        },
+        {
+          "name": "The Lord of the Rings: Fate of the Fellowship",
+          "score": 93,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": -4,
+          "bgg": "https://boardgamegeek.com/boardgame/436217/the-lord-of-the-rings-fate-of-the-fellowship",
+          "img": "https://cf.geekdo-images.com/scw36iBIad7l-rGzxPGcGg__square200/img/N9e1iADIa5fTAYSjatXDvtk9-Po=/200x200/filters:strip_icc()/pic8662670.png"
+        },
+        {
+          "name": "Tomb Raider: The Crypt of Chronos",
+          "score": 91,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/425796/tomb-raider-the-crypt-of-chronos",
+          "img": "https://cf.geekdo-images.com/MnE2NOn8DE_opDMXCug4Pg__square200/img/hd_RSNGJvZktgQKTivvxjyiivzc=/200x200/filters:strip_icc()/pic8870162.png"
+        },
+        {
+          "name": "Ashes Ascendancy",
+          "score": 90,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
+          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
+        },
+        {
+          "name": "Ark Nova",
+          "score": 81,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/342942/ark-nova",
+          "img": "https://cf.geekdo-images.com/SoU8p28Sk1s8MSvoM4N8pQ__square200/img/bHhp_JlkP0JfeHgVd7bzt8W510k=/200x200/filters:strip_icc()/pic6293412.jpg"
+        }
+      ],
+      "solo": [
+        {
+          "name": "Harmonies",
+          "score": 182,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 0,
+          "bgg": "https://boardgamegeek.com/boardgame/414317/harmonies",
+          "img": "https://cf.geekdo-images.com/hZ9Ki0GHmDe0-QsPGdSK2Q__square200/img/8_3n5RDR_5AWTAP1i-jKHJ4tuC0=/200x200/filters:strip_icc()/pic8264433.png"
+        },
+        {
+          "name": "Star Trek: Captain's Chair",
+          "score": 160,
+          "mentions": 3,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 2,
+          "bgg": "https://boardgamegeek.com/boardgame/422541/star-trek-captains-chair",
+          "img": "https://cf.geekdo-images.com/Ft_wPFLBXESSipuF1-t8gQ__square200/img/JTgxIkgT78Ws1wp-P1DtL65K0VI=/200x200/filters:strip_icc()/pic8243925.jpg"
+        },
+        {
+          "name": "Kinfire Delve",
+          "score": 134,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -1,
+          "bgg": "https://boardgamegeek.com/boardgame/391795/kinfire-delve-vainglorys-grotto",
+          "img": "https://cf.geekdo-images.com/io5dPH2ImA5uqoLsO7K1GA__square200/img/G3oqCCakTS9bOecNdNWlO4VpISQ=/200x200/filters:strip_icc()/pic7570975.jpg"
+        },
+        {
+          "name": "Galactic Cruise",
+          "score": 131,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": 6,
+          "bgg": "https://boardgamegeek.com/boardgame/391137/galactic-cruise",
+          "img": "https://cf.geekdo-images.com/l-LMcklO683dyVlnRZS3mg__square200/img/5T65qKbTPRRCM6jTEIFu7FrE5mA=/200x200/filters:strip_icc()/pic7556818.jpg"
+        },
+        {
+          "name": "Deckers",
+          "score": 118,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/443306/deckers",
+          "img": "https://cf.geekdo-images.com/QIiMCGc9zpv_XKAI-zbqmQ__square200/img/-ilIXJsY93jP9mncnByWGQSGo3M=/200x200/filters:strip_icc()/pic8907989.jpg"
+        },
+        {
+          "name": "Gloomhaven",
+          "score": 111,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 2,
+          "bgg": "https://boardgamegeek.com/boardgame/174430/gloomhaven",
+          "img": "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__square200/img/gKnqaGwGjmSUNVj6NwQ7f8cyKp8=/200x200/filters:strip_icc()/pic2437871.jpg"
+        },
+        {
+          "name": "For Northwood!",
+          "score": 98,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/334590/for-northwood-a-solo-trick-taking-game",
+          "img": "https://cf.geekdo-images.com/3MdUGB8YD_jGTDyfbAnX9Q__square200/img/TvMosw79Lh1VT0DoR0S5Qo6wfzE=/200x200/filters:strip_icc()/pic6763912.png"
+        },
+        {
+          "name": "Small Fjords",
+          "score": 93,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/15511/fjords",
+          "img": "https://cf.geekdo-images.com/5lLbSwazSo9jibcsJGvu3w__square200/img/sHSwuYqmYJhltxqlxi6XkzE9mPY=/200x200/filters:strip_icc()/pic8639545.jpg"
+        },
+        {
+          "name": "The Lord of the Rings: Fate of the Fellowship",
+          "score": 93,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/436217/the-lord-of-the-rings-fate-of-the-fellowship",
+          "img": "https://cf.geekdo-images.com/scw36iBIad7l-rGzxPGcGg__square200/img/N9e1iADIa5fTAYSjatXDvtk9-Po=/200x200/filters:strip_icc()/pic8662670.png"
+        },
+        {
+          "name": "Tomb Raider: The Crypt of Chronos",
+          "score": 91,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -5,
+          "bgg": "https://boardgamegeek.com/boardgame/425796/tomb-raider-the-crypt-of-chronos",
+          "img": "https://cf.geekdo-images.com/MnE2NOn8DE_opDMXCug4Pg__square200/img/hd_RSNGJvZktgQKTivvxjyiivzc=/200x200/filters:strip_icc()/pic8870162.png"
+        },
+        {
+          "name": "Ashes Ascendancy",
+          "score": 90,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -5,
+          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
+          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
+        },
+        {
+          "name": "Ark Nova",
+          "score": 81,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -5,
+          "bgg": "https://boardgamegeek.com/boardgame/342942/ark-nova",
+          "img": "https://cf.geekdo-images.com/SoU8p28Sk1s8MSvoM4N8pQ__square200/img/bHhp_JlkP0JfeHgVd7bzt8W510k=/200x200/filters:strip_icc()/pic6293412.jpg"
+        },
+        {
+          "name": "Cartographers Heroes",
+          "score": 79,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -4,
+          "bgg": "https://boardgamegeek.com/boardgame/315767/cartographers-heroes",
+          "img": "https://cf.geekdo-images.com/HIFpoE6wwuriOREJmqizPw__square200/img/2pLboT_r45LJ-yBZx6gvStmulcs=/200x200/filters:strip_icc()/pic5567490.png"
+        },
+        {
+          "name": "Abyss",
+          "score": 74,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/155987/abyss",
+          "img": "https://cf.geekdo-images.com/O9nPs9wrCghDF4izqFtoGQ__square200/img/2WTdKAt4xXU4W4VmL9i4z8psGSU=/200x200/filters:strip_icc()/pic1965255.jpg"
+        },
+        {
+          "name": "Aftermath",
+          "score": 69,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/281946/aftermath",
+          "img": "https://cf.geekdo-images.com/v5FE5VZ6CV7N5zUk1IRXQg__square200/img/oQ8xnwETo8VDX8sjiz1-_ifmYuk=/200x200/filters:strip_icc()/pic4781087.jpg"
+        }
+      ],
+      "party": [
+        {
+          "name": "Hit the Silk!",
+          "score": 70,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/331685/hit-the-silk",
+          "img": "https://cf.geekdo-images.com/uu3_la80Rx6TiuDtEpXO9A__square200/img/wfen4Ekx-ya86r4GJsQoicYFX3I=/200x200/filters:strip_icc()/pic6433684.jpg"
+        },
+        {
+          "name": "Last Minute",
+          "score": 70,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/413250/last-minute",
+          "img": "https://cf.geekdo-images.com/-MeN2L0xUcoh8QBUs69IHg__square200/img/MRHxyOK3h3BAPbpfmpyrsDLv4NM=/200x200/filters:strip_icc()/pic8380881.jpg"
+        },
+        {
+          "name": "Wavelength",
+          "score": 70,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/262543/wavelength",
+          "img": "https://cf.geekdo-images.com/z4fbPdmJg_5yphJEvql4ZA__square200/img/ojwhvyvB8dMmyzHgEYj5_TxZQ0w=/200x200/filters:strip_icc()/pic4552862.png"
+        },
+        {
+          "name": "dnup",
+          "score": 70,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": -1,
+          "bgg": "https://boardgamegeek.com/boardgame/432456/dnup",
+          "img": "https://cf.geekdo-images.com/mhNZFwA0kAS0gX2Tjh0pJw__square200/img/XBX4exa8BCQCwzw33D9Ajvau-NU=/200x200/filters:strip_icc()/pic9490614.jpg"
+        },
+        {
+          "name": "Monopoly",
+          "score": 11,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/1406/monopoly",
+          "img": "https://cf.geekdo-images.com/9nGoBZ0MRbi6rdH47sj2Qg__square200/img/BNj2Bd-rM9bqjZH5QobvNrJD3Vg=/200x200/filters:strip_icc()/pic5786795.jpg"
+        },
+        {
+          "name": "STACCS",
+          "score": 10,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/449465/staccs",
+          "img": "https://cf.geekdo-images.com/jvNVAnxx5ttdo5Cngob6uQ__square200/img/LSvnPE1jq4K3qFhiZy2ei5sm2NE=/200x200/filters:strip_icc()/pic9219829.png"
+        },
+        {
+          "name": "Love Letter",
+          "score": 5,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/129622/love-letter",
+          "img": "https://cf.geekdo-images.com/T1ltXwapFUtghS9A7_tf4g__square200/img/Gwt8ZfqbQAxQXut_WularJhFk0g=/200x200/filters:strip_icc()/pic1401448.jpg"
+        },
+        {
+          "name": "Pass the Pigs",
+          "score": 5,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/2593/pass-the-pigs",
+          "img": "https://cf.geekdo-images.com/blW_a3O5Md5bE1jFygJ6SA__square200/img/cmPi5aENiot9wZEIs9aUUNhoRyw=/200x200/filters:strip_icc()/pic697422.jpg"
+        },
+        {
+          "name": "Uno",
+          "score": 5,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/2223/uno",
+          "img": "https://cf.geekdo-images.com/-DHiHBBSnvaLu0Do8CIykQ__square200/img/JzrvZyZuYBdC4EIEy-gPJEJ2Lk0=/200x200/filters:strip_icc()/pic8204165.jpg"
+        },
+        {
+          "name": "Betrayal Legacy",
+          "score": 3,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/240196/betrayal-legacy",
+          "img": "https://cf.geekdo-images.com/F4-UGFUM3FfVLWsgBgpFLQ__square200/img/2U5FsyBW4Awe3d1tyhAmT0S1Gb8=/200x200/filters:strip_icc()/pic4314964.jpg"
+        }
+      ],
+      "crowdfunding": [
+        {
+          "name": "The Lord of the Rings: Ascension",
+          "backers": 7834,
+          "pct": 11247,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/stoneblade/the-lord-of-the-rings-ascension",
+          "bgg": "https://boardgamegeek.com/boardgame/469458/the-lord-of-the-rings-the-two-towers-ascension",
+          "img": "https://cf.geekdo-images.com/kcyWRbYvdPI-6dNSGy0PoA__square200/img/FiwV3SjCGc3JPyNm-e43KJiDPeg=/200x200/filters:strip_icc()/pic9544772.png"
+        },
+        {
+          "name": "Baba Is You: The Board Game",
+          "backers": 5050,
+          "pct": 2990,
+          "platform": "Kickstarter",
+          "ends": "2026-10-09",
+          "url": "https://www.kickstarter.com/projects/bitewinggamesnick/baba-is-you-the-board-game",
+          "bgg": "https://boardgamegeek.com/boardgame/475492/baba-is-you-the-board-game",
+          "img": "https://cf.geekdo-images.com/QtWtX8uogiigdjlTWF84ZQ__square200/img/-D_FC5gIjYPH06h3mR41cZJrWC0=/200x200/filters:strip_icc()/pic9722035.jpg"
+        },
+        {
+          "name": "Tend: Hive & Cellar Expansions",
+          "backers": 3984,
+          "pct": 1488,
+          "platform": "Gamefound",
+          "ends": "2026-10-07",
+          "url": "https://gamefound.com/en/projects/iv-studio/tend-expansions",
+          "bgg": "https://boardgamegeek.com/boardgame/477856/tend-hive",
+          "img": "https://cf.geekdo-images.com/WqqnKSU6xCJWgH80dMK_9Q__square200/img/KyqPTi31L7jUepO6rrlK3gdbtsk=/200x200/filters:strip_icc()/pic9768840.png"
+        },
+        {
+          "name": "Bullet Galaxy",
+          "backers": 3955,
+          "pct": 1943,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/level-99-games/bullet-galaxy",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Dead by Daylight: The Board Game - Auris Box",
+          "backers": 3378,
+          "pct": 1367,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/level-99-games/dbd",
+          "bgg": "https://boardgamegeek.com/boardgame/466738/dead-by-daylight-the-board-game-auris-box",
+          "img": "https://cf.geekdo-images.com/DqFFS2bj-Ue_AAPQIrdjSA__square200/img/pDN9dgMrFu9t20YaOPfZH5M1EcM=/200x200/filters:strip_icc()/pic9473281.png"
+        },
+        {
+          "name": "Wreck",
+          "backers": 3255,
+          "pct": 5845,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/chip-theory-games/wroth-reprint--wreck-expansion",
+          "bgg": "https://boardgamegeek.com/boardgame/473113/wreck",
+          "img": "https://cf.geekdo-images.com/MShIYqsSAbr3222FOGLIjg__square200/img/3cdPGTI8UYhJnFUYryMK5agl61k=/200x200/filters:strip_icc()/pic9645076.jpg"
+        },
+        {
+          "name": "Onryō: First Seal",
+          "backers": 2013,
+          "pct": 572,
+          "platform": "Kickstarter",
+          "ends": "2026-10-08",
+          "url": "https://www.kickstarter.com/projects/lemerygames/onryo-first-seal",
+          "bgg": "https://boardgamegeek.com/boardgame/477447/onryo-first-seal",
+          "img": "https://cf.geekdo-images.com/fIyiG4FGL6Z1neD-reInlQ__square200/img/rTSfJThaTfqVej57Nx_7eKnWFDo=/200x200/filters:strip_icc()/pic9785917.png"
+        },
+        {
+          "name": "Bloodwork: The Reckoning",
+          "backers": 1685,
+          "pct": 802,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/i-demo-games/bloodwork-the-reckoning",
+          "bgg": "https://boardgamegeek.com/boardgame/466701/bloodwork-the-reckoning",
+          "img": "https://cf.geekdo-images.com/kGwq2dOCqpSYX2l1GbnfsQ__square200/img/BVb-JqUIOlqThwmjakyRk_cXA-0=/200x200/filters:strip_icc()/pic9521903.jpg"
+        },
+        {
+          "name": "Perennial",
+          "backers": 1607,
+          "pct": 875,
+          "platform": "Kickstarter",
+          "ends": "2026-11-05",
+          "url": "https://www.kickstarter.com/projects/flatoutgames/perennial-0",
+          "bgg": "https://boardgamegeek.com/boardgame/471962/perennial",
+          "img": "https://cf.geekdo-images.com/nqGwjApBFE9gF-pMymYZdQ__square200/img/qz92F1tFTqxZF4-53xabTEq9a8c=/200x200/filters:strip_icc()/pic9612167.jpg"
+        },
+        {
+          "name": "Kart",
+          "backers": 1205,
+          "pct": 154,
+          "platform": "Kickstarter",
+          "ends": "2026-10-06",
+          "url": "https://www.kickstarter.com/projects/ledergames/kart",
+          "bgg": "https://boardgamegeek.com/boardgame/475307/kart",
+          "img": "https://cf.geekdo-images.com/acpA_ip3ZO1zJ0LmXhEH1w__square200/img/as9IEP2f-qVOp5xqcSOo-HR-8mU=/200x200/filters:strip_icc()/pic9742971.jpg"
+        },
+        {
+          "name": "Raising Rabbits",
+          "backers": 1103,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/rebel-raptor/raising-rabbits",
+          "bgg": "https://boardgamegeek.com/boardgame/415135/raising-rabbits",
+          "img": "https://cf.geekdo-images.com/p01uZ5w4pxtOm8Riv0Prnw__square200/img/nYurev0drv46DcMvAZqNMqW1csw=/200x200/filters:strip_icc()/pic8179272.jpg"
+        },
+        {
+          "name": "The Adventure Store",
+          "backers": 1097,
+          "pct": 522,
+          "platform": "Kickstarter",
+          "ends": "2026-09-26",
+          "url": "https://www.kickstarter.com/projects/insideupgames/the-adventure-store",
+          "bgg": "https://boardgamegeek.com/boardgame/470760/the-adventure-store",
+          "img": "https://cf.geekdo-images.com/02OWJcrr1-ISf34vVAbTYw__square200/img/CfSShe2MLFBYj2Iin2H_siANrtg=/200x200/filters:strip_icc()/pic9617565.png"
+        },
+        {
+          "name": "Ace of Aces: Handy Rotary & Flying Machines Deluxe Editions",
+          "backers": 1031,
+          "pct": 251,
+          "platform": "Kickstarter",
+          "ends": "2026-10-08",
+          "url": "https://www.kickstarter.com/projects/mrbgames/ace-of-aces-handy-rotary-and-flying-machines-deluxe-editions",
+          "bgg": "https://boardgamegeek.com/boardgame/798/ace-of-aces-handy-rotary-series",
+          "img": "https://cf.geekdo-images.com/jYe7ObB1H-s6zu8a6GtmCg__square200/img/wTsySGmPuDo0L8e6sNwrCWd8hXM=/200x200/filters:strip_icc()/pic9761477.jpg"
+        },
+        {
+          "name": "Dice Commandos: Infestation",
+          "backers": 1030,
+          "pct": 920,
+          "platform": "Gamefound",
+          "ends": "2026-10-03",
+          "url": "https://gamefound.com/en/projects/gabe-barrett/dice-commandos-2",
+          "bgg": "https://boardgamegeek.com/boardgame/451881/dice-commandos",
+          "img": "https://cf.geekdo-images.com/RVsxVARcX89iPi7e7g4upg__square200/img/EBpmn58Y5vtxKQ5s4iWhu9RloPI=/200x200/filters:strip_icc()/pic9032352.png"
+        },
+        {
+          "name": "Naruto Shippuden Battle",
+          "backers": 850,
+          "pct": 541,
+          "platform": "Gamefound",
+          "ends": "2026-10-09",
+          "url": "https://gamefound.com/en/projects/this-is-a-game/naruto-shippuden-battle",
+          "bgg": "https://boardgamegeek.com/boardgame/472092/naruto-shippuden-battle",
+          "img": "https://cf.geekdo-images.com/JCQcntAaM3HqhkAQaMQPdw__square200/img/C4ZTwThpKb647_pn4Q0mbgn2ybs=/200x200/filters:strip_icc()/pic9624515.png"
+        },
+        {
+          "name": "Caravanserai",
+          "backers": 813,
+          "pct": 671,
+          "platform": "Kickstarter",
+          "ends": "2026-10-08",
+          "url": "https://www.kickstarter.com/projects/everlandstudio/caravanserai",
+          "bgg": "https://boardgamegeek.com/boardgame/405542/caravanserai",
+          "img": "https://cf.geekdo-images.com/q5jO9L6ul8QlnGHmOdW3hA__square200/img/Kua45Mwx3KfvCuZO0gis4z2_8pA=/200x200/filters:strip_icc()/pic9784263.png"
+        },
+        {
+          "name": "Yokozuna",
+          "backers": 802,
+          "pct": 565,
+          "platform": "Kickstarter",
+          "ends": "2026-10-07",
+          "url": "https://www.kickstarter.com/projects/metamorphgames/yokozuna-sumo-tabletop-action",
+          "bgg": "https://boardgamegeek.com/boardgame/457316/yokozuna",
+          "img": "https://cf.geekdo-images.com/yjOPRSGWzuCUU2ETLq3_UQ__square200/img/wEvvYCQKGEjjmyQgRYtoZ0a8b74=/200x200/filters:strip_icc()/pic9339148.png"
         },
         {
           "name": "Medici Traders",
