@@ -8,414 +8,6 @@ const TRENDING_DATA = {
   },
   "history": [
     {
-      "date": "2026-08-20",
-      "overall": [
-        {
-          "name": "Arcs",
-          "score": 449,
-          "mentions": 2,
-          "sources": [
-            "r/boardgamescirclejerk"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/359871/arcs",
-          "img": "https://cf.geekdo-images.com/XWImAu_3RK61wbzcKboVdA__square200/img/zXO9E8jCgpkdRq2PVHUlI7xy8Zc=/200x200/filters:strip_icc()/pic8145530.png"
-        },
-        {
-          "name": "Catan",
-          "score": 381,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/13/catan",
-          "img": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__square200/img/0YXkSunQYJYfi_YHi0k0mvFBrxM=/200x200/filters:strip_icc()/pic9156909.png"
-        },
-        {
-          "name": "Magical Athlete",
-          "score": 218,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": 1,
-          "bgg": "https://boardgamegeek.com/boardgame/454103/magical-athlete",
-          "img": "https://cf.geekdo-images.com/1uW8t9AkuqOF0xjv_sXKgw__square200/img/OJ7OWTUqJnxvpyHLvwDsIDoDg38=/200x200/filters:strip_icc()/pic9106864.png"
-        },
-        {
-          "name": "Imperium: Classics",
-          "score": 218,
-          "mentions": 2,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": -1,
-          "bgg": "https://boardgamegeek.com/boardgame/318184/imperium-classics",
-          "img": "https://cf.geekdo-images.com/MN0OvKejfrfwD6bupQHp4g__square200/img/0Nh58B0-AtVBgnejOt4HxLneKVM=/200x200/filters:strip_icc()/pic5623566.jpg"
-        },
-        {
-          "name": "Mage Knight",
-          "score": 182,
-          "mentions": 5,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/49957/mage-knight-board-game",
-          "img": "https://cf.geekdo-images.com/sC9CotKaoY75QPf8sigm6A__square200/img/g5s6Vqtl69pc3asqWWvvV6yu4U4=/200x200/filters:strip_icc()/pic521238.jpg"
-        },
-        {
-          "name": "Tiny Epic Galaxies",
-          "score": 146,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/163967/tiny-epic-galaxies",
-          "img": "https://cf.geekdo-images.com/c_87h8o0AOrfCO3hxMjjrA__square200/img/agIZRVZrHXMq9yQvCqX4GxkiL1c=/200x200/filters:strip_icc()/pic2349732.jpg"
-        },
-        {
-          "name": "Slay the Spire: The Board Game",
-          "score": 140,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": -5,
-          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
-          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
-        },
-        {
-          "name": "Gloomhaven",
-          "score": 130,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/174430/gloomhaven",
-          "img": "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__square200/img/gKnqaGwGjmSUNVj6NwQ7f8cyKp8=/200x200/filters:strip_icc()/pic2437871.jpg"
-        },
-        {
-          "name": "Ashes Ascendancy",
-          "score": 126,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
-          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
-        },
-        {
-          "name": "Arkham Horror",
-          "score": 126,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/257499/arkham-horror-third-edition",
-          "img": "https://cf.geekdo-images.com/09KeqyJEtu2qcskbtlOhqw__square200/img/uWVtIV5SuMcG7y-FS0yRLZbfsMk=/200x200/filters:strip_icc()/pic5726297.jpg"
-        },
-        {
-          "name": "Kingdom Come: Deliverance – The Board Game",
-          "score": 114,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": -6,
-          "bgg": "https://boardgamegeek.com/boardgame/473897/kingdom-come-deliverance-the-board-game",
-          "img": "https://cf.geekdo-images.com/HILsgVvw-j5bb6bXdrlp1g__square200/img/IzltF7rbrK6Q7EgrA4WUaO_UUP0=/200x200/filters:strip_icc()/pic9666028.png"
-        },
-        {
-          "name": "Patchwork",
-          "score": 86,
-          "mentions": 3,
-          "sources": [
-            "r/boardgamescirclejerk"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/163412/patchwork",
-          "img": "https://cf.geekdo-images.com/xNSaIHCKr_cc7Q2rQSSJPQ__square200/img/f1sIPoR1NAbp__F0VnwHvs_SirE=/200x200/filters:strip_icc()/pic9273518.jpg"
-        },
-        {
-          "name": "Spirit Island",
-          "score": 84,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/162886/spirit-island",
-          "img": "https://cf.geekdo-images.com/kjCm4ZvPjIZxS-mYgSPy1g__square200/img/MSwBm5TdhKshhkC8UVeXi8_izTA=/200x200/filters:strip_icc()/pic7013651.jpg"
-        },
-        {
-          "name": "The Monolith",
-          "score": 84,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": -6,
-          "bgg": "https://boardgamegeek.com/boardgame/469969/the-monolith",
-          "img": "https://cf.geekdo-images.com/lsGyVrrBRHfGJOLpcxuTZw__square200/img/sjT72Gz4uGlWexHEziPTGeBWENs=/200x200/filters:strip_icc()/pic9614326.png"
-        },
-        {
-          "name": "The White Castle",
-          "score": 81,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/371942/the-white-castle",
-          "img": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__square200/img/dhL41LnGHG3_goo6-PGqOIYH-no=/200x200/filters:strip_icc()/pic7754663.jpg"
-        }
-      ],
-      "solo": [
-        {
-          "name": "Imperium: Classics",
-          "score": 218,
-          "mentions": 2,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": 1,
-          "bgg": "https://boardgamegeek.com/boardgame/318184/imperium-classics",
-          "img": "https://cf.geekdo-images.com/MN0OvKejfrfwD6bupQHp4g__square200/img/0Nh58B0-AtVBgnejOt4HxLneKVM=/200x200/filters:strip_icc()/pic5623566.jpg"
-        },
-        {
-          "name": "Mage Knight",
-          "score": 182,
-          "mentions": 5,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/49957/mage-knight-board-game",
-          "img": "https://cf.geekdo-images.com/sC9CotKaoY75QPf8sigm6A__square200/img/g5s6Vqtl69pc3asqWWvvV6yu4U4=/200x200/filters:strip_icc()/pic521238.jpg"
-        },
-        {
-          "name": "Tiny Epic Galaxies",
-          "score": 146,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/163967/tiny-epic-galaxies",
-          "img": "https://cf.geekdo-images.com/c_87h8o0AOrfCO3hxMjjrA__square200/img/agIZRVZrHXMq9yQvCqX4GxkiL1c=/200x200/filters:strip_icc()/pic2349732.jpg"
-        },
-        {
-          "name": "Slay the Spire: The Board Game",
-          "score": 140,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": -3,
-          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
-          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
-        },
-        {
-          "name": "Gloomhaven",
-          "score": 130,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/174430/gloomhaven",
-          "img": "https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__square200/img/gKnqaGwGjmSUNVj6NwQ7f8cyKp8=/200x200/filters:strip_icc()/pic2437871.jpg"
-        },
-        {
-          "name": "Ashes Ascendancy",
-          "score": 126,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/437290/ashes-ascendancy",
-          "img": "https://cf.geekdo-images.com/dEqlgvF9fwEkVlZ6y_6dPQ__square200/img/KE1a3XHf2CJjR8fqq6cR6Sei7tQ=/200x200/filters:strip_icc()/pic8650659.jpg"
-        },
-        {
-          "name": "Arkham Horror",
-          "score": 126,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/257499/arkham-horror-third-edition",
-          "img": "https://cf.geekdo-images.com/09KeqyJEtu2qcskbtlOhqw__square200/img/uWVtIV5SuMcG7y-FS0yRLZbfsMk=/200x200/filters:strip_icc()/pic5726297.jpg"
-        },
-        {
-          "name": "Spirit Island",
-          "score": 84,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": -1,
-          "bgg": "https://boardgamegeek.com/boardgame/162886/spirit-island",
-          "img": "https://cf.geekdo-images.com/kjCm4ZvPjIZxS-mYgSPy1g__square200/img/MSwBm5TdhKshhkC8UVeXi8_izTA=/200x200/filters:strip_icc()/pic7013651.jpg"
-        },
-        {
-          "name": "The White Castle",
-          "score": 81,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/371942/the-white-castle",
-          "img": "https://cf.geekdo-images.com/qXT1U-nFh9PE8ujfdmI7dA__square200/img/dhL41LnGHG3_goo6-PGqOIYH-no=/200x200/filters:strip_icc()/pic7754663.jpg"
-        },
-        {
-          "name": "Nemesis",
-          "score": 66,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/167355/nemesis",
-          "img": "https://cf.geekdo-images.com/4KSmlm59w0GwLIlgDnJDAQ__square200/img/1kuCTzh-sagNMhCP3ja2BNWjAn4=/200x200/filters:strip_icc()/pic8211747.png"
-        },
-        {
-          "name": "Deckers",
-          "score": 64,
-          "mentions": 3,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": -3,
-          "bgg": "https://boardgamegeek.com/boardgame/443306/deckers",
-          "img": "https://cf.geekdo-images.com/QIiMCGc9zpv_XKAI-zbqmQ__square200/img/-ilIXJsY93jP9mncnByWGQSGo3M=/200x200/filters:strip_icc()/pic8907989.jpg"
-        },
-        {
-          "name": "Carcassonne",
-          "score": 64,
-          "mentions": 2,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/822/carcassonne",
-          "img": "https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__square200/img/2spDfunmsck0NXjMz6eeZmMN7xw=/200x200/filters:strip_icc()/pic8621446.jpg"
-        },
-        {
-          "name": "Earthborne Rangers",
-          "score": 61,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/342900/earthborne-rangers",
-          "img": "https://cf.geekdo-images.com/EVfMwPiHmxDUvY32BbghBg__square200/img/BzfEEBzbXRa1lHm-5dc3ls6wuHU=/200x200/filters:strip_icc()/pic7378384.jpg"
-        },
-        {
-          "name": "Vantage",
-          "score": 60,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/420033/vantage",
-          "img": "https://cf.geekdo-images.com/M0e9l-SHH2H4RMSAcnsDgg__square200/img/AFfSFufAeHUbnKONFYGAZO7VIMs=/200x200/filters:strip_icc()/pic8658546.jpg"
-        },
-        {
-          "name": "Sleeping Gods: Distant Skies",
-          "score": 59,
-          "mentions": 3,
-          "sources": [
-            "r/boardgames",
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/358320/sleeping-gods-distant-skies",
-          "img": "https://cf.geekdo-images.com/r72BZoC3whophBzKi45Rgg__square200/img/TPdjs6tQHryeGybC3XTU6j6liXU=/200x200/filters:strip_icc()/pic6737677.jpg"
-        }
-      ],
-      "party": [
-        {
-          "name": "Magical Athlete",
-          "score": 218,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": 0,
-          "bgg": "https://boardgamegeek.com/boardgame/454103/magical-athlete",
-          "img": "https://cf.geekdo-images.com/1uW8t9AkuqOF0xjv_sXKgw__square200/img/OJ7OWTUqJnxvpyHLvwDsIDoDg38=/200x200/filters:strip_icc()/pic9106864.png"
-        },
-        {
-          "name": "Munchkin",
-          "score": 41,
-          "mentions": 1,
-          "sources": [
-            "r/soloboardgaming"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/1927/munchkin",
-          "img": "https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__square200/img/uD1CHovTtvMZ3qWMD3cFc3Y7bxQ=/200x200/filters:strip_icc()/pic1871016.jpg"
-        },
-        {
-          "name": "King of Tokyo",
-          "score": 9,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/70323/king-of-tokyo",
-          "img": "https://cf.geekdo-images.com/m_RzXpHURC0_xLkvRSR_sw__square200/img/-p84hy3Vwivxnj6zaw0e43o_uAo=/200x200/filters:strip_icc()/pic3043734.jpg"
-        },
-        {
-          "name": "Dune",
-          "score": 9,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/283355/dune",
-          "img": "https://cf.geekdo-images.com/2fgPg6Be--w97zoycObUgg__square200/img/NWqx5GlJXleAeaHR3PJWTwdzWcU=/200x200/filters:strip_icc()/pic4815198.jpg"
-        },
-        {
-          "name": "King of Tokyo: Godzilla",
-          "score": 9,
-          "mentions": 1,
-          "sources": [
-            "r/boardgames"
-          ],
-          "change": null,
-          "bgg": "https://boardgamegeek.com/boardgame/463297/king-of-tokyo-godzilla",
-          "img": "https://cf.geekdo-images.com/Yo5tR3aWzRRCM7dGrEq6IQ__square200/img/gXK3ghUUwUOG6QjRlXULWPHN_PA=/200x200/filters:strip_icc()/pic9390673.png"
-        }
-      ],
-      "crowdfunding": []
-    },
-    {
       "date": "2026-08-21",
       "overall": [
         {
@@ -17250,6 +16842,726 @@ const TRENDING_DATA = {
           "url": "https://www.kickstarter.com/projects/559918879/gods-will-your-chance-to-become-a-god",
           "bgg": "https://boardgamegeek.com/boardgame/460023/gods-will",
           "img": "https://cf.geekdo-images.com/wrckOdpbTQB9Pu8i-2nRvQ__square200/img/kdkQhfs5vNTRw9_N8URAy0gl3Jw=/200x200/filters:strip_icc()/pic9423689.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "overall": [
+        {
+          "name": "Gallery Gambit",
+          "score": 451,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/468373/gallery-gambit",
+          "img": "https://cf.geekdo-images.com/LUTDC6QAzsHM5A_XWXDr6g__square200/img/eddriDkRg81NpmmNe4zaK9z8Kew=/200x200/filters:strip_icc()/pic9559899.png"
+        },
+        {
+          "name": "Azul",
+          "score": 440,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": 0,
+          "bgg": "https://boardgamegeek.com/boardgame/230802/azul",
+          "img": "https://cf.geekdo-images.com/aPSHJO0d0XOpQR5X-wJonw__square200/img/3SujmcsLunL1xALI1xJzgbfDndE=/200x200/filters:strip_icc()/pic6973671.png"
+        },
+        {
+          "name": "Dark Tower",
+          "score": 228,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/30/dark-tower",
+          "img": "https://cf.geekdo-images.com/3Nl1qEL5tdB6Eo19FCBm9Q__square200/img/0MilPUPZ53gwMgcL0T1JanO0VVM=/200x200/filters:strip_icc()/pic4007794.jpg"
+        },
+        {
+          "name": "Clank!",
+          "score": 196,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/201808/clank-a-deck-building-adventure",
+          "img": "https://cf.geekdo-images.com/DPjV1iI0ygo5Bl3XLNRiIg__square200/img/igPSSXCt7ikcwpgp1_IN13E3hiY=/200x200/filters:strip_icc()/pic4449526.jpg"
+        },
+        {
+          "name": "The Elder Scrolls: Betrayal of the Second Era",
+          "score": 185,
+          "mentions": 4,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/356080/the-elder-scrolls-betrayal-of-the-second-era",
+          "img": "https://cf.geekdo-images.com/1boSR6Gvi_melhbRhxdAUw__square200/img/yMXkgl7ZiClbRR2Gox5PGpNnBVI=/200x200/filters:strip_icc()/pic8332880.jpg"
+        },
+        {
+          "name": "Catan",
+          "score": 164,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/13/catan",
+          "img": "https://cf.geekdo-images.com/0XODRpReiZBFUffEcqT5-Q__square200/img/0YXkSunQYJYfi_YHi0k0mvFBrxM=/200x200/filters:strip_icc()/pic9156909.png"
+        },
+        {
+          "name": "Crabs in a Bucket",
+          "score": 141,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": -2,
+          "bgg": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket",
+          "img": "https://cf.geekdo-images.com/3rCQqAUCZdPGPcgQBLQV-g__square200/img/L3H0Mi42m4G1OGFmC0IX9o1vVnc=/200x200/filters:strip_icc()/pic7289966.png"
+        },
+        {
+          "name": "Santorini",
+          "score": 118,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/194655/santorini",
+          "img": "https://cf.geekdo-images.com/665Ply7Ho1WVf1v1iZlWeg__square200/img/4V2SDxn1tPXFNAl80NDOcVtQYFc=/200x200/filters:strip_icc()/pic3283110.png"
+        },
+        {
+          "name": "Pandemic: Reign of Cthulhu",
+          "score": 118,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/192153/reign-of-cthulhu",
+          "img": "https://cf.geekdo-images.com/rwNaEQfzABp7dkpnwn1Ksw__square200/img/oaPA7J94XoR5Fg8Yv5TcTt4Qm6U=/200x200/filters:strip_icc()/pic2866737.png"
+        },
+        {
+          "name": "Slay the Spire: The Board Game",
+          "score": 111,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 3,
+          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
+          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
+        },
+        {
+          "name": "Wingspan",
+          "score": 85,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/266192/wingspan",
+          "img": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__square200/img/BuUGdo8iEnHLPKZvyttszIdBNOU=/200x200/filters:strip_icc()/pic4458123.jpg"
+        },
+        {
+          "name": "Marvel Champions",
+          "score": 78,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": -5,
+          "bgg": "https://boardgamegeek.com/boardgame/285774/marvel-champions-the-card-game",
+          "img": "https://cf.geekdo-images.com/kRvUgYiaOq07kC67ZK5UoQ__square200/img/dELqF3Nu63hBEDyV_WbyvsIVAr0=/200x200/filters:strip_icc()/pic4900321.jpg"
+        },
+        {
+          "name": "Space Base",
+          "score": 72,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/242302/space-base",
+          "img": "https://cf.geekdo-images.com/MHhQxXVjiaa6C-04nGiIWw__square200/img/SKGk_WaEEq0PTtFM-f1ZyBTp6uc=/200x200/filters:strip_icc()/pic6640638.jpg"
+        },
+        {
+          "name": "Dominion",
+          "score": 72,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/36218/dominion",
+          "img": "https://cf.geekdo-images.com/j6iQpZ4XkemZP07HNCODBA__square200/img/bdy0EAVNphNdyTwHjVOiddTaUFQ=/200x200/filters:strip_icc()/pic394356.jpg"
+        },
+        {
+          "name": "Dead Cells: The Rogue-Lite Board Game",
+          "score": 69,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": -3,
+          "bgg": "https://boardgamegeek.com/boardgame/380135/dead-cells-the-rogue-lite-board-game",
+          "img": "https://cf.geekdo-images.com/N_5Dz0GeI5dGBzSrBMEqrg__square200/img/zadJUIDtvlLIQBCl5sKuqb9AU1s=/200x200/filters:strip_icc()/pic7336034.jpg"
+        }
+      ],
+      "solo": [
+        {
+          "name": "The Elder Scrolls: Betrayal of the Second Era",
+          "score": 185,
+          "mentions": 4,
+          "sources": [
+            "r/boardgames",
+            "r/soloboardgaming"
+          ],
+          "change": 2,
+          "bgg": "https://boardgamegeek.com/boardgame/356080/the-elder-scrolls-betrayal-of-the-second-era",
+          "img": "https://cf.geekdo-images.com/1boSR6Gvi_melhbRhxdAUw__square200/img/yMXkgl7ZiClbRR2Gox5PGpNnBVI=/200x200/filters:strip_icc()/pic8332880.jpg"
+        },
+        {
+          "name": "Slay the Spire: The Board Game",
+          "score": 111,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 7,
+          "bgg": "https://boardgamegeek.com/boardgame/338960/slay-the-spire-the-board-game",
+          "img": "https://cf.geekdo-images.com/PQzVclEoOQ_wr4e1V86kxA__square200/img/re-Tb8BZJFe6HqT-yOVkZTTdYsw=/200x200/filters:strip_icc()/pic8157856.png"
+        },
+        {
+          "name": "Dead Cells: The Rogue-Lite Board Game",
+          "score": 69,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 5,
+          "bgg": "https://boardgamegeek.com/boardgame/380135/dead-cells-the-rogue-lite-board-game",
+          "img": "https://cf.geekdo-images.com/N_5Dz0GeI5dGBzSrBMEqrg__square200/img/zadJUIDtvlLIQBCl5sKuqb9AU1s=/200x200/filters:strip_icc()/pic7336034.jpg"
+        },
+        {
+          "name": "Mage Knight",
+          "score": 54,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 7,
+          "bgg": "https://boardgamegeek.com/boardgame/49957/mage-knight-board-game",
+          "img": "https://cf.geekdo-images.com/sC9CotKaoY75QPf8sigm6A__square200/img/g5s6Vqtl69pc3asqWWvvV6yu4U4=/200x200/filters:strip_icc()/pic521238.jpg"
+        },
+        {
+          "name": "Nemesis",
+          "score": 48,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/167355/nemesis",
+          "img": "https://cf.geekdo-images.com/4KSmlm59w0GwLIlgDnJDAQ__square200/img/1kuCTzh-sagNMhCP3ja2BNWjAn4=/200x200/filters:strip_icc()/pic8211747.png"
+        },
+        {
+          "name": "Too Many Bones",
+          "score": 47,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 6,
+          "bgg": "https://boardgamegeek.com/boardgame/192135/too-many-bones",
+          "img": "https://cf.geekdo-images.com/gfT_6H4P9wdNQQ2KMU9rHg__square200/img/lQMOzCaOJg0eEKPVpoTuQGhnTn4=/200x200/filters:strip_icc()/pic3037396.jpg"
+        },
+        {
+          "name": "Mission: Drive",
+          "score": 47,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/455489/mission-drive",
+          "img": "https://cf.geekdo-images.com/GXeDKjeaYhFfv8FmiMzqBg__square200/img/9z9wJaGFicL6h0LiZFmO_KrBLJY=/200x200/filters:strip_icc()/pic9138386.png"
+        },
+        {
+          "name": "Under Falling Skies",
+          "score": 47,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/306735/under-falling-skies",
+          "img": "https://cf.geekdo-images.com/wJ3vp3v0OQuFC8jhz4Ws-w__square200/img/Q2wRAaXHhF8HnT2v6iuEEmiiFCQ=/200x200/filters:strip_icc()/pic6501281.jpg"
+        },
+        {
+          "name": "Imperium: Legends",
+          "score": 44,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 1,
+          "bgg": "https://boardgamegeek.com/boardgame/318182/imperium-legends",
+          "img": "https://cf.geekdo-images.com/-6AnQ0BuCM8u1lqAwTe8Rw__square200/img/AKw1-pC86TZjjPz2WU_R2Xp893M=/200x200/filters:strip_icc()/pic5623567.jpg"
+        },
+        {
+          "name": "Star Trek: Captain's Chair",
+          "score": 40,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/422541/star-trek-captains-chair",
+          "img": "https://cf.geekdo-images.com/Ft_wPFLBXESSipuF1-t8gQ__square200/img/JTgxIkgT78Ws1wp-P1DtL65K0VI=/200x200/filters:strip_icc()/pic8243925.jpg"
+        },
+        {
+          "name": "Deckers",
+          "score": 39,
+          "mentions": 2,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/443306/deckers",
+          "img": "https://cf.geekdo-images.com/QIiMCGc9zpv_XKAI-zbqmQ__square200/img/-ilIXJsY93jP9mncnByWGQSGo3M=/200x200/filters:strip_icc()/pic8907989.jpg"
+        },
+        {
+          "name": "Nusfjord",
+          "score": 32,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/234277/nusfjord",
+          "img": "https://cf.geekdo-images.com/nKYqNPEE94Zk_q5Vtk527w__square200/img/AdzZuXm7OUQ-wB3oa0ni7qiQmVI=/200x200/filters:strip_icc()/pic3729070.jpg"
+        },
+        {
+          "name": "Spirit Island",
+          "score": 32,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": 2,
+          "bgg": "https://boardgamegeek.com/boardgame/162886/spirit-island",
+          "img": "https://cf.geekdo-images.com/kjCm4ZvPjIZxS-mYgSPy1g__square200/img/MSwBm5TdhKshhkC8UVeXi8_izTA=/200x200/filters:strip_icc()/pic7013651.jpg"
+        },
+        {
+          "name": "Sleeping Gods",
+          "score": 32,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/255984/sleeping-gods",
+          "img": "https://cf.geekdo-images.com/Zdt8l4oTBpFICsMyNof7Jg__square200/img/b6WoYa7PqsW2uvN2_hia1pqzE64=/200x200/filters:strip_icc()/pic5975244.png"
+        },
+        {
+          "name": "Cthulhu: Death May Die",
+          "score": 32,
+          "mentions": 1,
+          "sources": [
+            "r/soloboardgaming"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/253344/cthulhu-death-may-die",
+          "img": "https://cf.geekdo-images.com/SPpzri7fwLRgVWMKOocHxw__square200/img/G7NDTea1O6DjOTL7d2PyoEgkuAo=/200x200/filters:strip_icc()/pic9712872.png"
+        }
+      ],
+      "party": [
+        {
+          "name": "Crabs in a Bucket",
+          "score": 141,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": 0,
+          "bgg": "https://boardgamegeek.com/boardgame/353719/crabs-in-a-bucket",
+          "img": "https://cf.geekdo-images.com/3rCQqAUCZdPGPcgQBLQV-g__square200/img/L3H0Mi42m4G1OGFmC0IX9o1vVnc=/200x200/filters:strip_icc()/pic7289966.png"
+        },
+        {
+          "name": "Bohnanza",
+          "score": 19,
+          "mentions": 2,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/11/bohnanza",
+          "img": "https://cf.geekdo-images.com/8SADtu_4zBH_UJrCo935Iw__square200/img/Jf6GXFKEEj-MDaUJNjOgZwenKjo=/200x200/filters:strip_icc()/pic6348964.jpg"
+        },
+        {
+          "name": "Alice is Missing",
+          "score": 18,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/rpgitem/311654/alice-is-missing",
+          "img": "https://cf.geekdo-images.com/211476emISgQLsa2h3BAYw__square200/img/OnGk_WXI6R9XOeqU4ItFuAGqEUo=/200x200/filters:strip_icc()/pic5625807.png"
+        },
+        {
+          "name": "Colourbrain",
+          "score": 13,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/223742/colourbrain",
+          "img": "https://cf.geekdo-images.com/cf-n4ra7xthqdTvKIF9f5g__square200/img/DyNOHTTiS6dHYQTKxtSPulpsOiU=/200x200/filters:strip_icc()/pic9719163.jpg"
+        },
+        {
+          "name": "Flip 7",
+          "score": 6,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/420087/flip-7",
+          "img": "https://cf.geekdo-images.com/YrQxEB9Ef0kQorRApzG5vQ__square200/img/oVP9V9sKz8f49pVpUn-yLkBlZfw=/200x200/filters:strip_icc()/pic8780246.jpg"
+        },
+        {
+          "name": "UNO: Show 'Em No Mercy",
+          "score": 0,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/399088/uno-show-em-no-mercy",
+          "img": "https://cf.geekdo-images.com/BrmN9uBYLBf9qzlqtQUhTg__square200/img/EuPVqQ1o6LR51pI1icY9eqilgFw=/200x200/filters:strip_icc()/pic7762353.jpg"
+        },
+        {
+          "name": "Among Cultists",
+          "score": 0,
+          "mentions": 1,
+          "sources": [
+            "r/boardgames"
+          ],
+          "change": null,
+          "bgg": "https://boardgamegeek.com/boardgame/277670/among-cultists-a-social-deduction-thriller",
+          "img": "https://cf.geekdo-images.com/ZljGAZbiYM3Ak3Mg4RE1Qw__square200/img/NwscAG3GSmHpcCi95yAF1k90CS4=/200x200/filters:strip_icc()/pic7181914.jpg"
+        }
+      ],
+      "crowdfunding": [
+        {
+          "name": "Game Changer: Home Edition",
+          "backers": 49211,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/warrenjames/game-changer-home-edition",
+          "bgg": "https://boardgamegeek.com/boardgame/470036/game-changer-home-edition",
+          "img": "https://cf.geekdo-images.com/CpPlsOmC_Bgab-hynOsUnA__square200/img/EteAZk_0yAdNgqz0NxoaORAtbNA=/200x200/filters:strip_icc()/pic9567811.jpg"
+        },
+        {
+          "name": "Clank! — Cube of Holding and The Forgotten Vault",
+          "backers": 6467,
+          "pct": 3693,
+          "platform": "Kickstarter",
+          "ends": "2026-10-01",
+          "url": "https://www.kickstarter.com/projects/direwolf/clank-cube-of-holding-and-the-forgotten-vault",
+          "bgg": "https://boardgamegeek.com/boardgame/477934/clank-the-forgotten-vault",
+          "img": "https://cf.geekdo-images.com/PWBS3-eaLng-pu9qhG1n3g__square200/img/tj3IVcxHBSq8iE-wXr2rnbv_UBU=/200x200/filters:strip_icc()/pic9770064.jpg"
+        },
+        {
+          "name": "8 Dragons",
+          "backers": 6196,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/wonderbow-games/8-dragons",
+          "bgg": "https://boardgamegeek.com/boardgame/454438/8-dragons",
+          "img": "https://cf.geekdo-images.com/R5iIG_-VyhoDw2kYX-lVdA__square200/img/kvCz8Y_R52_forX5N3Kj4zgpqsQ=/200x200/filters:strip_icc()/pic9108005.jpg"
+        },
+        {
+          "name": "Heroes of Might and Magic III: Factory, Bulwark & Forge Expansions",
+          "backers": 5329,
+          "pct": 2067,
+          "platform": "Gamefound",
+          "ends": "2026-10-12",
+          "url": "https://gamefound.com/en/projects/archon-studio/heroes-of-might-and-magic-iii-the-board-game-factory-bulwark-forge-expansions",
+          "bgg": "https://boardgamegeek.com/boardgame/423894/heroes-of-might-and-magic-iii-the-board-game-stron",
+          "img": "https://cf.geekdo-images.com/UxmixqZtPMwY0Clz6CZRXQ__square200/img/hg0YQD5_9rflnq6dGq1ALR6CMu0=/200x200/filters:strip_icc()/pic8436934.jpg"
+        },
+        {
+          "name": "Kemet: The Gates of Thonis",
+          "backers": 5040,
+          "pct": 4264,
+          "platform": "Gamefound",
+          "ends": "2026-09-30",
+          "url": "https://gamefound.com/en/projects/kolossal-games/kemet-the-gates-of-thonis",
+          "bgg": "https://boardgamegeek.com/boardgame/466538/kemet-the-gates-of-thonis",
+          "img": "https://cf.geekdo-images.com/hgySSO5ys85YHcqchpkgKg__square200/img/vhLowM_T1TUMX3anAe_7PKr0IX0=/200x200/filters:strip_icc()/pic9516078.png"
+        },
+        {
+          "name": "Personal Demons",
+          "backers": 3248,
+          "pct": 2784,
+          "platform": "Kickstarter",
+          "ends": "2026-10-15",
+          "url": "https://www.kickstarter.com/projects/tettix/personal-demons",
+          "bgg": "https://boardgamegeek.com/boardgame/448409/personal-demons",
+          "img": "https://cf.geekdo-images.com/XdPLKH7yIP-j2wC056lHDg__square200/img/qdqV0OaUk-yvTtCngVqmo_VT5cA=/200x200/filters:strip_icc()/pic9326949.png"
+        },
+        {
+          "name": "Gang Wars (+ Scarface 1920 Reprint)",
+          "backers": 2802,
+          "pct": 858,
+          "platform": "Gamefound",
+          "ends": "2026-10-15",
+          "url": "https://gamefound.com/en/projects/redzen/gang-wars",
+          "bgg": "https://boardgamegeek.com/boardgame/469941/gang-wars",
+          "img": "https://cf.geekdo-images.com/rwOIKeX0hDRGkyNElqYgWQ__square200/img/XHcBS0tYRJJbBsqaJphGBhO0ee0=/200x200/filters:strip_icc()/pic9560449.jpg"
+        },
+        {
+          "name": "Reverie",
+          "backers": 2685,
+          "pct": 8021,
+          "platform": "Kickstarter",
+          "ends": "2026-10-01",
+          "url": "https://www.kickstarter.com/projects/duxsomnium/reverie-symphony-of-colors",
+          "bgg": "https://boardgamegeek.com/boardgame/475420/reverie",
+          "img": "https://cf.geekdo-images.com/e7XHItWZw9DoruOiS4hoKg__square200/img/kePkX4FOLkQQYB8AygToitWHJoY=/200x200/filters:strip_icc()/pic9708678.png"
+        },
+        {
+          "name": "Goa",
+          "backers": 2384,
+          "pct": 498,
+          "platform": "Gamefound",
+          "ends": "2026-09-30",
+          "url": "https://gamefound.com/en/projects/quined-games/goa",
+          "bgg": "https://boardgamegeek.com/boardgame/9216/goa",
+          "img": "https://cf.geekdo-images.com/qVr5oSdmchY0XauUmh5DrQ__square200/img/En1c9lEOeyqkN1urr65rznOtEa8=/200x200/filters:strip_icc()/pic9209550.jpg"
+        },
+        {
+          "name": "Doomensions Returns",
+          "backers": 1228,
+          "pct": 669,
+          "platform": "Kickstarter",
+          "ends": "2026-10-22",
+          "url": "https://www.kickstarter.com/projects/mysteriouspackage/doomensions-returns",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Electrify",
+          "backers": 1169,
+          "pct": 771,
+          "platform": "Kickstarter",
+          "ends": "2026-10-17",
+          "url": "https://www.kickstarter.com/projects/alderac/electrify-by-aeg",
+          "bgg": "https://boardgamegeek.com/boardgame/462761/electrify",
+          "img": "https://cf.geekdo-images.com/EHVdeuQOTa3772k3V8Ojcg__square200/img/xjFdZktzyELnq3UZWygRqrv6hPk=/200x200/filters:strip_icc()/pic9666286.jpg"
+        },
+        {
+          "name": "Believe in me! (please)",
+          "backers": 1158,
+          "pct": 478,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/wyrmgold/believe-in-me-please",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Dice Commandos: Infestation",
+          "backers": 1150,
+          "pct": 1024,
+          "platform": "Gamefound",
+          "ends": "2026-10-03",
+          "url": "https://gamefound.com/en/projects/gabe-barrett/dice-commandos-2",
+          "bgg": "https://boardgamegeek.com/boardgame/478713/dice-commandos-infestation",
+          "img": "https://cf.geekdo-images.com/1IqRBrborgeLs5DGtFX2eQ__square200/img/Ee1taIU7uHXsOm48IgpBwrndgAk=/200x200/filters:strip_icc()/pic9801283.png"
+        },
+        {
+          "name": "Bookwyrm",
+          "backers": 1145,
+          "pct": 369,
+          "platform": "Kickstarter",
+          "ends": "2026-10-15",
+          "url": "https://www.kickstarter.com/projects/swordandrosepress/bookwyrm",
+          "bgg": "https://boardgamegeek.com/boardgame/470217/bookwyrm",
+          "img": "https://cf.geekdo-images.com/WOJEV3EGORG9hdC7Olr-1Q__square200/img/SciexcVUV3qauBU2F3gQ2v55xB0=/200x200/filters:strip_icc()/pic9566532.jpg"
+        },
+        {
+          "name": "Ancient Empires",
+          "backers": 1136,
+          "pct": 1204,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/archona-games/small-ancient-empires",
+          "bgg": "https://boardgamegeek.com/boardgame/453804/ancient-empires",
+          "img": "https://cf.geekdo-images.com/MF_JADENNOCe3M_iKkrLJQ__square200/img/rcE13QuC1IrldZ5UUczTyiJnmmk=/200x200/filters:strip_icc()/pic9099829.jpg"
+        },
+        {
+          "name": "Gudnak: Reprint & Guilds of Zarruhk Expansion",
+          "backers": 1105,
+          "pct": 596,
+          "platform": "Gamefound",
+          "ends": "2026-10-13",
+          "url": "https://gamefound.com/en/projects/chaotic-great/gudnak-the-guilds-of-zarrukh-expansion",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Ozob: A Cyberpunk Board Game",
+          "backers": 881,
+          "pct": 368,
+          "platform": "Gamefound",
+          "ends": "2026-10-02",
+          "url": "https://gamefound.com/en/projects/nonsense/ozobbg",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Exceed Skytear",
+          "backers": 853,
+          "pct": 848,
+          "platform": "Gamefound",
+          "ends": "2026-10-08",
+          "url": "https://gamefound.com/en/projects/skytear/exceed-skytear",
+          "bgg": "https://boardgamegeek.com/boardgame/475800/exceed-skytear",
+          "img": "https://cf.geekdo-images.com/xIgNCtHkxidKXtCaYguRkw__square200/img/A4N1RAOCGiTMLPZLfSTP8Dkz1Oo=/200x200/filters:strip_icc()/pic9818529.png"
+        },
+        {
+          "name": "Dale of Merchants: 10-year Anniversary",
+          "backers": 826,
+          "pct": 218,
+          "platform": "Gamefound",
+          "ends": "2026-10-13",
+          "url": "https://gamefound.com/en/projects/snowdale/dale-of-merchants-10-year-anniversary",
+          "bgg": "https://boardgamegeek.com/boardgame/480089/dale-of-merchants-1-the-extraordinary-guild",
+          "img": "https://cf.geekdo-images.com/XzLOcMpRyPaBcRoSGgPsKw__square200/img/LIWGnpMEfQcXjsqLwbWt4_BU8g0=/200x200/filters:strip_icc()/pic9822084.png"
+        },
+        {
+          "name": "Tangled Yarns",
+          "backers": 790,
+          "pct": 1541,
+          "platform": "Kickstarter",
+          "ends": "2026-10-01",
+          "url": "https://www.kickstarter.com/projects/kadenaentertainment/tangled-yarns-a-cooperative-stand-against-a-cosmic-horror",
+          "bgg": "https://boardgamegeek.com/boardgame/472349/tangled-yarns",
+          "img": "https://cf.geekdo-images.com/N-4zGjX3DQK28ktNQK7FhQ__square200/img/b3CAN49FYIBGah-gFY01xPOInWE=/200x200/filters:strip_icc()/pic9653551.png"
+        },
+        {
+          "name": "City of the Great Machine: The Story Unfolds",
+          "backers": 727,
+          "pct": 806,
+          "platform": "Kickstarter",
+          "ends": "2026-10-16",
+          "url": "https://www.kickstarter.com/projects/crowdgames/city-of-the-great-machine-the-story-unfolds",
+          "bgg": "https://boardgamegeek.com/boardgame/473553/city-of-the-great-machine-the-story-unfolds",
+          "img": "https://cf.geekdo-images.com/XOL17sS2Src6llELBpjdBA__square200/img/XHRR6q4rTOHDXwL5WfrfKFlb5Z0=/200x200/filters:strip_icc()/pic9669622.jpg"
+        },
+        {
+          "name": "Phantom Epoch: Last Chance + Localization",
+          "backers": 559,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/doteira-games/phantom-epoch-last-chance--localization",
+          "bgg": "https://boardgamegeek.com/boardgame/467113/phantom-epoch-exiles-of-volan",
+          "img": "https://cf.geekdo-images.com/BLy3p-zYcCxZ5x7zL4ALhw__square200/img/JQA7OL7G3O3C8Rwg4yYc6Hcmg-k=/200x200/filters:strip_icc()/pic9476972.png"
+        },
+        {
+          "name": "Super Lucha!",
+          "backers": 551,
+          "pct": null,
+          "platform": "Gamefound",
+          "ends": "2026-10-04",
+          "url": "https://gamefound.com/en/projects/steve-resk/super-lucha",
+          "bgg": null,
+          "img": null
+        },
+        {
+          "name": "Assault Red Horizon 41: Revised Edition",
+          "backers": 480,
+          "pct": 481,
+          "platform": "Gamefound",
+          "ends": null,
+          "url": "https://gamefound.com/en/projects/sound-of-drums-gmbh/assault-red-horizon-41-rev-edition",
+          "bgg": "https://boardgamegeek.com/boardgame/454667/assault-red-horizon-41-revised-edition",
+          "img": "https://cf.geekdo-images.com/00OVNFz2Sie1JEwTRdCuTw__square200/img/91JvoEzYID-fvq_URCjrXQnA-b8=/200x200/filters:strip_icc()/pic9147285.jpg"
+        },
+        {
+          "name": "Questiny: The Board Game",
+          "backers": 443,
+          "pct": 302,
+          "platform": "Kickstarter",
+          "ends": "2026-10-01",
+          "url": "https://www.kickstarter.com/projects/questinyboardgame/questiny-the-board-game",
+          "bgg": "https://boardgamegeek.com/boardgame/455460/questiny",
+          "img": "https://cf.geekdo-images.com/J9Q4-u6MEi4fGWRqYubFcQ__square200/img/hpSBH2t5boTBHcK8DUTSmOaVhPg=/200x200/filters:strip_icc()/pic9137565.jpg"
+        },
+        {
+          "name": "Barbaric: Crown of the Frost",
+          "backers": 406,
+          "pct": 714,
+          "platform": "Gamefound",
+          "ends": "2026-09-30",
+          "url": "https://gamefound.com/en/projects/hexa-house/barbaric-crown-of-the-frost",
+          "bgg": "https://boardgamegeek.com/boardgame/472580/barbaric-the-board-game",
+          "img": null
+        },
+        {
+          "name": "Battle Goomis",
+          "backers": 384,
+          "pct": 280,
+          "platform": "Backerkit",
+          "ends": "2026-09-29",
+          "url": "https://www.backerkit.com/c/projects/louie-s-loops/battle-goomis-the-crochet-card-game-and-pattern-book",
+          "bgg": "https://boardgamegeek.com/boardgame/478267/battle-goomis",
+          "img": "https://cf.geekdo-images.com/nxfIr3Q4tEKeFCUlY090Og__square200/img/_hYfVaZ9YqrZyOORwnZJCeVUTAM=/200x200/filters:strip_icc()/pic9780286.jpg"
+        },
+        {
+          "name": "Cozy Bundle: So Happy You're Here!, The Witches' Road & Nemi",
+          "backers": 343,
+          "pct": 607,
+          "platform": "Kickstarter",
+          "ends": "2026-09-29",
+          "url": "https://www.kickstarter.com/projects/fiammingogames/cozy-bundle-so-happy-youre-here-the-witches-road-and-nemi",
+          "bgg": "https://boardgamegeek.com/boardgame/480090/the-cozy-bundle-snug-box",
+          "img": null
+        },
+        {
+          "name": "MovieDEX",
+          "backers": 307,
+          "pct": 556,
+          "platform": "Kickstarter",
+          "ends": "2026-10-01",
+          "url": "https://www.kickstarter.com/projects/1366405808/moviedex-a-game-night-box-for-anyone-who-watches-movies",
+          "bgg": "https://boardgamegeek.com/boardgame/476848/moviedex",
+          "img": "https://cf.geekdo-images.com/866YAfSPhzxZLRP1Px5B8Q__square200/img/aL4jRIDufJmjq1X-GfRrqhxEvsY=/200x200/filters:strip_icc()/pic9756126.jpg"
+        },
+        {
+          "name": "The Nights of King Ludd",
+          "backers": 306,
+          "pct": 290,
+          "platform": "Kickstarter",
+          "ends": "2026-10-02",
+          "url": "https://www.kickstarter.com/projects/dietzfoundation/the-nights-of-king-ludd",
+          "bgg": "https://boardgamegeek.com/boardgame/447588/the-nights-of-king-ludd",
+          "img": "https://cf.geekdo-images.com/rmA8uYbrDZwR74V4n783JQ__square200/img/mpLdgOomZ7CcqI_F-aCITq39uxI=/200x200/filters:strip_icc()/pic9708023.jpg"
         }
       ]
     }
